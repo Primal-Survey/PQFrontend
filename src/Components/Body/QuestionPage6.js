@@ -2,16 +2,16 @@ import React from "react";
 import { useContext } from "react";
 import QuestionsContext from "../Contexts/QuestionContext";
 
-function QuestionPage1() {
+function QuestionPage6() {
   const Questions = useContext(QuestionsContext);
 
   return (
     <div>
-      <div>{Questions.questionOne.text}</div>
-      <div>{Questions.questionTwo.text}</div>
-      <div>{Questions.questionThree.text}</div>
+      <div>{Questions.questionSixteen.text}</div>
+      <div>{Questions.questionSeventeen.text}</div>
+      <div>{Questions.questionEighteen.text}</div>
     </div>
   );
 }
 
-export default QuestionPage1;
+export default QuestionPage6;
