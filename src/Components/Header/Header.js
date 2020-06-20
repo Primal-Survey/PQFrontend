@@ -1,13 +1,12 @@
 import React from "react";
 
-
-
 function Header() {
   return (
-    <div>
-      <div>Header Box!</div>
-
-    </div>
+    <header class="page-footer black">
+      <div class="container">
+        <h1>Primal Quiz</h1>
+      </div>
+    </header>
   );
 }
 
