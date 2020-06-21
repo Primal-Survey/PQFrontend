@@ -1,19 +1,20 @@
 import React from "react";
-import { useContext, useState } from "react";
-import QuestionsContext from "../../Contexts/QuestionContext";
-import submitInfo from "../../Contexts/SubmitInfo"
+import { useState } from "react";
+import submitInfo from "../../Contexts/SubmitInfo";
 
 function OneFiveForm() {
-  const [surveyInfo, setSurveyInfo] = useState(submitInfo)
+  const [surveyInfo, setSurveyInfo] = useState(submitInfo);
 
   const handleChange = (e) => {
     setSurveyInfo({
-    surveyInfo: {
+      surveyInfo: {
         [e.target.name]: e.target.value,
       },
     });
   };
-  {console.log(surveyInfo)}
+  {
+    console.log(surveyInfo);
+  }
   return (
     <form action="#">
       <div>
@@ -24,7 +25,6 @@ function OneFiveForm() {
               value={1}
               class="with-gap"
               name={surveyInfo.relentless1}
-         
               type="radio"
             />
             <span>1</span>
@@ -37,7 +37,7 @@ function OneFiveForm() {
               onChange={handleChange}
               value={2}
               class="with-gap"
-              name="group1"
+              name={surveyInfo.relentless1}
               type="radio"
             />
             <span>2</span>
@@ -49,7 +49,7 @@ function OneFiveForm() {
               onChange={handleChange}
               value={3}
               class="with-gap"
-              name="group1"
+              name={surveyInfo.relentless1}
               type="radio"
             />
             <span>3</span>
@@ -61,7 +61,7 @@ function OneFiveForm() {
               onChange={handleChange}
               value={4}
               class="with-gap"
-              name="group1"
+              name={surveyInfo.relentless1}
               type="radio"
             />
             <span>4</span>
@@ -73,7 +73,7 @@ function OneFiveForm() {
               onChange={handleChange}
               value={5}
               class="with-gap"
-              name="group1"
+              name={surveyInfo.relentless1}
               type="radio"
             />
             <span>5</span>
