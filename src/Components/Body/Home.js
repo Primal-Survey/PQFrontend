@@ -1,7 +1,4 @@
 import React from "react";
-import {useState} from "react";
-import submitInfo from "../Contexts/SubmitInfo"
-
 
 
 function Home() {

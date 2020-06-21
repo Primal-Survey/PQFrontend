@@ -1,8 +1,6 @@
 import React from "react";
 import './oneFiveForm.css';
 function OneFiveForm({questionKey, surveyInfo, handleChange}) {
-  
-  
   return (
     <form action="#">
       <div className="radio-buttons">
