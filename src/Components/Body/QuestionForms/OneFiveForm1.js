@@ -1,30 +1,17 @@
 import React from "react";
-import { useState } from "react";
-import submitInfo from "../../Contexts/SubmitInfo";
-
-function OneFiveForm() {
-  const [surveyInfo, setSurveyInfo] = useState(submitInfo);
-
-  const handleChange = (e) => {
-    setSurveyInfo({
-      surveyInfo: {
-        [e.target.name]: e.target.value,
-      },
-    });
-  };
-  {
-    console.log(surveyInfo);
-  }
+import './oneFiveForm.css';
+function OneFiveForm({questionKey, surveyInfo, handleChange}) {
   return (
     <form action="#">
-      <div>
+      <div className="radio-buttons">
         <p>
           <label>
             <input
               onChange={handleChange}
               value={1}
-              class="with-gap"
-              name={surveyInfo.relentless1}
+              className="with-gap"
+              name={questionKey}
+              checked={surveyInfo[questionKey] === "1"}
               type="radio"
             />
             <span>1</span>
@@ -36,8 +23,9 @@ function OneFiveForm() {
             <input
               onChange={handleChange}
               value={2}
-              class="with-gap"
-              name={surveyInfo.relentless1}
+              className="with-gap"
+              name={questionKey}
+              checked={surveyInfo[questionKey] === "2"}
               type="radio"
             />
             <span>2</span>
@@ -48,8 +36,9 @@ function OneFiveForm() {
             <input
               onChange={handleChange}
               value={3}
-              class="with-gap"
-              name={surveyInfo.relentless1}
+              className="with-gap"
+              name={questionKey}
+              checked={surveyInfo[questionKey] === "3"}
               type="radio"
             />
             <span>3</span>
@@ -60,8 +49,9 @@ function OneFiveForm() {
             <input
               onChange={handleChange}
               value={4}
-              class="with-gap"
-              name={surveyInfo.relentless1}
+              className="with-gap"
+              name={questionKey}
+              checked={surveyInfo[questionKey] === "4"}
               type="radio"
             />
             <span>4</span>
@@ -72,8 +62,9 @@ function OneFiveForm() {
             <input
               onChange={handleChange}
               value={5}
-              class="with-gap"
-              name={surveyInfo.relentless1}
+              className="with-gap"
+              name={questionKey}
+              checked={surveyInfo[questionKey] === "5"}
               type="radio"
             />
             <span>5</span>
