@@ -3,13 +3,19 @@ import { Link } from "react-router-dom";
 import QuestionsContext from "../Contexts/QuestionContext";
 import OneFiveForm1 from "./QuestionForms/OneFiveForm1";
 
-function QuestionPage1({keys, ...rest}) {
+function QuestionPage1({prev, next, questions, keys, ...rest}) {
   const Questions = useContext(QuestionsContext);
 
 
   return (
     <div>
-      <div>
+      {questions.map((question, i) => (
+        <div>
+          {Questions[question].text}
+          <OneFiveForm1 questionKey={keys[i]} {...rest} />
+         </div> 
+      ))}
+      {/* <div>
         {Questions.Relentless1.text}
         <OneFiveForm1 questionKey={keys[0]} {...rest} />
       </div>
@@ -22,8 +28,16 @@ function QuestionPage1({keys, ...rest}) {
       <div>
         {Questions.Agnostic1.text}
         <OneFiveForm1 questionKey={keys[2]} {...rest}  />
+      </div> */}
+      <div>
+        {prev && <Link to={`/questionpage${prev}/`}>
+          {`Question page ${prev}`}
+          </Link>}
+          {next && <Link to={`/questionpage${next}/`}>
+            {`Question page ${next}`}
+            </Link>}
       </div>
-      <Link to="/questionpage2/">Question page 2</Link>
+    
       {/* <Route path="/questionpage2/" component={QuestionPage2} /> */}
     </div>
   );
