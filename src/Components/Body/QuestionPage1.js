@@ -10,7 +10,7 @@ function QuestionPage1({prev, next, questions, keys, ...rest}) {
   return (
     <div>
       {questions.map((question, i) => (
-        <div>
+        <div key={i}>
           {Questions[question].text}
           <OneFiveForm1 questionKey={keys[i]} {...rest} />
          </div> 

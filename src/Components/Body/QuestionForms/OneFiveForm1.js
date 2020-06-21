@@ -2,7 +2,7 @@ import React from "react";
 import './oneFiveForm.css';
 function OneFiveForm({questionKey, surveyInfo, handleChange}) {
   
-  console.log(surveyInfo)
+  
   return (
     <form action="#">
       <div className="radio-buttons">
@@ -11,7 +11,7 @@ function OneFiveForm({questionKey, surveyInfo, handleChange}) {
             <input
               onChange={handleChange}
               value={1}
-              class="with-gap"
+              className="with-gap"
               name={questionKey}
 
               type="radio"
@@ -25,7 +25,7 @@ function OneFiveForm({questionKey, surveyInfo, handleChange}) {
             <input
               onChange={handleChange}
               value={2}
-              class="with-gap"
+              className="with-gap"
               name={questionKey}
               type="radio"
             />
@@ -37,7 +37,7 @@ function OneFiveForm({questionKey, surveyInfo, handleChange}) {
             <input
               onChange={handleChange}
               value={3}
-              class="with-gap"
+              className="with-gap"
               name={questionKey}
               type="radio"
             />
@@ -49,7 +49,7 @@ function OneFiveForm({questionKey, surveyInfo, handleChange}) {
             <input
               onChange={handleChange}
               value={4}
-              class="with-gap"
+              className="with-gap"
               name={questionKey}
               type="radio"
             />
@@ -61,7 +61,7 @@ function OneFiveForm({questionKey, surveyInfo, handleChange}) {
             <input
               onChange={handleChange}
               value={5}
-              class="with-gap"
+              className="with-gap"
               name={questionKey}
               type="radio"
             />

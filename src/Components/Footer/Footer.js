@@ -2,17 +2,17 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer class="page-footer black">
-      <div class="container">
-        <div class="row">
+    <footer className="page-footer black">
+      <div className="container">
+        <div className="row">
           <div>
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">Footer Content</p>
+            <h5 className="white-text">Footer Content</h5>
+            <p className="grey-text text-lighten-4">Footer Content</p>
           </div>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container">© 2020 Copyright Text</div>
+      <div className="footer-copyright">
+        <div className="container">© 2020 Copyright Text</div>
       </div>
     </footer>
   );
