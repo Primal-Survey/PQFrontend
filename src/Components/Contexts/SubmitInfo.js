@@ -1,8 +1,8 @@
-const SubmitInfo = {
+const submitInfo = {
   region: "",
   gender: "",
-  age: 0,
-  income: 0,
+  age: "",
+  income: "",
   education: "",
   industry: "",
   workRole: "",
@@ -43,4 +43,4 @@ const SubmitInfo = {
   nuts3: 0,
 };
 
-export default SubmitInfo;
+export default submitInfo;
