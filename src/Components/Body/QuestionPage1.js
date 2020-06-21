@@ -15,27 +15,15 @@ function QuestionPage1({prev, next, questions, keys, ...rest}) {
           <OneFiveForm1 questionKey={keys[i]} {...rest} />
          </div> 
       ))}
-      {/* <div>
-        {Questions.Relentless1.text}
-        <OneFiveForm1 questionKey={keys[0]} {...rest} />
-      </div>
-
-      <div>
-        {Questions.Oppositional1.text}
-        <OneFiveForm1 questionKey={keys[1]} {...rest} />
-      </div>
-
-      <div>
-        {Questions.Agnostic1.text}
-        <OneFiveForm1 questionKey={keys[2]} {...rest}  />
-      </div> */}
-      <div>
-        {prev && <Link to={`/questionpage${prev}/`}>
+      <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+        {prev ? (<Link to={`/questionpage${prev}/`}>
           {`Question page ${prev}`}
-          </Link>}
-          {next && <Link to={`/questionpage${next}/`}>
+          </Link>) : (
+            <Link to='/'>Home</Link>
+          )}
+          {next ?( <Link to={`/questionpage${next}/`}>
             {`Question page ${next}`}
-            </Link>}
+            </Link>) : (<Link to='/results'>Results</Link>)}
       </div>
     
       {/* <Route path="/questionpage2/" component={QuestionPage2} /> */}

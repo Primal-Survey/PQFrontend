@@ -13,7 +13,7 @@ function OneFiveForm({questionKey, surveyInfo, handleChange}) {
               value={1}
               className="with-gap"
               name={questionKey}
-
+              checked={surveyInfo[questionKey] === "1"}
               type="radio"
             />
             <span>1</span>
@@ -27,6 +27,7 @@ function OneFiveForm({questionKey, surveyInfo, handleChange}) {
               value={2}
               className="with-gap"
               name={questionKey}
+              checked={surveyInfo[questionKey] === "2"}
               type="radio"
             />
             <span>2</span>
@@ -39,6 +40,7 @@ function OneFiveForm({questionKey, surveyInfo, handleChange}) {
               value={3}
               className="with-gap"
               name={questionKey}
+              checked={surveyInfo[questionKey] === "3"}
               type="radio"
             />
             <span>3</span>
@@ -51,6 +53,7 @@ function OneFiveForm({questionKey, surveyInfo, handleChange}) {
               value={4}
               className="with-gap"
               name={questionKey}
+              checked={surveyInfo[questionKey] === "4"}
               type="radio"
             />
             <span>4</span>
@@ -63,6 +66,7 @@ function OneFiveForm({questionKey, surveyInfo, handleChange}) {
               value={5}
               className="with-gap"
               name={questionKey}
+              checked={surveyInfo[questionKey] === "5"}
               type="radio"
             />
             <span>5</span>

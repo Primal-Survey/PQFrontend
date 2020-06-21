@@ -31,6 +31,7 @@ function BodyBox() {
         <Route path="/questionpage5/" render={props => <QuestionPage1 {...props} prev={4} next={6} surveyInfo={surveyInfo} handleChange={handleChange} keys={['nuts2', 'insecure2', 'relentless3']} questions={['Nuts2', 'Insecure2', 'Relentless3']}/>} />
         <Route path="/questionpage6/" render={props => <QuestionPage1 {...props} prev={5} next={7} surveyInfo={surveyInfo} handleChange={handleChange} keys={['oppositional3', 'agnostic3', 'messianic3']} questions={['Oppositional3', 'Agnostic3', 'Messianic3']}/>} />
         <Route path="/questionpage7/" render={props => <QuestionPage1 {...props} prev={6} next={null} surveyInfo={surveyInfo} handleChange={handleChange} keys={['gallant3', 'insecure3', 'nuts3']} questions={['Gallant3', 'Insecure3', 'Nuts3']}/>}/>
+        <Route path="/results" render={() => <h1>Results</h1>} />
       </div>
   );
 }
