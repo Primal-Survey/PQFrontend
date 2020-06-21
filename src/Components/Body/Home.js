@@ -5,7 +5,6 @@ import submitInfo from "../Contexts/SubmitInfo"
 
 
 function Home() {
-  const [submitState, setSubmitState] = useState(submitInfo)
 
   return (
     <div>

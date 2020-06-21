@@ -4,9 +4,7 @@ import QuestionsContext from "../../Contexts/QuestionContext";
 import submitInfo from "../../Contexts/SubmitInfo"
 
 function OneFiveForm() {
-  const Questions = useContext(QuestionsContext);
-
-  const [surveyInfo, setSurveyInfo] = useState(...submitInfo)
+  const [surveyInfo, setSurveyInfo] = useState(submitInfo)
 
   const handleChange = (e) => {
     setSurveyInfo({
@@ -15,7 +13,7 @@ function OneFiveForm() {
       },
     });
   };
-
+  {console.log(surveyInfo)}
   return (
     <form action="#">
       <div>
@@ -25,7 +23,8 @@ function OneFiveForm() {
               onChange={handleChange}
               value={1}
               class="with-gap"
-              name={submitInfo.relentless1}
+              name={surveyInfo.relentless1}
+         
               type="radio"
             />
             <span>1</span>

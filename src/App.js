@@ -7,8 +7,6 @@ import Footer from "./Components/Footer/Footer";
 import { HashRouter as Router } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import QuestionsContext from "./Components/Contexts/QuestionContext";
-import InfoSubmitContext from "./Components/Contexts/InfoSubmitContext";
-import {submitInfo, setSubmitInfo} from "./Components/Contexts/SubmitInfo";
 import Questions from "./Components/Contexts/Questions";
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
