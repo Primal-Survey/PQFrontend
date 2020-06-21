@@ -2,8 +2,8 @@ import React from "react";
 
 function Header() {
   return (
-    <header class="page-footer black">
-      <div class="container">
+    <header className="page-footer black">
+      <div className="container">
         <h1>Primal Quiz</h1>
       </div>
     </header>

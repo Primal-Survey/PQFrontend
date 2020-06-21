@@ -1,32 +1,32 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import QuestionsContext from "../Contexts/QuestionContext";
 import OneFiveForm1 from "./QuestionForms/OneFiveForm1";
-import { Route, Link } from "react-router-dom";
-import QuestionPage2 from "./QuestionPage2";
 
-function QuestionPage1() {
+function QuestionPage1({prev, next, questions, keys, ...rest}) {
   const Questions = useContext(QuestionsContext);
 
 
   return (
     <div>
-      <div>
-        {Questions.Relentless1.text}
-        <OneFiveForm1 />
+      {questions.map((question, i) => (
+        <div key={i}>
+          {Questions[question].text}
+          <OneFiveForm1 questionKey={keys[i]} {...rest} />
+         </div> 
+      ))}
+      <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+        {prev ? (<Link to={`/questionpage${prev}/`}>
+          {`Question page ${prev}`}
+          </Link>) : (
+            <Link to='/'>Home</Link>
+          )}
+          {next ?( <Link to={`/questionpage${next}/`}>
+            {`Question page ${next}`}
+            </Link>) : (<Link to='/results'>Results</Link>)}
       </div>
-
-      <div>
-        {Questions.Oppositional1.text}
-        <OneFiveForm1 />
-      </div>
-
-      <div>
-        {Questions.Agnostic1.text}
-        <OneFiveForm1 />
-      </div>
-      <Link to="/questionpage2/">Question page 2</Link>
-      <Route path="/questionpage2/" component={QuestionPage2} />
+    
+      {/* <Route path="/questionpage2/" component={QuestionPage2} /> */}
     </div>
   );
 }
