@@ -12,7 +12,9 @@ function Footer() {
         </div>
       </div>
       <div className="footer-copyright">
-        <div className="container">© 2020 Copyright Text</div>
+        <div className="container">
+          © 2020 Marco Greenberg. All Rights Reserved.{" "}
+        </div>
       </div>
     </footer>
   );

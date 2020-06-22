@@ -12,24 +12,23 @@ function OneFiveForm() {
       },
     });
   };
-  {
-    console.log(surveyInfo);
-  }
+
   return (
-    <form action="#">
-      <div class="input-field col s12">
+    <form className="col s12 l6" action="#">
+      <div className="input-field col s12">
         <select>
-          <option value="" disabled selected></option>
+          <option value="" defaultValue></option>
           <option value="Northeast">Northeast</option>
           <option value="Midwest">Midwest</option>
+
           <option value="South">South</option>
           <option value="West">West</option>
         </select>
         <label>Census Region from zip code</label>
       </div>
-      <div class="input-field col s12">
+      <div className="input-field col s12">
         <select>
-          <option value="" disabled selected></option>
+          <option value="" defaultValue></option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Other">Other</option>
@@ -37,9 +36,9 @@ function OneFiveForm() {
         </select>
         <label>Please indicate your gender.</label>
       </div>
-      <div class="input-field col s12">
+      <div className="input-field col s12">
         <select>
-          <option value="" disabled selected></option>
+          <option value="" defaultValue></option>
           <option value="Under 21">Under 21</option>
           <option value="21-24">21-24</option>
           <option value="25-29">25-29</option>
@@ -55,9 +54,9 @@ function OneFiveForm() {
         </select>
         <label>What is your age?</label>
       </div>
-      <div class="input-field col s12">
+      <div className="input-field col s12">
         <select>
-          <option value="" disabled selected></option>
+          <option value="" defaultValue></option>
           <option value="$0 - $25,000">$0 - $25,000</option>
           <option value="$25,001 - $50,000">$25,001 - $50,000</option>
           <option value="$50,001 - $75,000">$50,001 - $75,000</option>
@@ -70,9 +69,9 @@ function OneFiveForm() {
         </select>
         <label> Please indicate your approximate personal annual income.</label>
       </div>
-      <div class="input-field col s12">
+      <div className="input-field col s12">
         <select>
-          <option value="" disabled selected></option>
+          <option value="" defaultValue></option>
           <option value="High school diploma or equivalent">
             High school diploma or equivalent
           </option>
@@ -88,9 +87,9 @@ function OneFiveForm() {
         </select>
         <label>What is the highest degree you have received? </label>
       </div>
-      <div class="input-field col s12">
+      <div className="input-field col s12">
         <select>
-          <option value="" disabled selected></option>
+          <option value="" defaultValue></option>
           <option value="Advertising / Marketing">
             Advertising / Marketing
           </option>
@@ -147,9 +146,9 @@ function OneFiveForm() {
           working due to the Coronavirus)?
         </label>
       </div>
-      <div class="input-field col s12">
+      <div className="input-field col s12">
         <select>
-          <option value="" disabled selected></option>
+          <option value="" defaultValue></option>
           <option value="Owner/ Founder/ Partner/ Entrepreneur">
             Owner/ Founder/ Partner/ Entrepreneur
           </option>
@@ -176,9 +175,9 @@ function OneFiveForm() {
         </select>
         <label>My work role is best described as? Select one.</label>
       </div>
-      <div class="input-field col s12">
+      <div className="input-field col s12">
         <select>
-          <option value="" disabled selected></option>
+          <option value="" defaultValue></option>
           <option value="Yes, and I think it was a great success">
             Yes, and I think it was a great success
           </option>
@@ -189,9 +188,9 @@ function OneFiveForm() {
         </select>
         <label> Have you ever launched your own entrepreneurial venture?</label>
       </div>
-      <div class="input-field col s12">
+      <div className="input-field col s12">
         <select>
-          <option value="" disabled selected></option>
+          <option value="" defaultValue></option>
           <option value="Cubicle">Cubicle</option>
           <option value="Closed door office">Closed door office</option>
           <option value="Open office">Open office</option>
@@ -209,9 +208,9 @@ function OneFiveForm() {
           productive and comfortable?
         </label>
       </div>
-      <div class="input-field col s12">
+      <div className="input-field col s12">
         <select>
-          <option value="" disabled selected></option>
+          <option value="" defaultValue></option>
           <option value="Fearful">Fearful</option>
           <option value="No big deal">No big deal</option>
           <option value="Distracted">Distracted</option>
