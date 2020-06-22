@@ -12,28 +12,6 @@ function BodyBox() {
 
   return (
     <div>
-      <div>
-        <Link to="/metadata/">Meta Data</Link>
-        <Link to="/questionpage1/">question page1</Link>
-        <Link to="/questionpage2/">question page2</Link>
-        <Link to="/questionpage3/">question page3</Link>
-        <Link to="/questionpage4/">question page4</Link>
-        <Link to="/questionpage5/">question page5</Link>
-        <Link to="/questionpage6/">question page6</Link>
-        <Link to="/questionpage7/">question page7</Link>
-      </div>
-
-      <Route
-        path="/metadata/"
-        render={(props) => (
-          <Home
-            {...props}
-            surveyInfo={surveyInfo}
-            handleChange={handleChange}
-          />
-        )}
-      />
-
       <Route
         path="/metadata/"
         render={(props) => (
@@ -49,7 +27,7 @@ function BodyBox() {
         render={(props) => (
           <QuestionPage1
             {...props}
-            prev={1}
+            prev={0}
             next={2}
             surveyInfo={surveyInfo}
             handleChange={handleChange}
