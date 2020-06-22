@@ -1,9 +1,19 @@
 import React from "react";
+import M from 'materialize-css/dist/js/materialize.min.js';
+import 'materialize-css/dist/css/materialize.min.css';
+import { useEffect } from "react";
 
 function MetaDataForm(surveyInfo) {
+  
+  useEffect(() => {
+    //auto initializes Materialize's JS
+    M.AutoInit();
+  }, []);
+
   const handleChange = surveyInfo.surveyInfo.handleChange;
   return (
-    <form action="#">
+    <form className="" action="#">
+      
       <div className="input-field col s12">
         <select onChange={handleChange} name="region">
           <option value="" defaultValue></option>
