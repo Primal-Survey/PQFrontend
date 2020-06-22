@@ -1,5 +1,5 @@
 import React from "react";
-import {useEffect} from "react"
+import { useEffect } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import BodyBox from "./Components/Body/BodyBox";
@@ -11,7 +11,6 @@ import Questions from "./Components/Contexts/Questions";
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
 
-
 function App() {
   useEffect(() => {
     //auto initializes Materialize's JS
@@ -22,7 +21,7 @@ function App() {
       <QuestionsContext.Provider value={Questions}>
         <div>
           <Helmet>
-            <title>Primal Quiz</title>
+            <title>The Primitive Book Quiz</title>
           </Helmet>
           <Header />
           <Router basename="/">
