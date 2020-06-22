@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Route } from "react-router-dom";
 import initialState from "../Contexts/SubmitInfo";
 import Home from "./Home";
-import QuestionPage1 from "./QuestionPage1";
+import QuestionPage1 from "./QuestionPage";
 
 function BodyBox() {
   const [surveyInfo, setSurveyInfo] = useState(initialState);
@@ -27,21 +27,9 @@ function BodyBox() {
         path="/"
         render={(props) => (
           <Home
+            {...props}
             surveyInfo={surveyInfo}
             handleChange={handleChange}
-            keys={[
-              "region",
-              "gender",
-              "age",
-              "income",
-              "education",
-              "industry",
-              "workrole",
-              "employment",
-              "entrepreneur",
-              "workSite",
-              "coidReact",
-            ]}
           />
         )}
       />
@@ -50,7 +38,7 @@ function BodyBox() {
         render={(props) => (
           <QuestionPage1
             {...props}
-            prev={null}
+            prev={1}
             next={2}
             surveyInfo={surveyInfo}
             handleChange={handleChange}

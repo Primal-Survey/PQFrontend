@@ -1,12 +1,13 @@
 import React from "react";
 import MetaDataForm from "./QuestionForms/MetaDataForm";
 
-function Home(keys, ...rest) {
+function Home(surveyInfo) {
   return (
     <div>
-      <div>Home Box!</div>
-      <MetaDataForm questionKey={keys[0]} {...rest} />
-      {console.log({ ...rest })}
+      {console.log(surveyInfo)}
+      <div>
+        <MetaDataForm surveyInfo={surveyInfo} />
+      </div>
     </div>
   );
 }

@@ -1,22 +1,11 @@
 import React from "react";
-import { useState } from "react";
-import submitInfo from "../../Contexts/SubmitInfo";
 
-function OneFiveForm() {
-  const [surveyInfo, setSurveyInfo] = useState(submitInfo);
-
-  const handleChange = (e) => {
-    setSurveyInfo({
-      surveyInfo: {
-        [e.target.name]: e.target.value,
-      },
-    });
-  };
-
+function MetaDataForm(surveyInfo) {
+  const handleChange = surveyInfo.surveyInfo.handleChange;
   return (
-    <form className="col s12 l6" action="#">
+    <form action="#">
       <div className="input-field col s12">
-        <select>
+        <select onChange={handleChange} name="region">
           <option value="" defaultValue></option>
           <option value="Northeast">Northeast</option>
           <option value="Midwest">Midwest</option>
@@ -24,10 +13,10 @@ function OneFiveForm() {
           <option value="South">South</option>
           <option value="West">West</option>
         </select>
-        <label>Census Region from zip code</label>
+        <label>Please indicate your census region</label>
       </div>
       <div className="input-field col s12">
-        <select>
+        <select onChange={handleChange} name="gender">
           <option value="" defaultValue></option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
@@ -36,8 +25,8 @@ function OneFiveForm() {
         </select>
         <label>Please indicate your gender.</label>
       </div>
-      <div className="input-field col s12">
-        <select>
+      <div class="input-field col s12">
+        <select onChange={handleChange} name="age">
           <option value="" defaultValue></option>
           <option value="Under 21">Under 21</option>
           <option value="21-24">21-24</option>
@@ -54,8 +43,8 @@ function OneFiveForm() {
         </select>
         <label>What is your age?</label>
       </div>
-      <div className="input-field col s12">
-        <select>
+      <div class="input-field col s12">
+        <select onChange={handleChange} name="income">
           <option value="" defaultValue></option>
           <option value="$0 - $25,000">$0 - $25,000</option>
           <option value="$25,001 - $50,000">$25,001 - $50,000</option>
@@ -69,8 +58,8 @@ function OneFiveForm() {
         </select>
         <label> Please indicate your approximate personal annual income.</label>
       </div>
-      <div className="input-field col s12">
-        <select>
+      <div class="input-field col s12">
+        <select onChange={handleChange} name="education">
           <option value="" defaultValue></option>
           <option value="High school diploma or equivalent">
             High school diploma or equivalent
@@ -87,8 +76,8 @@ function OneFiveForm() {
         </select>
         <label>What is the highest degree you have received? </label>
       </div>
-      <div className="input-field col s12">
-        <select>
+      <div class="input-field col s12">
+        <select onChange={handleChange} name="industry">
           <option value="" defaultValue></option>
           <option value="Advertising / Marketing">
             Advertising / Marketing
@@ -146,8 +135,8 @@ function OneFiveForm() {
           working due to the Coronavirus)?
         </label>
       </div>
-      <div className="input-field col s12">
-        <select>
+      <div class="input-field col s12">
+        <select onChange={handleChange} name="workRole">
           <option value="" defaultValue></option>
           <option value="Owner/ Founder/ Partner/ Entrepreneur">
             Owner/ Founder/ Partner/ Entrepreneur
@@ -175,8 +164,28 @@ function OneFiveForm() {
         </select>
         <label>My work role is best described as? Select one.</label>
       </div>
-      <div className="input-field col s12">
-        <select>
+      <div class="input-field col s12">
+        <select onChange={handleChange} name="employment">
+          <option value="" defaultValue></option>
+          <option value="I am currently employed full-time">
+            I am currently employed full-time
+          </option>
+          <option value="I was unemployed on March 15, 2020, and I am currently unemployed">
+            I was unemployed on March 15, 2020, and I am currently unemployed
+          </option>
+          <option value="I was employed full-time on March 15, 2020, but due to the Coronavirus I am currently unemployed">
+            I was employed full-time on March 15, 2020, but due to the
+            Coronavirus I am currently unemployed
+          </option>
+        </select>
+        <label>
+          This question is about your current employment---meaning right
+          now/today. Select the one answer that best describes your situation.
+        </label>
+      </div>
+
+      <div class="input-field col s12">
+        <select onChange={handleChange} name="entrepreneur">
           <option value="" defaultValue></option>
           <option value="Yes, and I think it was a great success">
             Yes, and I think it was a great success
@@ -188,8 +197,8 @@ function OneFiveForm() {
         </select>
         <label> Have you ever launched your own entrepreneurial venture?</label>
       </div>
-      <div className="input-field col s12">
-        <select>
+      <div class="input-field col s12">
+        <select onChange={handleChange} name="workSite">
           <option value="" defaultValue></option>
           <option value="Cubicle">Cubicle</option>
           <option value="Closed door office">Closed door office</option>
@@ -208,8 +217,8 @@ function OneFiveForm() {
           productive and comfortable?
         </label>
       </div>
-      <div className="input-field col s12">
-        <select>
+      <div class="input-field col s12">
+        <select onChange={handleChange} name="covidReact">
           <option value="" defaultValue></option>
           <option value="Fearful">Fearful</option>
           <option value="No big deal">No big deal</option>
@@ -231,4 +240,4 @@ function OneFiveForm() {
   );
 }
 
-export default OneFiveForm;
+export default MetaDataForm;
