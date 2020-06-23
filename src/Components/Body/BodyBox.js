@@ -16,7 +16,7 @@ function BodyBox() {
       <Route exact path="/" component={Welcome} />
 
       <Route
-        path="/metadata/"
+        path="/startPage/"
         render={(props) => (
           <Home
             {...props}
