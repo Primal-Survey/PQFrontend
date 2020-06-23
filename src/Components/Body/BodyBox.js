@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import initialState from "../Contexts/SubmitInfo";
 import Home from "./Home";
-import Welcome from "./Welcome";
+import Welcome from "./QuestionForms/Welcome/Welcome";
 import QuestionPage1 from "./QuestionPage";
 
 function BodyBox() {
