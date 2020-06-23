@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import initialState from "../Contexts/SubmitInfo";
 import Home from "./Home";
+import Welcome from "./Welcome";
 import QuestionPage1 from "./QuestionPage";
 
 function BodyBox() {
@@ -11,7 +12,9 @@ function BodyBox() {
     setSurveyInfo({ ...surveyInfo, [name]: value });
 
   return (
-    <div>
+    <Switch>
+      <Route exact path="/" component={Welcome} />
+
       <Route
         path="/metadata/"
         render={(props) => (
@@ -22,6 +25,7 @@ function BodyBox() {
           />
         )}
       />
+
       <Route
         path="/questionpage1/"
         render={(props) => (
@@ -36,6 +40,7 @@ function BodyBox() {
           />
         )}
       />
+
       <Route
         path="/questionpage2/"
         render={(props) => (
@@ -50,6 +55,7 @@ function BodyBox() {
           />
         )}
       />
+
       <Route
         path="/questionpage3/"
         render={(props) => (
@@ -64,6 +70,7 @@ function BodyBox() {
           />
         )}
       />
+
       <Route
         path="/questionpage4/"
         render={(props) => (
@@ -78,6 +85,7 @@ function BodyBox() {
           />
         )}
       />
+
       <Route
         path="/questionpage5/"
         render={(props) => (
@@ -92,6 +100,7 @@ function BodyBox() {
           />
         )}
       />
+
       <Route
         path="/questionpage6/"
         render={(props) => (
@@ -106,6 +115,7 @@ function BodyBox() {
           />
         )}
       />
+
       <Route
         path="/questionpage7/"
         render={(props) => (
@@ -120,8 +130,9 @@ function BodyBox() {
           />
         )}
       />
+
       <Route path="/results" render={() => <h1>Results</h1>} />
-    </div>
+    </Switch>
   );
 }
 
