@@ -1,29 +1,104 @@
 import React from "react";
 import styled from "styled-components";
 
+import Amazon from "./images/amazon.JPG";
+import Bam from "./images/bam.JPG";
+import BN from "./images/BN.JPG";
+import IB from "./images/IB.JPG";
+import Book2 from "./images/book2.JPG";
+import Author from "./images/author.JPG";
+
 function Footer() {
   return (
-    <Foot
-      className="page-footer black"
-      style={{
-        textAlign: "center",
-        padding: "20px",
-        left: "0",
-        bottom: "0",
-        width: "100%",
-      }}
-    >
-      <div className="container">
-        <div className="row">
-          <div>
-            <h5 className="white-text">Footer Content</h5>
-            <p className="grey-text text-lighten-4">Footer Content</p>
-          </div>
+    <Foot className="page-footer black">
+      <Content className="container">
+        <div className="row ">
+          <LeftBox className="col l6 s12">
+            <Section>
+              <div>
+                <h5 className="teal-text">
+                  Captures insights and advice that everyone can use to thrive
+                  in the constantly evolving workplace.
+                </h5>
+                <H6>
+                  — DANIEL H. PINK, NEW YORK TIMES BESTSELLING AUTHOR OF WHEN,
+                  DRIVE, AND TO SELL IS HUMAN.
+                </H6>
+              </div>
+              <ImgBox>
+                <div>
+                  <Img2 src={Author} alt="Primitive Book" />
+                </div>
+              </ImgBox>
+            </Section>
+          </LeftBox>
+
+          {/* -----------------  right links ---------------------------*/}
+          <RightBox className="col l6  s12">
+            <h5 className="teal-text">
+              PURCHASE THE BOOK AT YOUR FAVORITE RETAILER
+            </h5>
+
+            <ImgBox className="col s12 m12 l12 ">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://primitive-book.squarespace.com/#purchase-section"
+              >
+                <div className="col s6 m3 l3 ">
+                  <Img2 src={Book2} alt="Primitive Book" />
+                </div>
+              </a>
+            </ImgBox>
+
+            <ImgBox className="col s12 m12 l12 ">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.amazon.com/Primitive-Tapping-Primal-Powering-Successful/dp/0316530379/"
+              >
+                <div className="col s6 m3 l3 ">
+                  <Img src={Amazon} alt="" />
+                </div>
+              </a>
+
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.booksamillion.com/p/Primitive/Marco-Greenberg/9780316530378"
+              >
+                <div className="col s6 m3 l3 ">
+                  <Img src={Bam} alt="" />
+                </div>
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.barnesandnoble.com/w/primitive-marco-greenberg/1136270724?ean=9780316530378"
+              >
+                <div className="col s6 m3 l3 ">
+                  <Img src={BN} alt="" />
+                </div>
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.indiebound.org/book/9780316530378"
+              >
+                <div className="col s6 m3 l3 ">
+                  <Img src={IB} alt="" />
+                </div>
+              </a>
+            </ImgBox>
+          </RightBox>
         </div>
-      </div>
+
+        {/* -----------------  right links ---------------------------*/}
+      </Content>
+
       <div className="footer-copyright">
         <div className="container">
-          © 2020 Marco Greenberg. All Rights Reserved.{" "}
+          © 2020 Marco Greenberg. All Rights Reserved.
         </div>
       </div>
     </Foot>
@@ -31,7 +106,72 @@ function Footer() {
 }
 const Foot = styled.footer`
   display: flex;
-  min-height: 50vh;
   flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 50vh;
 `;
+
+const Content = styled.div`
+  display: flex;
+  /* border: 1px solid blue; */
+  justify-content: space-evenly;
+  min-width: 95vw;
+  min-height: 40vh;
+`;
+
+const Section = styled.section`
+  /* border: 1px solid dodgerblue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 40vw;
+  min-height: 50vh;
+`;
+const RightBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50vh;
+  width: 45%;
+  /* border: 1px solid yellow; */
+`;
+
+const LeftBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50vh;
+  width: 50%;
+
+  /* border: 1px solid red; */
+`;
+
+const ImgBox = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  /* border: 1px solid orange; */
+`;
+
+const Img = styled.img`
+  max-width: 100px;
+  max-height: auto;
+  /* border: 1px solid red; */
+`;
+
+const Img2 = styled.img`
+  max-width: 200px;
+  height: auto;
+  /* border: 1px solid red; */
+`;
+
+const H6 = styled.h6`
+  padding-left: 10px;
+  border: 1px solid black;
+`;
+
 export default Footer;
