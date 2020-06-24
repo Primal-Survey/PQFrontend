@@ -5,7 +5,7 @@ function Header() {
   return (
     <Section className="page-footer black">
       <div className="container">
-        <h1>The Primitive Book Quiz</h1>
+        <h1 className="teal-text">The Primitive Book Quiz</h1>
       </div>
     </Section>
   );
