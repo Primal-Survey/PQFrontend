@@ -1,14 +1,18 @@
 import React from "react";
+import styled from "styled-components";
 
 function Footer() {
   return (
-    <footer className="page-footer black" style = {{
-      textAlign: "center",
-      padding: "20px",
-      left: "0",
-      bottom: "0",
-      width: "100%",
-    }}>
+    <Foot
+      className="page-footer black"
+      style={{
+        textAlign: "center",
+        padding: "20px",
+        left: "0",
+        bottom: "0",
+        width: "100%",
+      }}
+    >
       <div className="container">
         <div className="row">
           <div>
@@ -22,8 +26,12 @@ function Footer() {
           © 2020 Marco Greenberg. All Rights Reserved.{" "}
         </div>
       </div>
-    </footer>
+    </Foot>
   );
 }
-
+const Foot = styled.footer`
+  display: flex;
+  min-height: 50vh;
+  flex-direction: column;
+`;
 export default Footer;
