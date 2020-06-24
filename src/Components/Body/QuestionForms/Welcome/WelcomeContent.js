@@ -12,9 +12,9 @@ const WelcomeContent = () => {
           corporate BS, business jargon, or filled with platitudes. This survey
           gets to the heart of the matter. It is based on a study conducted by a
           St. Joe’s University Professor of Management in conjunction with a
-          methodology developed by Marco Greenberg in his book, Primitive:
+          methodology developed by Marco Greenberg in his book, "Primitive:
           Tapping the Primal Drive that Powers the World’s Most Successful
-          People. Research indicates that you’ll make more money and be more
+          People". Research indicates that you’ll make more money and be more
           fulfilled the more you are able to tap into your primal drive. There
           are seven different types of “Primitives,” each with its own distinct
           qualities. This survey is meant to help stuck individuals feel

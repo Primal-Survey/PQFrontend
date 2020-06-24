@@ -11,7 +11,8 @@ function Header() {
   );
 }
 const Section = styled.header`
-  padding-bottom: 50px;
+  /* padding-bottom: 25px; */
+  min-height: 25vh;
 `;
 
 export default Header;
