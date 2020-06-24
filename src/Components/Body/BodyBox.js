@@ -3,6 +3,7 @@ import { Link, Route } from "react-router-dom";
 import initialState from "../Contexts/SubmitInfo";
 import Home from "./Home";
 import QuestionPage1 from "./QuestionPage";
+import Results from "./Results";
 
 function BodyBox() {
   const [surveyInfo, setSurveyInfo] = useState(initialState);
@@ -120,7 +121,10 @@ function BodyBox() {
           />
         )}
       />
-      <Route path="/results" render={() => <h1>Results</h1>} />
+      <Route
+        path="/results"
+        render={(props) => <Results {...props} surveyInfo={surveyInfo} />}
+      />
     </div>
   );
 }
