@@ -7,7 +7,7 @@ import submitInfo from "../Contexts/SubmitInfo";
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
-  console.log(surveyInfo)
+  console.log(surveyInfo);
   const [DataInfo, setDataInfo] = useState(resultInfo);
   useEffect(() => {
     agrigateData();
@@ -15,9 +15,17 @@ function DataVisual(surveyInfo) {
   console.log(DataInfo);
 
   const agrigateData = () => {
-    
+    const formatData = () => {
+      Object.keys(DataInfo).forEach(function (key) {
+        if (parseInt(DataInfo[key])) {
+          DataInfo[key] = +DataInfo[key];
+        } else {
+          return DataInfo[key];
+        }
+      });
+    };
 
-
+    setDataInfo(formatData(DataInfo));
     setDataInfo(
       (DataInfo.relentlessResult =
         parseInt(DataInfo.relentless1) +
@@ -61,14 +69,14 @@ function DataVisual(surveyInfo) {
         parseInt(DataInfo.gallant3))
     );
   };
-  const r = (resultInfo.relentlessResult / 15);
-  const o = (resultInfo.oppositionalResult/ 15);
-  const a = (resultInfo.agnosticResult/ 15);
-  const m = (resultInfo.messianicResult/ 15);
-  const i = (resultInfo.insecureResult/ 15);
-  const n = (resultInfo.nutsResult/ 15);
-  const g = (resultInfo.gallantResult/ 15);
-  console.log(r, resultInfo)
+  const r = resultInfo.relentlessResult / 15;
+  const o = resultInfo.oppositionalResult / 15;
+  const a = resultInfo.agnosticResult / 15;
+  const m = resultInfo.messianicResult / 15;
+  const i = resultInfo.insecureResult / 15;
+  const n = resultInfo.nutsResult / 15;
+  const g = resultInfo.gallantResult / 15;
+  console.log(r, resultInfo);
   const data = [
     {
       data: {
@@ -84,6 +92,15 @@ function DataVisual(surveyInfo) {
     },
   ];
 
+  const defaultOptions = {
+    captionProps: () => ({
+      className: "caption",
+      textAnchor: "middle",
+      fontSize: "20px",
+      fontFamily: "sans-serif",
+    }),
+  };
+
   const captions = {
     // columns
     Relentless: "Relentless",
@@ -97,7 +114,7 @@ function DataVisual(surveyInfo) {
 
   return (
     <Fade>
-      <RadarChart captions={captions} data={data} size={450} />
+      <RadarChart captions={captions} data={data} size={350} />
     </Fade>
   );
 }
