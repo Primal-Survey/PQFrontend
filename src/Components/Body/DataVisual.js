@@ -7,14 +7,17 @@ import submitInfo from "../Contexts/SubmitInfo";
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
+  console.log(surveyInfo)
   const [DataInfo, setDataInfo] = useState(resultInfo);
   useEffect(() => {
     agrigateData();
-    console.log(DataInfo.relentlessResult);
-
-  }, [surveyInfo]);
+  }, []);
+  console.log(DataInfo);
 
   const agrigateData = () => {
+    
+
+
     setDataInfo(
       (DataInfo.relentlessResult =
         parseInt(DataInfo.relentless1) +
@@ -58,15 +61,14 @@ function DataVisual(surveyInfo) {
         parseInt(DataInfo.gallant3))
     );
   };
-
-  const r = 0.001 * DataInfo.relentlessResult;
-  const o = 0.001 * DataInfo.relentlessResult;
-  const a = 0.001 * DataInfo.relentlessResult;
-  const m = 0.001 * DataInfo.relentlessResult;
-  const i = 0.001 * DataInfo.relentlessResult;
-  const n = 0.001 * DataInfo.relentlessResult;
-  const g = 0.001 * DataInfo.relentlessResult;
-
+  const r = (resultInfo.relentlessResult / 15);
+  const o = (resultInfo.oppositionalResult/ 15);
+  const a = (resultInfo.agnosticResult/ 15);
+  const m = (resultInfo.messianicResult/ 15);
+  const i = (resultInfo.insecureResult/ 15);
+  const n = (resultInfo.nutsResult/ 15);
+  const g = (resultInfo.gallantResult/ 15);
+  console.log(r, resultInfo)
   const data = [
     {
       data: {
@@ -95,7 +97,7 @@ function DataVisual(surveyInfo) {
 
   return (
     <Fade>
-      <RadarChart captions={captions} data={data} size={800} />
+      <RadarChart captions={captions} data={data} size={450} />
     </Fade>
   );
 }
