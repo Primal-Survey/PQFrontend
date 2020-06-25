@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import Amazon from "./images/amazon.JPG";
-import Bam from "./images/bam.JPG";
-import BN from "./images/BN.JPG";
-import IB from "./images/IB.JPG";
+import Amazon3 from "./images/amazon3.png";
+import Bam2 from "./images/Bam2.png";
+import BN2 from "./images/BN2.jpg";
+import IndieBound from "./images/IndieBound.JPG";
 import Book2 from "./images/book2.JPG";
 import Author from "./images/author.JPG";
 
@@ -58,7 +58,7 @@ function Footer() {
                 href="https://www.amazon.com/Primitive-Tapping-Primal-Powering-Successful/dp/0316530379/"
               >
                 <div className="col s6 m3 l3 ">
-                  <Img src={Amazon} alt="" />
+                  <Img src={Amazon3} alt="" />
                 </div>
               </a>
 
@@ -68,7 +68,7 @@ function Footer() {
                 href="https://www.booksamillion.com/p/Primitive/Marco-Greenberg/9780316530378"
               >
                 <div className="col s6 m3 l3 ">
-                  <Img src={Bam} alt="" />
+                  <Img src={Bam2} alt="" />
                 </div>
               </a>
               <a
@@ -77,7 +77,7 @@ function Footer() {
                 href="https://www.barnesandnoble.com/w/primitive-marco-greenberg/1136270724?ean=9780316530378"
               >
                 <div className="col s6 m3 l3 ">
-                  <Img src={BN} alt="" />
+                  <Img src={BN2} alt="" />
                 </div>
               </a>
               <a
@@ -86,7 +86,7 @@ function Footer() {
                 href="https://www.indiebound.org/book/9780316530378"
               >
                 <div className="col s6 m3 l3 ">
-                  <Img src={IB} alt="" />
+                  <Img src={IndieBound} alt="" />
                 </div>
               </a>
             </ImgBox>
