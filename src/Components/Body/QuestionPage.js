@@ -20,7 +20,7 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
           {prev ? (
             <Link to={`/questionpage${prev}/`}>{`Question page ${prev}`}</Link>
           ) : (
-            <Link to="/metadata/">Meta Data</Link>
+            <Link to="/startPage/">Meta Data</Link>
           )}
           {next ? (
             <Link to={`/questionpage${next}/`}>{`Question page ${next}`}</Link>

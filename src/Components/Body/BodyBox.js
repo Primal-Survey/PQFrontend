@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import initialState from "../Contexts/SubmitInfo";
+import styled from "styled-components";
+
 import Home from "./Home";
+import Welcome from "./QuestionForms/Welcome/Welcome";
 import QuestionPage1 from "./QuestionPage";
 import Results from "./Results";
 
@@ -12,17 +15,21 @@ function BodyBox() {
     setSurveyInfo({ ...surveyInfo, [name]: value });
 
   return (
-    <div>
-      <Route
-        path="/metadata/"
-        render={(props) => (
-          <Home
-            {...props}
-            surveyInfo={surveyInfo}
-            handleChange={handleChange}
-          />
-        )}
-      />
+<Main>
+<Switch>
+    <Route exact path="/" component={Welcome} />
+    <Route
+          path="/startPage/"
+          render={(props) => (
+            <Home
+              {...props}
+              surveyInfo={surveyInfo}
+              handleChange={handleChange}
+            />
+          )}
+        />
+
+      
       <Route
         path="/questionpage1/"
         render={(props) => (
@@ -125,8 +132,14 @@ function BodyBox() {
         path="/results"
         render={(props) => <Results {...props} surveyInfo={surveyInfo} />}
       />
-    </div>
+
+    </Switch>
+    </Main>
   );
 }
-
+const Main = styled.main`
+  display: flex;
+  min-height: 50vh;
+  flex-direction: column;
+`;
 export default BodyBox;

@@ -16,7 +16,7 @@ function App() {
     //auto initializes Materialize's JS
     M.AutoInit();
   }, []);
-  
+
   return (
     <div className="App">
       <QuestionsContext.Provider value={Questions}>
