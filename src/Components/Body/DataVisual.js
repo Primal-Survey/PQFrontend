@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
-import submitInfo from "../Contexts/SubmitInfo";
+
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
   console.log(surveyInfo);
   const [DataInfo, setDataInfo] = useState(resultInfo);
   useEffect(() => {
-    agrigateData();
+    agrigateData();  
   }, []);
   console.log(DataInfo);
 
