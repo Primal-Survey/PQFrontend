@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Home from "./Home";
 import Welcome from "./QuestionForms/Welcome/Welcome";
 import QuestionPage1 from "./QuestionPage";
+import Results from "./Results";
 
 function BodyBox() {
   const [surveyInfo, setSurveyInfo] = useState(initialState);
@@ -17,7 +18,6 @@ function BodyBox() {
     <Main>
       <Switch>
         <Route exact path="/" component={Welcome} />
-
         <Route
           path="/startPage/"
           render={(props) => (
@@ -43,7 +43,6 @@ function BodyBox() {
             />
           )}
         />
-
         <Route
           path="/questionpage2/"
           render={(props) => (
@@ -58,7 +57,6 @@ function BodyBox() {
             />
           )}
         />
-
         <Route
           path="/questionpage3/"
           render={(props) => (
@@ -73,7 +71,6 @@ function BodyBox() {
             />
           )}
         />
-
         <Route
           path="/questionpage4/"
           render={(props) => (
@@ -88,7 +85,6 @@ function BodyBox() {
             />
           )}
         />
-
         <Route
           path="/questionpage5/"
           render={(props) => (
@@ -103,7 +99,6 @@ function BodyBox() {
             />
           )}
         />
-
         <Route
           path="/questionpage6/"
           render={(props) => (
@@ -118,7 +113,6 @@ function BodyBox() {
             />
           )}
         />
-
         <Route
           path="/questionpage7/"
           render={(props) => (
@@ -133,8 +127,10 @@ function BodyBox() {
             />
           )}
         />
-
-        <Route path="/results" render={() => <h1>Results</h1>} />
+        <Route
+          path="/results"
+          render={(props) => <Results {...props} surveyInfo={surveyInfo} />}
+        />
       </Switch>
     </Main>
   );
