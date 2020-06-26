@@ -13,7 +13,7 @@ function MetaDataForm(surveyInfo) {
   const handleChange = surveyInfo.surveyInfo.handleChange;
   return (
     <Fade>
-      <form className="" action="#">
+      <form className="col s12 l6" action="#">
         <div className="input-field col s12">
           <select onChange={handleChange} name="region">
             <option value="" defaultValue></option>

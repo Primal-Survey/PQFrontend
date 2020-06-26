@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import DataVisual from "./DataVisual";
 import ResultVisual from "./ResultVisual";
+import EmailMeForm from "./EmailMeForm.js";
 
 function Results(surveyInfo) {
   return (
@@ -11,6 +12,8 @@ function Results(surveyInfo) {
       <Container>
         <DataVisual surveyInfo={surveyInfo} />
         <ResultVisual surveyInfo={surveyInfo} />
+        <EmailMeForm />
+        <p>*Personal information is not collected</p>
       </Container>
     </Fade>
   );
