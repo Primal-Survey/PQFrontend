@@ -3,7 +3,6 @@ import Fade from "react-reveal/Fade";
 import styled from "styled-components";
 
 const ResultVisual = (surveyInfo) => {
-  const resultInfo = surveyInfo.surveyInfo.surveyInfo;
   return (
     <Fade>
       <Section>

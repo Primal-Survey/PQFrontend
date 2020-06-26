@@ -4,13 +4,13 @@ import Fade from "react-reveal/Fade";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
 
-
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
   console.log(surveyInfo);
   const [DataInfo, setDataInfo] = useState(resultInfo);
+
   useEffect(() => {
-    agrigateData();  
+    agrigateData();
   }, []);
   console.log(DataInfo);
 
@@ -68,6 +68,29 @@ function DataVisual(surveyInfo) {
         parseInt(DataInfo.gallant2) +
         parseInt(DataInfo.gallant3))
     );
+    setDataInfo(
+      (DataInfo.IN_ShortScale =
+        parseInt(DataInfo.insecureResult) + parseInt(DataInfo.nutsResult))
+    );
+    setDataInfo(
+      (DataInfo.PQ_ShortScale =
+        parseInt(DataInfo.relentlessResult) +
+        parseInt(DataInfo.oppositionalResult) +
+        parseInt(DataInfo.agnosticResult) +
+        parseInt(DataInfo.messianicResult) +
+        parseInt(DataInfo.insecureResult) +
+        parseInt(DataInfo.nutsResult) +
+        parseInt(DataInfo.gallantResult))
+    );
+
+    setDataInfo(
+      (DataInfo.ROAMG_ShortScale =
+        parseInt(DataInfo.relentlessResult) +
+        parseInt(DataInfo.oppositionalResult) +
+        parseInt(DataInfo.agnosticResult) +
+        parseInt(DataInfo.messianicResult) +
+        parseInt(DataInfo.gallantResult))
+    );
   };
   const r = resultInfo.relentlessResult / 15;
   const o = resultInfo.oppositionalResult / 15;
@@ -76,7 +99,7 @@ function DataVisual(surveyInfo) {
   const i = resultInfo.insecureResult / 15;
   const n = resultInfo.nutsResult / 15;
   const g = resultInfo.gallantResult / 15;
-  console.log(r, resultInfo);
+
   const data = [
     {
       data: {
@@ -92,6 +115,11 @@ function DataVisual(surveyInfo) {
     },
   ];
 
+  const PrimalPercent = parseFloat(
+    (resultInfo.PQ_ShortScale / 105) * 100
+  ).toFixed();
+
+  console.log(PrimalPercent);
   const defaultOptions = {
     captionProps: () => ({
       className: "caption",
@@ -115,6 +143,7 @@ function DataVisual(surveyInfo) {
   return (
     <Fade>
       <RadarChart captions={captions} data={data} size={350} />
+      <h3>You are {PrimalPercent}% Primal</h3>
     </Fade>
   );
 }

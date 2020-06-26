@@ -11,6 +11,7 @@ function Results(surveyInfo) {
     <Fade>
       <Container>
         <DataVisual surveyInfo={surveyInfo} />
+
         <ResultVisual surveyInfo={surveyInfo} />
         <EmailMeForm />
         <p>*Personal information is not collected</p>
