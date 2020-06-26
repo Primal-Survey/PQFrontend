@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Home from "./Home";
 import Welcome from "./Welcome/Welcome";
 import QuestionPage1 from "./QuestionPage";
-import Results from "./Results";
+import Results from "./Results/Results";
 
 function BodyBox() {
   const [surveyInfo, setSurveyInfo] = useState(initialState);

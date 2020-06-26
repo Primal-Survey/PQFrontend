@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import QuestionsContext from "../Contexts/QuestionContext";
 import OneFiveForm1 from "./QuestionForms/OneFiveForm";
 import Fade from "react-reveal/Fade";
+import SubmitButton from "./QuestionForms/SubmitButton"
 
 function QuestionPage1({ prev, next, questions, keys, ...rest }) {
   const Questions = useContext(QuestionsContext);
@@ -25,7 +26,7 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
           {next ? (
             <Link to={`/questionpage${next}/`}>{`Question page ${next}`}</Link>
           ) : (
-            <Link to="/results">Results</Link>
+            <SubmitButton/>
           )}
         </div>
 
