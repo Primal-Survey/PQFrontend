@@ -171,7 +171,7 @@ const Img2 = styled.img`
 
 const H6 = styled.h6`
   padding-left: 10px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 `;
 
 export default Footer;
