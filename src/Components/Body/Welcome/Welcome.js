@@ -20,6 +20,6 @@ function Welcome() {
 
 const Container = styled.div`
   /* padding-bottom: 25px; */
-  min-height: 72vh;
+  min-height: 75vh;
 `;
 export default Welcome;
