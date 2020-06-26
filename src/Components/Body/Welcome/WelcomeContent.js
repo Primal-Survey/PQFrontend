@@ -21,11 +21,13 @@ const WelcomeContent = () => {
           empowered and liberated. It provides you with a lucid roadmap on how
           to start, reinvent, or recalibrate their careers. Likewise, this
           survey seeks to assist managers in becoming conductors, who can more
-          effectively manage their teams. Take it by clicking{" "}
-          <strong>“Begin Survey”</strong> below. And don’t forget, this is a
-          spectrum. The world cannot blossom without civilized people! Civilized
-          folks are key. But with the world changing right under our feet, it is
-          now more important than ever to tap into our Primal sides.
+          effectively manage their teams. <br />
+          <br />
+          Take it by clicking <strong>“Begin Survey”</strong> below. And don’t
+          forget, this is a spectrum. The world cannot blossom without civilized
+          people! Civilized folks are key. But with the world changing right
+          under our feet, it is now more important than ever to tap into our
+          Primal sides.
         </P>
       </Section>
     </Fade>
