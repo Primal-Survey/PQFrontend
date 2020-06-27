@@ -5,7 +5,7 @@ import MetaDataForm from "./QuestionForms/MetaDataForm";
 function Home(surveyInfo) {
   return (
     <div>
-      {console.log(surveyInfo)}
+      {/* {console.log(surveyInfo)} */}
       <div>
         <MetaDataForm surveyInfo={surveyInfo} />
       </div>

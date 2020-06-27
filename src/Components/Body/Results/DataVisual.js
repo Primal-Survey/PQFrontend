@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
+import ResultVisual from "./ResultVisual";
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
@@ -12,7 +13,7 @@ function DataVisual(surveyInfo) {
   useEffect(() => {
     agrigateData();
   }, []);
-  console.log(DataInfo);
+  //   console.log(DataInfo);
 
   const agrigateData = () => {
     const formatData = () => {
@@ -119,7 +120,7 @@ function DataVisual(surveyInfo) {
     (resultInfo.PQ_ShortScale / 105) * 100
   ).toFixed();
 
-  console.log(PrimalPercent);
+  //   console.log(PrimalPercent);
   const defaultOptions = {
     captionProps: () => ({
       className: "caption",
@@ -144,6 +145,7 @@ function DataVisual(surveyInfo) {
     <Fade>
       <RadarChart captions={captions} data={data} size={350} />
       <h3>You are {PrimalPercent}% Primal</h3>
+      <ResultVisual resultInfo={resultInfo} />
     </Fade>
   );
 }

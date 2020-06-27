@@ -2,11 +2,46 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components";
 
-const ResultVisual = (surveyInfo) => {
+import ResultsText from "./ResultsText";
+import EmailMeForm from "./EmailMeForm.js";
+
+const ResultVisual = (resultInfo) => {
+  console.log("PQ short scale -->", resultInfo.resultInfo.PQ_ShortScale);
+
+  // const emailInfo =      Build out this object to send to email form
+
+  const resultTotals = {
+    relentlessResult: resultInfo.resultInfo.relentlessResult,
+    oppositionalResult: resultInfo.resultInfo.oppositionalResult,
+    agnosticResult: resultInfo.resultInfo.agnosticResult,
+    messianicResult: resultInfo.resultInfo.messianicResult,
+    insecureResult: resultInfo.resultInfo.insecureResult,
+    nutsResult: resultInfo.resultInfo.nutsResult,
+    gallantResult: resultInfo.resultInfo.gallantResult,
+  };
+  console.log("resultTotals-->", resultTotals);
+
+  const sortedArr = [];
+
+  const Sorted = Object.values(resultTotals).sort(function (a, b) {
+    if (a[0] < b[0]) {
+      sortedArr.push();
+    }
+    return sortedArr;
+  });
+
+  console.log("values sorted-->", Sorted);
+
+  //   const TopThree = resultTotals.sort();
+
+  //   console.log("TopThree-->", TopThree);
+
   return (
     <Fade>
       <Section>
         <P>
+          {ResultsText.relentless.catTitle}
+          <br />
           The <strong>PQ ROAMING SURVEY</strong> is a 21-question
           self-assessment unlike other personality quizzes. This is not
           corporate BS, business jargon, or filled with platitudes. This survey
@@ -30,6 +65,8 @@ const ResultVisual = (surveyInfo) => {
           Primal sides.
         </P>
       </Section>
+      <EmailMeForm />
+      {/* Add props into form when rdy */}
     </Fade>
   );
 };
