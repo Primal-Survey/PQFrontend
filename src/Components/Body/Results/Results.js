@@ -10,8 +10,6 @@ function Results(surveyInfo) {
     <Fade>
       <Container>
         <DataVisual surveyInfo={surveyInfo} />
-
-        <p>*Personal information is not collected</p>
       </Container>
     </Fade>
   );

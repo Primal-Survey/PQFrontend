@@ -18,7 +18,7 @@ function BodyBox() {
     <Main>
       <Switch>
         <Route exact path="/" component={Welcome} />
-        <Route
+        {/* <Route
           path="/startPage/"
           render={(props) => (
             <Home
@@ -27,7 +27,8 @@ function BodyBox() {
               handleChange={handleChange}
             />
           )}
-        />
+        /> */}
+        {/* metadata page is disabled per client */}
 
         <Route
           path="/questionpage1/"
@@ -137,7 +138,8 @@ function BodyBox() {
 }
 const Main = styled.main`
   display: flex;
-  min-height: 50vh;
+  min-height: 60vh;
   flex-direction: column;
+  justify-content: center;
 `;
 export default BodyBox;

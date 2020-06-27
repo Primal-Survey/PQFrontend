@@ -24,24 +24,24 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
         <div style={{ display: "flex", justifyContent: "space-evenly" }}>
           {prev ? (
             <Link to={`/questionpage${prev}/`}>
-              <Button className="waves-effect waves-light btn">
+              <a className="  btn">
                 <i class="material-icons left">arrow_back</i>
                 {`Question page ${prev}`}
-              </Button>
+              </a>{" "}
             </Link>
           ) : (
             <Link to="/">
-              <Button className="waves-effect waves-light btn">
+              <a className=" btn">
                 <i class="material-icons left">arrow_back</i>Back Home
-              </Button>
+              </a>
             </Link>
           )}
           {next ? (
             <Link to={`/questionpage${next}/`}>
-              <Button className="waves-effect waves-light btn">
-                <i class="material-icons left">arrow_forward</i>
+              <a className="  btn">
+                <i class="material-icons right">arrow_forward</i>
                 {`Question page ${next}`}
-              </Button>
+              </a>{" "}
             </Link>
           ) : (
             <SubmitButton />

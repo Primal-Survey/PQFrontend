@@ -6,7 +6,13 @@ import Fade from "react-reveal/Fade";
 const EmailMeForm = () => {
   return (
     <Fade>
-      <div>
+      <div
+        style={{
+          minWidth: "99vw",
+          height: "auto",
+          border: "1px solid black",
+        }}
+      >
         <div class="row">
           <form
             class="col s12"
@@ -43,10 +49,29 @@ const EmailMeForm = () => {
                 <label for="icon_prefix">Email Address</label>
               </div>
             </div>
+          </form>{" "}
+          <div
+            style={{
+              minWidth: "99vw",
+              height: "auto",
+              //   border: "1px solid red",
+            }}
+          >
+            <Link
+              to="/"
+              style={{
+                margin: "1em",
+              }}
+            >
+              <Button className="waves-effect waves-light btn">
+                <i class="material-icons left">autorenew</i>
+                Back to start
+              </Button>
+            </Link>
             <Link
               to="/results/"
               style={{
-                width: "100%",
+                margin: "1em",
               }}
             >
               <Button className="waves-effect waves-light btn">
@@ -54,7 +79,8 @@ const EmailMeForm = () => {
                 Email me my results.
               </Button>
             </Link>
-          </form>
+            <p>**Personal information is not collected**</p>
+          </div>
         </div>
       </div>
     </Fade>
@@ -65,7 +91,4 @@ const Button = styled.footer`
   margin-bottom: 20px;
 `;
 
-const I = styled.i`
-  font-size: 3em;
-`;
 export default EmailMeForm;

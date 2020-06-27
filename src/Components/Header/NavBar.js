@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { AutoInit } from "materialize-css";
 
 const NavBar = () => {
   return (
@@ -9,6 +10,7 @@ const NavBar = () => {
           className="nav-wrapper black"
           style={{
             width: "100%",
+            height: "100%",
             display: "flex",
             justifyContent: "center",
           }}

@@ -19,7 +19,11 @@ function Welcome() {
 }
 
 const Container = styled.div`
-  /* padding-bottom: 25px; */
-  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  max-width: 100vw;
 `;
 export default Welcome;
