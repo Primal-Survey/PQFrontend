@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import Fade from "react-reveal/Fade";
+import styled from "styled-components";
+
 import QuestionsContext from "../Contexts/QuestionContext";
 import OneFiveForm1 from "./QuestionForms/OneFiveForm";
-import Fade from "react-reveal/Fade";
-import SubmitButton from "./QuestionForms/SubmitButton"
+
+import SubmitButton from "./QuestionForms/SubmitButton";
 
 function QuestionPage1({ prev, next, questions, keys, ...rest }) {
   const Questions = useContext(QuestionsContext);
@@ -17,23 +20,38 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
             <OneFiveForm1 questionKey={keys[i]} {...rest} />
           </div>
         ))}
+        <br /> <br />
         <div style={{ display: "flex", justifyContent: "space-evenly" }}>
           {prev ? (
-            <Link to={`/questionpage${prev}/`}>{`Question page ${prev}`}</Link>
+            <Link to={`/questionpage${prev}/`}>
+              <Button className="waves-effect waves-light btn">
+                <i class="material-icons left">arrow_back</i>
+                {`Question page ${prev}`}
+              </Button>
+            </Link>
           ) : (
-            <Link to="/startPage/">Meta Data</Link>
+            <Link to="/">
+              <Button className="waves-effect waves-light btn">
+                <i class="material-icons left">arrow_back</i>Back Home
+              </Button>
+            </Link>
           )}
           {next ? (
-            <Link to={`/questionpage${next}/`}>{`Question page ${next}`}</Link>
+            <Link to={`/questionpage${next}/`}>
+              <Button className="waves-effect waves-light btn">
+                <i class="material-icons left">arrow_forward</i>
+                {`Question page ${next}`}
+              </Button>
+            </Link>
           ) : (
-            <SubmitButton/>
+            <SubmitButton />
           )}
         </div>
-
-        {/* <Route path="/questionpage2/" component={QuestionPage2} /> */}
       </Fade>
     </div>
   );
 }
-
+const Button = styled.button`
+  margin-bottom: 20px;
+`;
 export default QuestionPage1;
