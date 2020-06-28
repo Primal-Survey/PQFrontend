@@ -26,7 +26,7 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
             <Link to={`/questionpage${prev}/`}>
               <Button className="hoverable  btn">
                 <i class="material-icons left">arrow_back</i>
-                {`Question page ${prev}`}
+                Previous
               </Button>
             </Link>
           ) : (
@@ -39,8 +39,8 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
           {next ? (
             <Link to={`/questionpage${next}/`}>
               <Button className="hoverable  btn">
-                <i class="material-icons left">arrow_forward</i>
-                {`Question page ${next}`}
+                <i class="material-icons right">arrow_forward</i>
+                Next
               </Button>
             </Link>
           ) : (
@@ -53,5 +53,27 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
 }
 const Button = styled.button`
   margin-bottom: 20px;
+  min-width: 175px;
 `;
+//make buttons same width
+const QuestionContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50vw;
+  border: 1px solid blue;
+`;
+
+//try to make text bigger, darker, align left on choices?
+const Question = styled.div`
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  margin: 1em;
+`;
+
+//make agree disagree component
+
 export default QuestionPage1;
