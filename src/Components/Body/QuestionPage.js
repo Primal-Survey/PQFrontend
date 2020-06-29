@@ -13,6 +13,19 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
 
   return (
     <Fade>
+      <AgreeBox>
+        <AgreeBar>
+          <i class="material-icons medium left">navigate_before</i>{" "}
+          {/* <i class="material-icons small">fiber_manual_record</i> */}
+          <P>Completely Disagree</P>
+          {/* <i class="material-icons tiny">fiber_manual_record</i> */}
+          <i class="material-icons ">fiber_manual_record</i>
+          {/* <i class="material-icons tiny">fiber_manual_record</i> */}
+          <P>Completely Agree</P>
+          {/* <i class="material-icons small">fiber_manual_record</i> */}
+          <i class="material-icons medium right">navigate_next</i>
+        </AgreeBar>
+      </AgreeBox>
       <div>
         {questions.map((question, i) => (
           <QuestionContainer>
@@ -24,7 +37,7 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
             </Question>
           </QuestionContainer>
         ))}
-        <br /> <br />
+
         <ButtonContainer>
           {prev ? (
             <Link to={`/questionpage${prev}/`}>
@@ -100,6 +113,30 @@ const Button = styled.button`
   /* margin-bottom: 20px; */
   min-width: 180px;
   /* border: 1px solid red; */
+`;
+
+const AgreeBox = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  /* border: 1px solid red; */
+  margin: 1em;
+`;
+
+const AgreeBar = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 50%;
+  /* border: 1px solid red; */
+  /* padding-bottom: 0.5em;
+  margin-bottom: 1.5em; */
+`;
+
+const P = styled.p`
+  font-weight: 650;
+  font-size: 1.5em;
 `;
 //make agree disagree component
 
