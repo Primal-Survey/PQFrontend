@@ -110,7 +110,7 @@ const Foot = styled.footer`
   /* justify-content: center; */
   align-items: center;
   justify-content: space-evenly;
-  min-height: 50vh;
+  min-height: 100vh;
 `;
 
 const Content = styled.div`
@@ -158,13 +158,13 @@ const ImgBox = styled.div`
 `;
 
 const Img = styled.img`
-  max-width: 100px;
+  max-width: 7vw;
   max-height: auto;
   /* border: 1px solid red; */
 `;
 
 const Img2 = styled.img`
-  max-width: 200px;
+  max-width: 12vw;
   height: auto;
   /* border: 1px solid red; */
 `;
