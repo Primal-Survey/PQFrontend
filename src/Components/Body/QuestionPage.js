@@ -12,13 +12,17 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
   const Questions = useContext(QuestionsContext);
 
   return (
-    <div>
-      <Fade>
+    <Fade>
+      <div>
         {questions.map((question, i) => (
-          <div key={i}>
-            {Questions[question].text}
-            <OneFiveForm1 questionKey={keys[i]} {...rest} />
-          </div>
+          <QuestionContainer>
+            <Question key={i}>
+              <Text>{Questions[question].text}</Text>
+              <Scale>
+                <OneFiveForm1 questionKey={keys[i]} {...rest} />
+              </Scale>
+            </Question>
+          </QuestionContainer>
         ))}
         <br /> <br />
         <ButtonContainer>
@@ -47,10 +51,45 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
             <SubmitButton />
           )}
         </ButtonContainer>
-      </Fade>
-    </div>
+      </div>
+    </Fade>
   );
 }
+
+const QuestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 99vw;
+  /* border: 1px solid pink; */
+`;
+
+const Question = styled.div`
+  /* border: 1px solid purple; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+  padding: 0.5em;
+  margin: 1em;
+`;
+const Text = styled.div`
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  /* padding: 0.5em; */
+`;
+const Scale = styled.div`
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -62,25 +101,6 @@ const Button = styled.button`
   min-width: 180px;
   /* border: 1px solid red; */
 `;
-//make buttons same width
-const QuestionContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 50vw;
-  border: 1px solid blue;
-`;
-
-//try to make text bigger, darker, align left on choices?
-const Question = styled.div`
-  border: 1px solid red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5em;
-  margin: 1em;
-`;
-
 //make agree disagree component
 
 export default QuestionPage1;

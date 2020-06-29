@@ -102,7 +102,6 @@ const RadioButton = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0.5em;
-  margin: 1em;
 `;
 const Strong = styled.span`
   font-weight: 700;
