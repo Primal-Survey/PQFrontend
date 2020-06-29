@@ -12,7 +12,8 @@ const SubmitButton = () => {
   );
 };
 const Button = styled.footer`
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  min-width: 175px;
 `;
 
 // make same size as the other buttons

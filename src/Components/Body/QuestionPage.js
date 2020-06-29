@@ -21,7 +21,7 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
           </div>
         ))}
         <br /> <br />
-        <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <ButtonContainer>
           {prev ? (
             <Link to={`/questionpage${prev}/`}>
               <Button className="hoverable  btn">
@@ -46,14 +46,21 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
           ) : (
             <SubmitButton />
           )}
-        </div>
+        </ButtonContainer>
       </Fade>
     </div>
   );
 }
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid red;
+`;
 const Button = styled.button`
-  margin-bottom: 20px;
-  min-width: 175px;
+  /* margin-bottom: 20px; */
+  min-width: 180px;
+  border: 1px solid red;
 `;
 //make buttons same width
 const QuestionContainer = styled.div`
