@@ -51,18 +51,34 @@ const ResultVisual = (resultInfo) => {
   const TopResult = Sorted.pop();
 
   console.log("TopResult-->", TopResult);
+  const Name = TopResult.name
+  const ResultValue = TopResult.value
 
-  return (
-    <Fade>
-      <Section>
-        <P>
-          {TopResult.name} {TopResult.value}
-        </P>
-      </Section>
-      <EmailMeForm />
-      {/* Add props into form when rdy */}
-    </Fade>
-  );
+  while (Name ===)
+
+  if (TopResult.value !== 0) {
+    return (
+      <Fade>
+        <Section>
+          <P>
+            {TopResult.name} {TopResult.value}
+          </P>
+        </Section>
+        <EmailMeForm />
+        {/* Add props into form when rdy */}
+      </Fade>
+    );
+  } else {
+    return (
+      <Fade>
+        <Section>
+          <P>please fill out quiz to see results</P>
+        </Section>
+        <EmailMeForm />
+        {/* Have this else statement push to home page automatically if results are at 0 */}
+      </Fade>
+    );
+  }
 };
 
 const P = styled.p`
