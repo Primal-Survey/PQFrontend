@@ -55,12 +55,12 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 const Button = styled.button`
   /* margin-bottom: 20px; */
   min-width: 180px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 //make buttons same width
 const QuestionContainer = styled.div`

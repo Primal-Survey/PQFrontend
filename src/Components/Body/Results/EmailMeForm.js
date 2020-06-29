@@ -10,7 +10,7 @@ const EmailMeForm = () => {
         style={{
           minWidth: "99vw",
           height: "auto",
-          border: "1px solid black",
+          //   border: "1px solid black",
         }}
       >
         <div class="row">
@@ -68,12 +68,7 @@ const EmailMeForm = () => {
                 Back to start
               </Button>
             </Link>
-            <Link
-              to="/results/"
-              style={{
-                margin: "1em",
-              }}
-            >
+            <Link to="/results/">
               <Button className="waves-effect waves-light btn">
                 <i class="material-icons right">send</i>
                 Email me my results.
@@ -89,6 +84,7 @@ const EmailMeForm = () => {
 
 const Button = styled.footer`
   margin-bottom: 20px;
+  min-width: 275px;
 `;
 
 export default EmailMeForm;
