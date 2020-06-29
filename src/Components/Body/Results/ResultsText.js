@@ -157,7 +157,7 @@ const ResultsText = {
       "Primal Tip for NP’s #1: Take a moment and think: what would be your childish response to a recent compilation? Jot that down immediately. If there weren’t any rules, how would you go about solving it? Now consider: what exactly is holding you back?",
     ],
   },
-  Gallant: {
+  gallant: {
     catTitle: "Gallant Primitive",
     catIntro:
       "Gallant - You are a <strong>Gallant Primitive (GP)</strong>. You combine both courage and nobility, and protect those to whom you’re loyal and who are loyal to you. Being a Gallant Primitive is perhaps our most primal instinct of all. You prioritize doing the right thing for others and going to the favor bank.. Gallant Primitives measure impact by how much good they do for others. Being a GP can mean taking enormous risks to commit your life to helping others. It may sound surprising, but being gallant is perhaps our most primal instinct. Gallant Primitives are noble to others without expecting reciprocation. GP’s feel a moral responsibility to make others’ needs and concerns your own.",
