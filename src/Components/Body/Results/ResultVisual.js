@@ -90,13 +90,19 @@ const ResultVisual = (resultInfo) => {
       ? (range = TextBlock[0].rangeInfo.medium)
       : (range = TextBlock[0].rangeInfo.high);
     // console.log(range);
-    let RangeResult = TextBlock[0].rangeInfo;
+    // let RangeResult = TextBlock[0].rangeInfo;
     // console.log(RangeResult);
 
     return (
       <Fade>
+        <Header>
+          <h4>
+            You tend to lean on the <strong>{TextBlock[0].catTitle}</strong>{" "}
+            side of life.
+          </h4>
+        </Header>
+
         <Section>
-          <P>{TextBlock[0].catTitle}</P>
           <P>{TextBlock[0].catIntro}</P>
           <P>{range}</P>
           <P>{TextBlock[0].tips}</P>
@@ -126,6 +132,16 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
+  text-align: justify;
+  max-width: 80%;
+`;
+const Header = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
   margin: auto;
   max-width: 80%;
 `;

@@ -260,7 +260,9 @@ function DataVisual(surveyInfo) {
   return (
     <Fade>
       <RadarChart captions={captions} data={data} size={350} />
-      <h3>You are {PrimalPercent}% Primal</h3>
+      <h4>
+        You are <strong>{PrimalPercent}% Primal</strong> overall.
+      </h4>
       <ResultVisual resultInfo={resultInfo} />
     </Fade>
   );
