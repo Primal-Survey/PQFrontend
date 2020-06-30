@@ -14,7 +14,7 @@ const EmailMeForm = (props) => {
   });
   const [emailerr, setEmailerr] = useState("");
 
-  const BACKEND = "http://localhost:5032";
+  const BACKEND = process.env.BACKEND;
 
   // console.log(10, emailAddy);
   const doChange = (e) => {
