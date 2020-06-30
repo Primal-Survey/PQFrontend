@@ -9,7 +9,7 @@ function Header() {
       <Section className="">
         <div className="container">
           <NavBar />
-          <h1 className="teal-text">The Primitive Book Quiz</h1>
+          <h1 className="#87cbce-text">The Primitive Book Quiz</h1>
         </div>
       </Section>
     </BackgroundLayer>
