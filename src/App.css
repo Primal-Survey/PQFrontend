@@ -17,11 +17,11 @@ h5 {
   font-family: "TitlingGothicFBComp";
 }
 
-h1,h2, h6{
+h1,h2,h5,h6{
   color:#87cbce;
 }
 
-h3, h4, h5{
+h3, h4,{
   color:darkcyan;
 }
 
