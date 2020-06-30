@@ -3,24 +3,34 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
+import axios from "axios";
+
 const EmailMeForm = (props) => {
-	console.log(7, props);
 	const {TopResult} = props;
 	const [emailAddy, setEmail] = useState({
 		email: ""
 	})
 	const [emailerr, setEmailerr] = useState("")
 
+	const BACKEND = "http://localhost:4000"
+
 	// console.log(10, emailAddy);
 	const doChange = (e) => {
 		setEmail({ [e.target.name]: e.target.value })
 	}
 
-	const doSubmit = (e, emailAddy) => {
+	const doSubmit = (e, emailAddy, TopResult) => {
 		e.preventDefault();
-		console.log(17, emailAddy.email);
 		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
-			console.log(18, TopResult);
+			axios
+				.post(`${BACKEND}/api/results/mailer/`, TopResult)
+				.then((sent) => {
+					console.log(29);
+				})
+				.catch((err) => {
+					console.log(32);
+				})
+
 		} else {
 			setEmailerr("Nope.")
 			setEmail({email: ""})
