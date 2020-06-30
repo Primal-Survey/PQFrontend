@@ -5,11 +5,13 @@ import { AutoInit } from "materialize-css";
 const NavBar = () => {
   return (
     <div>
-      <nav  className="nav-wrapper N/A transparent"
-      style={{
-           border: "none",
-           boxShadow: "none"
-          }}>
+      <nav
+        className="nav-wrapper N/A transparent"
+        style={{
+          border: "none",
+          boxShadow: "none",
+        }}
+      >
         <div
           className="nav-wrapper N/A transparent"
           style={{
@@ -18,6 +20,7 @@ const NavBar = () => {
             height: "100%",
             display: "flex",
             justifyContent: "center",
+            alignItems: "center",
           }}
         >
           {/* Icon for mobile screen menu */}
@@ -35,7 +38,7 @@ const NavBar = () => {
           </a>
           {/* main NavBar */}
           <ul className=" right hide-on-med-and-down">
-         <ListItem>
+            <ListItem>
               <MainLink
                 target="_blank"
                 rel="noopener noreferrer"
@@ -45,7 +48,7 @@ const NavBar = () => {
                 <i>BOOK</i>
               </MainLink>
             </ListItem>
-         <ListItem>
+            <ListItem>
               <MainLink
                 target="_blank"
                 rel="noopener noreferrer"
@@ -55,7 +58,7 @@ const NavBar = () => {
                 <i>PURCHASE</i>
               </MainLink>
             </ListItem>
-         <ListItem>
+            <ListItem>
               <MainLink
                 target="_blank"
                 rel="noopener noreferrer"
@@ -66,7 +69,7 @@ const NavBar = () => {
               </MainLink>
             </ListItem>
 
-         <ListItem>
+            <ListItem>
               <MainLink
                 target="_blank"
                 rel="noopener noreferrer"
@@ -77,7 +80,7 @@ const NavBar = () => {
               </MainLink>
             </ListItem>
 
-         <ListItem>
+            <ListItem>
               <MainLink
                 target="_blank"
                 rel="noopener noreferrer"
@@ -93,60 +96,60 @@ const NavBar = () => {
 
       {/* for mobile screen menu */}
       <Ul className="sidenav" id="mobile-demo">
-        <Li>
-          <li>
+        <Div>
+          <Li>
             <StyledLink
               target="_blank"
               rel="noopener noreferrer"
               title="Main Site"
               href="https://www.primitivebook.com/#book-section"
             >
-              <i>BOOK</i>
+              <P>BOOK</P>
             </StyledLink>
-          </li>
-          <li>
+          </Li>
+          <Li>
             <StyledLink
               target="_blank"
               rel="noopener noreferrer"
               title="Buy it Here!"
               href="https://www.primitivebook.com/#purchase-section"
             >
-              <i>PURCHASE</i>
+              <P>PURCHASE</P>
             </StyledLink>
-          </li>
-          <li>
+          </Li>
+          <Li>
             <StyledLink
               target="_blank"
               rel="noopener noreferrer"
               title="About the book"
               href="https://www.primitivebook.com/#about-section"
             >
-              <i>ABOUT</i>
+              <P>ABOUT</P>
             </StyledLink>
-          </li>
+          </Li>
 
-          <li>
+          <Li>
             <StyledLink
               target="_blank"
               rel="noopener noreferrer"
               title="About Marco Greenberg"
               href="https://www.primitivebook.com/#author-section"
             >
-              <i>AUTHOR</i>
+              <P>AUTHOR</P>
             </StyledLink>
-          </li>
+          </Li>
 
-          <li>
+          <Li>
             <StyledLink
               target="_blank"
               rel="noopener noreferrer"
               title="Contact Marco"
               href="https://www.primitivebook.com/contact"
             >
-              <i>CONTACT</i>
+              <P>CONTACT</P>
             </StyledLink>
-          </li>
-        </Li>
+          </Li>
+        </Div>
       </Ul>
     </div>
   );
@@ -158,26 +161,44 @@ const Ul = styled.ul`
   justify-content: center;
   align-items: center;
   background-color: black;
+  /* border: 1px solid blue; */
 `;
-const Li = styled.div`
-  /* border: 1px solid black; */
-
+const Div = styled.div`
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 70%;
-  
+  height: 100%;
 `;
 
 const ListItem = styled.li`
   min-width: 10vw;
 `;
+const Li = styled.li`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid white; */
+`;
 
+const P = styled.p`
+  color: white !important;
+  /* border: 1px solid lightGray; */
+  width: 100px;
+  height: auto;
+  &:hover {
+    color: darkcyan;
+    transition: 0.4s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+  }
+`;
 
 const MainLink = styled.a`
   color: white;
-  text-decoration: none;
+  /* text-decoration: none; */
   margin: 1%;
 
   &:hover {
@@ -190,15 +211,12 @@ const MainLink = styled.a`
 const StyledLink = styled.a`
   display: flex;
   justify-content: center;
-  align-items: items center;
-  color: white;
-
+  align-items: center;
   margin: 1%;
-  min-height: 60px;
-  /* border: 1px solid lightGray; */
+  min-height: 18vh;
+  /* border: 1px solid orange; */
   &:hover {
-    /* border: 1px solid white; */
-    color: white;
+    color: darkcyan;
     transition: 0.4s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
   }
