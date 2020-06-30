@@ -6,7 +6,7 @@ import ResultsText from "./ResultsText";
 import EmailMeForm from "./EmailMeForm.js";
 
 const ResultVisual = (resultInfo) => {
-  console.log("PQ short scale -->", resultInfo.resultInfo.PQ_ShortScale);
+ 
 
   // const emailInfo =      Build out this object to send to email form
 
@@ -19,7 +19,7 @@ const ResultVisual = (resultInfo) => {
     nutsResult: resultInfo.resultInfo.nutsResult,
     gallantResult: resultInfo.resultInfo.gallantResult,
   };
-  console.log("resultTotals-->", resultTotals);
+
 
   const sortedArr = [];
 
@@ -30,11 +30,6 @@ const ResultVisual = (resultInfo) => {
     return sortedArr;
   });
 
-  console.log("values sorted-->", Sorted);
-
-  //   const TopThree = resultTotals.sort();
-
-  //   console.log("TopThree-->", TopThree);
 
   return (
     <Fade>

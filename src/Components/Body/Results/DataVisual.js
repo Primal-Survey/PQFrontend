@@ -4,16 +4,110 @@ import Fade from "react-reveal/Fade";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
 import ResultVisual from "./ResultVisual";
+import axios from "axios";
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
   console.log(surveyInfo);
   const [DataInfo, setDataInfo] = useState(resultInfo);
+  const [largeDataSet, setLargeDataSet] = useState({});
+ 
 
   useEffect(() => {
     agrigateData();
+    pullAndCompare();
+    // averageTheResults()
   }, []);
-  //   console.log(DataInfo);
+
+  const pullAndCompare = () => {
+    axios.get(`https://pq-backend.herokuapp.com/api/results`).then((res) => {
+      setLargeDataSet(res.data);
+    });
+  };
+
+  const all = Object.values(largeDataSet);
+  console.log(all);
+
+  let RelentlessResult = 0;
+  all.forEach(function (key) {
+    if (Object.keys(key)[15] === "relentlessResult") {
+      console.log("here", Object.keys(key))
+      RelentlessResult = RelentlessResult + Object.values(key)[15];
+    } else {
+      console.log("didnt work");
+    }
+  });
+
+  let OppositionalResult = 0;
+  all.forEach(function (key) {
+    if (Object.keys(key)[19] === "oppositionalResult") {
+      OppositionalResult = OppositionalResult + Object.values(key)[19];
+    } else {
+      console.log("didnt work");
+    }
+  });
+
+  let AgnosticResult = 0;
+  all.forEach(function (key) {
+    if (Object.keys(key)[23] === "agnosticResult") {
+      AgnosticResult = AgnosticResult + Object.values(key)[23];
+    } else {
+      console.log("didnt work");
+    }
+  });
+
+  let MessianicResult = 0;
+  all.forEach(function (key) {
+    if (Object.keys(key)[27] === "messianicResult") {
+      MessianicResult = MessianicResult + Object.values(key)[27];
+    } else {
+      console.log("didnt work");
+    }
+  });
+
+  let InsecureResult = 0;
+  all.forEach(function (key) {
+    if (Object.keys(key)[35] === "insecureResult") {
+      InsecureResult = InsecureResult + Object.values(key)[35];
+    } else {
+      console.log("didnt work");
+    }
+  });
+
+  let NutsResult = 0;
+  all.forEach(function (key) {
+    if (Object.keys(key)[39] === "nutsResult") {
+      NutsResult = NutsResult + Object.values(key)[39];
+    } else {
+      console.log("didnt work");
+    }
+  });
+
+  let GallantResult = 0;
+  all.forEach(function (key) {
+    if (Object.keys(key)[31] === "gallantResult") {
+      GallantResult = GallantResult + Object.values(key)[31];
+    } else {
+      console.log("didnt work");
+    }
+  });
+
+  const R = parseInt(RelentlessResult / all.length) / 15
+  const O = parseInt(OppositionalResult / all.length) / 15
+  const A = parseInt(AgnosticResult / all.length) / 15
+  const M = parseInt(MessianicResult / all.length) / 15
+  const I = parseInt(InsecureResult / all.length) / 15
+  const N = parseInt(NutsResult / all.length) / 15
+  const G = parseInt(GallantResult / all.length) / 15
+ 
+  console.log(R)
+  console.log(O)
+  console.log(A)
+  console.log(M)
+  console.log(I)
+  console.log(N)
+  console.log(G)
+
 
   const agrigateData = () => {
     const formatData = () => {
@@ -114,6 +208,18 @@ function DataVisual(surveyInfo) {
       },
       meta: { color: "blue" },
     },
+    {
+      data: {
+        Relentless: R,
+        Oppositional: O,
+        Agnostic: A,
+        Messianic: M,
+        Insecure: I,
+        Nuts: N,
+        Gallant: G,
+      },
+      meta: { color: 'red' }
+    }
   ];
 
   const PrimalPercent = parseFloat(
