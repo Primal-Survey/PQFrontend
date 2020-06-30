@@ -24,11 +24,11 @@ const NavBar = () => {
           <a
             href="#!"
             data-target="mobile-demo"
-            className="sidenav-trigger teal-text"
+            className="sidenav-trigger white-text"
           >
             <i
               className=" material-icons"
-              style={{ fontSize: "4em", textColor: "teal" }}
+              style={{ fontSize: "4em", textColor: "darkcyan" }}
             >
               menu
             </i>
@@ -157,7 +157,7 @@ const Ul = styled.ul`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: teal;
+  background-color: black;
 `;
 const Li = styled.div`
   /* border: 1px solid black; */
@@ -181,7 +181,7 @@ const MainLink = styled.a`
   margin: 1%;
 
   &:hover {
-    color: teal;
+    color: darkcyan;
     transition: 0.4s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
   }
@@ -198,7 +198,7 @@ const StyledLink = styled.a`
   /* border: 1px solid lightGray; */
   &:hover {
     /* border: 1px solid white; */
-    color: teal;
+    color: white;
     transition: 0.4s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
   }

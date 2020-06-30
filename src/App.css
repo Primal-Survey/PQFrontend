@@ -17,6 +17,14 @@ h5 {
   font-family: "TitlingGothicFBComp";
 }
 
+h1,h2, h6{
+  color:#87cbce;
+}
+
+h3, h4, h5{
+  color:darkcyan;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
