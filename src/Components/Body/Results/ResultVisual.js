@@ -122,7 +122,7 @@ const ResultVisual = (resultInfo) => {
                 {tips.map((tip) => {
                   return (
                     <li>
-                      <p>{tip}</p>
+                      <P>{tip}</P>
                     </li>
                   );
                 })}
