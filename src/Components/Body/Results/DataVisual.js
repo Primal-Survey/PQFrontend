@@ -162,19 +162,18 @@ function DataVisual(surveyInfo) {
         parseInt(DataInfo.gallant1) +
         parseInt(DataInfo.gallant2) +
         parseInt(DataInfo.gallant3))
-	);
-	
-	  // if you're in DEV mode, it will RANDOM GEN the results..
-	  if (process.env.NODE_ENV === "development") {
-		  DataInfo.relentlessResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.oppositionalResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.agnosticResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.messianicResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.insecureResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.nutsResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.gallantResult = Math.floor(Math.random() * 15) + 1
-	  }
+    );
 
+    // if you're in DEV mode, it will RANDOM GEN the results..
+    if (process.env.NODE_ENV === "development") {
+      DataInfo.relentlessResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.oppositionalResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.agnosticResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.messianicResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.insecureResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.nutsResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.gallantResult = Math.floor(Math.random() * 15) + 1;
+    }
 
     setDataInfo(
       (DataInfo.IN_ShortScale =
@@ -273,9 +272,9 @@ function DataVisual(surveyInfo) {
           </Text>
         </GraphKey>
       </Div>
-      <h4>
+      <h5>
         You are <strong>{PrimalPercent}% Primal</strong> overall.
-      </h4>
+      </h5>
       <ResultVisual resultInfo={resultInfo} />
     </Fade>
   );
