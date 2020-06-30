@@ -5,12 +5,14 @@ import Amazon3 from "./images/amazon3.png";
 import Bam2 from "./images/Bam2.png";
 import BN2 from "./images/BN2.jpg";
 import IndieBound from "./images/IndieBound.JPG";
-import Book2 from "./images/book2.JPG";
-import Author from "./images/author.JPG";
+import BookDown from "./../../Assets/Images/BookDown.png";
+import Marco from "./../../Assets/Images/Marco.jpg";
+import HeaderBanner from "./../../Assets/Images/HeaderBanner.jpg";
 
 function Footer() {
   return (
-    <Foot className="page-footer black">
+    <BackgroundLayer>
+    <Foot className="page-footer N/A transparent">
       <Content className="container">
         <div className="row ">
           <LeftBox className="col l6 s12">
@@ -27,7 +29,7 @@ function Footer() {
               </div>
               <ImgBox>
                 <div>
-                  <Img2 src={Author} alt="Primitive Book" />
+                  <Img2 src={Marco} alt="Primitive Book" />
                 </div>
               </ImgBox>
             </Section>
@@ -46,7 +48,7 @@ function Footer() {
                 href="https://primitive-book.squarespace.com/#purchase-section"
               >
                 <div className="col s6 m3 l3 ">
-                  <Img2 src={Book2} alt="Primitive Book" />
+                  <Img2 src={BookDown} alt="Primitive Book" />
                 </div>
               </a>
             </ImgBox>
@@ -102,6 +104,7 @@ function Footer() {
         </div>
       </div>
     </Foot>
+    </BackgroundLayer>
   );
 }
 const Foot = styled.footer`
@@ -110,7 +113,7 @@ const Foot = styled.footer`
   /* justify-content: center; */
   align-items: center;
   justify-content: space-evenly;
-  min-height: 100vh;
+  min-height: 50vh;
 `;
 
 const Content = styled.div`
@@ -164,7 +167,7 @@ const Img = styled.img`
 `;
 
 const Img2 = styled.img`
-  max-width: 12vw;
+  max-width: 17vw;
   height: auto;
   /* border: 1px solid red; */
 `;
@@ -173,5 +176,18 @@ const H6 = styled.h6`
   padding-left: 10px;
   /* border: 1px solid black; */
 `;
+
+const BackgroundLayer = styled.div`
+  text-align: center;
+  background: url(${HeaderBanner}) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  min-height: 20vh;
+  margin: auto;
+`;
+
 
 export default Footer;
