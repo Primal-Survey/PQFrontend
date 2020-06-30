@@ -3,7 +3,7 @@ import Fade from "react-reveal/Fade";
 import styled from "styled-components";
 
 import DataVisual from "./DataVisual";
-import EmailMeForm from "./EmailMeForm.js";
+// import EmailMeForm from "./EmailMeForm.js";
 
 function Results(surveyInfo) {
   return (

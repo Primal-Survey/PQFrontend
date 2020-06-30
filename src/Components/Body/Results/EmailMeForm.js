@@ -1,9 +1,46 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
-const EmailMeForm = () => {
+import axios from "axios";
+
+const EmailMeForm = (props) => {
+	const {TextBlock, range} = props;
+	TextBlock.rangeInfo = range;
+	console.log(10, TextBlock, range);
+	const [emailAddy, setEmail] = useState({
+		email: ""
+	})
+	const [emailerr, setEmailerr] = useState("")
+
+	const BACKEND = "http://localhost:4000"
+
+	// console.log(10, emailAddy);
+	const doChange = (e) => {
+		setEmail({ [e.target.name]: e.target.value })
+	}
+
+	const doSubmit = (e, emailAddy, TextBlock) => {
+		console.log(24, TextBlock);
+		e.preventDefault();
+		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
+			axios
+				.post(`${BACKEND}/api/results/mailer/`, TextBlock)
+				.then((sent) => {
+					console.log(sent);
+				})
+				.catch((err) => {
+					console.log(err);
+				})
+
+		} else {
+			setEmailerr("Nope.")
+			setEmail({email: ""})
+		}
+	}
+
+
   return (
     <Fade>
       <div
@@ -13,9 +50,12 @@ const EmailMeForm = () => {
           //   border: "1px solid black",
         }}
       >
-        <div className="row">
-          <form
-            className="col s12"
+        <div class="row">
+          <form onSubmit={(e) => {
+			  console.log(54, TextBlock);
+			  doSubmit(e, emailAddy, TextBlock)
+			}}
+            class="col s12"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -29,6 +69,7 @@ const EmailMeForm = () => {
                 width: "50%",
               }}
             >
+				  <EmailErr>{emailerr}</EmailErr>
               <div
                 className="input-field col s6 "
                 style={{
@@ -45,8 +86,9 @@ const EmailMeForm = () => {
                 >
                   email
                 </i>
-                <input id="icon_prefix" type="text" class="validate"></input>
-                <label htmlFor="icon_prefix">Email Address</label>
+				<input name="email" id="icon_prefix" type="text" class="validate"
+					onChange={doChange} value={emailAddy.email} />
+                <label for="icon_prefix">Email Address</label>
               </div>
             </div>
           </form>{" "}
@@ -85,6 +127,10 @@ const EmailMeForm = () => {
 const Button = styled.footer`
   margin-bottom: 20px;
   min-width: 275px;
+`;
+
+const EmailErr = styled.div`
+  min-height: 2rem;
 `;
 
 export default EmailMeForm;
