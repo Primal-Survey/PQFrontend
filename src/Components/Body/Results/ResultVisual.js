@@ -82,12 +82,24 @@ const ResultVisual = (resultInfo) => {
   //
   //////////////////////////////////////////////////////  show results if value not 0 (initial state), if quiz not filled out, push to home
   if (TopResult.value !== 0) {
+    ///////////////////////////sets range for result range
+    let range = "";
+    Value >= 3 && Value <= 6
+      ? (range = TextBlock[0].rangeInfo.low)
+      : Value >= 7 && Value <= 11
+      ? (range = TextBlock[0].rangeInfo.medium)
+      : (range = TextBlock[0].rangeInfo.high);
+    console.log(range);
+    let RangeResult = TextBlock[0].rangeInfo;
+    console.log(RangeResult);
+
     return (
       <Fade>
         <Section>
-          <P>
-            {TopResult.name} {TopResult.value}
-          </P>
+          <P>{TextBlock[0].catTitle}</P>
+          <P>{TextBlock[0].catIntro}</P>
+          <P>{range}</P>
+          <P>{TextBlock[0].tips}</P>
         </Section>
         <EmailMeForm />
         {/* Add props into form when rdy */}
@@ -111,7 +123,8 @@ const P = styled.p`
 
 const Section = styled.section`
   display: flex;
-  justify-content: space;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin: auto;
   max-width: 80%;
