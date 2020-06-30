@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
-const EmailMeForm = () => {
+const EmailMeForm = (props) => {
+	console.log(7, props);
+	const {TopResult} = props;
 	const [emailAddy, setEmail] = useState({
 		email: ""
 	})
+	const [emailerr, setEmailerr] = useState("")
+
 	// console.log(10, emailAddy);
 	const doChange = (e) => {
 		setEmail({ [e.target.name]: e.target.value })
@@ -16,9 +20,10 @@ const EmailMeForm = () => {
 		e.preventDefault();
 		console.log(17, emailAddy.email);
 		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
-			console.log(18, "email good");
+			console.log(18, TopResult);
 		} else {
-			console.log(21, "Nope");
+			setEmailerr("Nope.")
+			setEmail({email: ""})
 		}
 	}
 
@@ -33,7 +38,7 @@ const EmailMeForm = () => {
         }}
       >
         <div class="row">
-          <form onSubmit={(e) => doSubmit(e, emailAddy)}
+          <form onSubmit={(e) => doSubmit(e, emailAddy, TopResult)}
             class="col s12"
             style={{
               display: "flex",
@@ -48,6 +53,7 @@ const EmailMeForm = () => {
                 width: "50%",
               }}
             >
+				  <EmailErr>{emailerr}</EmailErr>
               <div
                 class="input-field col s6 "
                 style={{
@@ -105,6 +111,10 @@ const EmailMeForm = () => {
 const Button = styled.footer`
   margin-bottom: 20px;
   min-width: 275px;
+`;
+
+const EmailErr = styled.div`
+  min-height: 2rem;
 `;
 
 export default EmailMeForm;

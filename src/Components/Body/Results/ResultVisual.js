@@ -64,7 +64,7 @@ const ResultVisual = (resultInfo) => {
             {TopResult.name} {TopResult.value}
           </P>
         </Section>
-        <EmailMeForm />
+        <EmailMeForm TopResult={TopResult}/>
         {/* Add props into form when rdy */}
       </Fade>
     );
