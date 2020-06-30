@@ -58,14 +58,14 @@ const EmailMeForm = (props) => {
             }}
           >
             <div
-              class="row"
+              className="row"
               style={{
                 width: "50%",
               }}
             >
 				  <EmailErr>{emailerr}</EmailErr>
               <div
-                class="input-field col s6 "
+                className="input-field col s6 "
                 style={{
                   width: "100%",
                   display: "flex",
@@ -75,7 +75,7 @@ const EmailMeForm = (props) => {
                 }}
               >
                 <i
-                  class="material-icons prefix teal-text"
+                  className="material-icons prefix teal-text"
                   style={{ fontSize: "3em", textColor: "teal" }}
                 >
                   email
@@ -99,14 +99,14 @@ const EmailMeForm = (props) => {
                 margin: "1em",
               }}
             >
-              <Button className="waves-effect waves-light btn">
-                <i class="material-icons left">autorenew</i>
+              <Button classNameName="waves-effect waves-light btn">
+                <i className="material-icons left">autorenew</i>
                 Back to start
               </Button>
             </Link>
             <Link to="/results/">
-              <Button className="waves-effect waves-light btn">
-                <i class="material-icons right">send</i>
+              <Button classNameName="waves-effect waves-light btn">
+                <i className="material-icons right">send</i>
                 Email me my results.
               </Button>
             </Link>
