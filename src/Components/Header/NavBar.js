@@ -154,7 +154,7 @@ const Ul = styled.ul`
   align-items: center;
   background-color: teal;
 `;
-const Li = styled.li`
+const Li = styled.div`
   /* border: 1px solid black; */
 
   display: flex;

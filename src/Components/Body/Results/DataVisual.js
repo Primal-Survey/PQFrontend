@@ -7,7 +7,7 @@ import ResultVisual from "./ResultVisual";
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
-  console.log(surveyInfo);
+  //   console.log(surveyInfo);
   const [DataInfo, setDataInfo] = useState(resultInfo);
 
   useEffect(() => {

@@ -6,7 +6,7 @@ import ResultsText from "./ResultsText";
 import EmailMeForm from "./EmailMeForm.js";
 
 const ResultVisual = (resultInfo) => {
-  console.log("PQ short scale -->", resultInfo.resultInfo.PQ_ShortScale);
+  //   console.log("PQ short scale -->", resultInfo.resultInfo.PQ_ShortScale);
 
   // const emailInfo =      Build out this object to send to email form
 
@@ -40,25 +40,47 @@ const ResultVisual = (resultInfo) => {
     name: "gallant",
     value: resultInfo.resultInfo.gallantResult,
   };
-  console.log("resultTotals-->", resultTotals);
+  //   console.log("resultTotals-->", resultTotals);
 
   ///////////////////////////////////////////////////////  sorting the results
   const Sorted = resultTotals.sort(function (a, b) {
     return a.value - b.value;
   });
-  console.log("values sorted-->", Sorted);
+  //   console.log("values sorted-->", Sorted);
 
+  //
+  //
+  //
   /////////////////////////////////////////////////////// taking the last / highest result to display info from result text
   const TopResult = Sorted.pop();
   console.log("TopResult-->", TopResult);
 
+  //
+  //
+  //
   /////////////////////////////////////////////////////// bringing in data from ResultsText to match the "TopResult" category and value
   const Name = TopResult.name;
   const Value = TopResult.value;
   console.log("Results text-->", ResultsText);
 
-  //////////////////////////////////////////////////////  show results if value not 0 (initial state), if quiz not filled out, push to home
+  const TextBlock = [];
 
+  const TopText = ResultsText.map((i) => {
+    console.log(Object.keys(i)[0]);
+    if (Name !== Object.keys(i)[0]) {
+    } else return TextBlock.push(Object.values(i)[0]);
+  });
+  console.log("TextBlock", TextBlock[0]);
+
+  console.log("TextBlock", TextBlock[0].catTitle);
+  console.log("TextBlock", TextBlock[0].catIntro);
+  console.log("TextBlock", TextBlock[0].rangeInfo);
+  console.log("TextBlock", TextBlock[0].tips);
+  //   console.log("top text2 -->", ResultsText[[0][0].catTitle]);
+  //
+  //
+  //
+  //////////////////////////////////////////////////////  show results if value not 0 (initial state), if quiz not filled out, push to home
   if (TopResult.value !== 0) {
     return (
       <Fade>

@@ -19,15 +19,15 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
     <Fade>
       <AgreeBox>
         <AgreeBar>
-          <i class="material-icons medium left">navigate_before</i>{" "}
-          {/* <i class="material-icons small">fiber_manual_record</i> */}
+          <i className="material-icons medium left">navigate_before</i>{" "}
+          {/* <i className="material-icons small">fiber_manual_record</i> */}
           <P>Completely Disagree</P>
-          {/* <i class="material-icons tiny">fiber_manual_record</i> */}
-          <i class="material-icons ">fiber_manual_record</i>
-          {/* <i class="material-icons tiny">fiber_manual_record</i> */}
+          {/* <i className="material-icons tiny">fiber_manual_record</i> */}
+          <i className="material-icons ">fiber_manual_record</i>
+          {/* <i className="material-icons tiny">fiber_manual_record</i> */}
           <P>Completely Agree</P>
-          {/* <i class="material-icons small">fiber_manual_record</i> */}
-          <i class="material-icons medium right">navigate_next</i>
+          {/* <i className="material-icons small">fiber_manual_record</i> */}
+          <i className="material-icons medium right">navigate_next</i>
         </AgreeBar>
       </AgreeBox>
       <div>

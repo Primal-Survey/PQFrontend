@@ -13,9 +13,9 @@ const EmailMeForm = () => {
           //   border: "1px solid black",
         }}
       >
-        <div class="row">
+        <div className="row">
           <form
-            class="col s12"
+            className="col s12"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -24,13 +24,13 @@ const EmailMeForm = () => {
             }}
           >
             <div
-              class="row"
+              className="row"
               style={{
                 width: "50%",
               }}
             >
               <div
-                class="input-field col s6 "
+                className="input-field col s6 "
                 style={{
                   width: "100%",
                   display: "flex",
@@ -40,13 +40,17 @@ const EmailMeForm = () => {
                 }}
               >
                 <i
-                  class="material-icons prefix teal-text"
+                  className="material-icons prefix teal-text"
                   style={{ fontSize: "3em", textColor: "teal" }}
                 >
                   email
                 </i>
-                <input id="icon_prefix" type="text" class="validate"></input>
-                <label for="icon_prefix">Email Address</label>
+                <input
+                  id="icon_prefix"
+                  type="text"
+                  className="validate"
+                ></input>
+                <label htmlFor="icon_prefix">Email Address</label>
               </div>
             </div>
           </form>{" "}
@@ -63,14 +67,14 @@ const EmailMeForm = () => {
                 margin: "1em",
               }}
             >
-              <Button className="waves-effect waves-light btn">
-                <i class="material-icons left">autorenew</i>
+              <Button classNameName="waves-effect waves-light btn">
+                <i className="material-icons left">autorenew</i>
                 Back to start
               </Button>
             </Link>
             <Link to="/results/">
-              <Button className="waves-effect waves-light btn">
-                <i class="material-icons right">send</i>
+              <Button classNameName="waves-effect waves-light btn">
+                <i className="material-icons right">send</i>
                 Email me my results.
               </Button>
             </Link>
