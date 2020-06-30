@@ -164,7 +164,6 @@ const Header = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: justify;
   margin: auto;
   max-width: 80%;
 `;
