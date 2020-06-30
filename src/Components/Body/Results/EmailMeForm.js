@@ -8,7 +8,7 @@ import axios from "axios";
 const EmailMeForm = (props) => {
   const { TextBlock, range } = props;
   TextBlock.rangeInfo = range;
-  console.log(10, TextBlock, range);
+  //   console.log(10, TextBlock, range);
   const [emailAddy, setEmail] = useState({
     email: "",
   });
@@ -34,7 +34,7 @@ const EmailMeForm = (props) => {
           console.log(err);
         });
     } else {
-      setEmailerr("Nope.");
+      setEmailerr("***Please enter a valid email address***");
       setEmail({ email: "" });
     }
   };
@@ -48,13 +48,13 @@ const EmailMeForm = (props) => {
           //   border: "1px solid black",
         }}
       >
-        <div class="row">
+        <div className="row">
           <form
             onSubmit={(e) => {
               console.log(54, TextBlock);
               doSubmit(e, emailAddy, TextBlock);
             }}
-            class="col s12"
+            className="col s12"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -89,11 +89,11 @@ const EmailMeForm = (props) => {
                   name="email"
                   id="icon_prefix"
                   type="text"
-                  class="validate"
+                  className="validate"
                   onChange={doChange}
                   value={emailAddy.email}
                 />
-                <label for="icon_prefix">Email Address</label>
+                <label htmlFor="icon_prefix">Email Address</label>
               </div>
             </div>
           </form>{" "}

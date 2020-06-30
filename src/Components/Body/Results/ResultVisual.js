@@ -74,7 +74,6 @@ const ResultVisual = (resultInfo) => {
     } else return TextBlock.push(Object.values(i)[0]);
   });
   //   console.log("TextBlock", TextBlock[0]);
-
   //   console.log("TextBlock", TextBlock[0].catTitle);
   //   console.log("TextBlock", TextBlock[0].catIntro);
   //   console.log("TextBlock", TextBlock[0].rangeInfo);
@@ -134,7 +133,18 @@ const ResultVisual = (resultInfo) => {
       <Section>
         <P>{TextBlock[0].catIntro}</P>
         <P>{range}</P>
-        <ul>{tips}</ul>
+        <Section>
+          <h5>Tips</h5>
+          <ul>
+            {tips.map((tip) => {
+              return (
+                <li>
+                  <p>{tip}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </Section>
       </Section>
       <EmailMeForm TextBlock={TextBlock} range={range} />
     </Fade>
