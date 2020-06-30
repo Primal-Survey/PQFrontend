@@ -6,7 +6,9 @@ import Fade from "react-reveal/Fade";
 import axios from "axios";
 
 const EmailMeForm = (props) => {
-	const {TopResult} = props;
+	const {TextBlock, range} = props;
+	TextBlock.rangeInfo = range;
+	console.log(10, TextBlock, range);
 	const [emailAddy, setEmail] = useState({
 		email: ""
 	})
@@ -19,16 +21,17 @@ const EmailMeForm = (props) => {
 		setEmail({ [e.target.name]: e.target.value })
 	}
 
-	const doSubmit = (e, emailAddy, TopResult) => {
+	const doSubmit = (e, emailAddy, TextBlock) => {
+		console.log(24, TextBlock);
 		e.preventDefault();
 		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
 			axios
-				.post(`${BACKEND}/api/results/mailer/`, TopResult)
+				.post(`${BACKEND}/api/results/mailer/`, TextBlock)
 				.then((sent) => {
-					console.log(29);
+					console.log(sent);
 				})
 				.catch((err) => {
-					console.log(32);
+					console.log(err);
 				})
 
 		} else {
@@ -48,7 +51,10 @@ const EmailMeForm = (props) => {
         }}
       >
         <div class="row">
-          <form onSubmit={(e) => doSubmit(e, emailAddy, TopResult)}
+          <form onSubmit={(e) => {
+			  console.log(54, TextBlock);
+			  doSubmit(e, emailAddy, TextBlock)
+			}}
             class="col s12"
             style={{
               display: "flex",

@@ -6,7 +6,7 @@ const StartButton = () => {
   return (
     <Link to="/questionpage1/">
       <Button className="waves-effect waves-light btn">
-        <i class="material-icons right">send</i>Begin Survey
+        <i className="material-icons right">send</i>Begin Survey
       </Button>
     </Link>
   );

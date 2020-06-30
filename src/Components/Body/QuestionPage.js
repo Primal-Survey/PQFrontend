@@ -49,21 +49,21 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
           {prev ? (
             <Link to={`/questionpage${prev}/`}>
               <Button className="hoverable  btn">
-                <i class="material-icons left">arrow_back</i>
+                <i className="material-icons left">arrow_back</i>
                 Previous
               </Button>
             </Link>
           ) : (
             <Link to="/">
               <Button className="hoverable  btn">
-                <i class="material-icons left">arrow_back</i>Back Home
+                <i className="material-icons left">arrow_back</i>Back Home
               </Button>
             </Link>
           )}
           {next ? (
             <Link to={`/questionpage${next}/`}>
               <Button className="hoverable  btn">
-                <i class="material-icons right">arrow_forward</i>
+                <i className="material-icons right">arrow_forward</i>
                 Next
               </Button>
             </Link>

@@ -6,7 +6,7 @@ const SubmitButton = () => {
   return (
     <Link to="/results/">
       <Button className="waves-effect waves-light btn">
-        <i class="material-icons right ">send</i>See my results!
+        <i className="material-icons right ">send</i>See my results!
       </Button>
     </Link>
   );
