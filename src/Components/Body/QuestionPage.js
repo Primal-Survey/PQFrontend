@@ -9,7 +9,7 @@ import OneFiveForm1 from "./QuestionForms/OneFiveForm";
 import SubmitButton from "./QuestionForms/SubmitButton";
 
 function QuestionPage1({ prev, next, questions, keys, ...rest }) {
-  // // if you're in DEV mode, it will skip the survey.
+  // if you're in DEV mode, it will skip the survey.
   // if (process.env.NODE_ENV === "development") {
   //   next = false;
   // }
@@ -65,7 +65,7 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
               </Button>
             </Link>
           ) : (
-            <SubmitButton />
+            <SubmitButton {...rest}/>
           )}
         </ButtonContainer>
       </div>

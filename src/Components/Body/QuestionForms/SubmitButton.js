@@ -1,11 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import axios from "axios";
 
-const SubmitButton = () => {
+const SubmitButton = (surveyInfo) => {
+  const HandleSubmit = () => {
+    axios
+      .post(
+        `https://pq-backend.herokuapp.com/api/results`,
+        surveyInfo.surveyInfo
+      )
+      .then((res) => {
+        console.log(res.data);
+      });
+  };
+
   return (
     <Link to="/results/">
-      <Button className="waves-effect waves-light btn">
+      <Button onClick={HandleSubmit} className="waves-effect waves-light btn">
         <i class="material-icons right ">send</i>See my results!
       </Button>
     </Link>
