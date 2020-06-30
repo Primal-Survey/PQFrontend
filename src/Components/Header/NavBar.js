@@ -165,14 +165,13 @@ const Li = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 80%;
+  width: 100%;
   height: 70%;
   
 `;
 
 const ListItem = styled.li`
-  padding: 0 47px;
-  min-width: 15em;
+  min-width: 10vw;
 `;
 
 

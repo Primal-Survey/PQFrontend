@@ -210,18 +210,6 @@ function DataVisual(surveyInfo) {
   const data = [
     {
       data: {
-        Relentless: r,
-        Oppositional: o,
-        Agnostic: a,
-        Messianic: m,
-        Insecure: i,
-        Nuts: n,
-        Gallant: g,
-      },
-      meta: { color: "blue" },
-    },
-    {
-      data: {
         Relentless: R,
         Oppositional: O,
         Agnostic: A,
@@ -232,6 +220,18 @@ function DataVisual(surveyInfo) {
       },
       meta: { color: "red" },
     },
+    {
+      data: {
+        Relentless: r,
+        Oppositional: o,
+        Agnostic: a,
+        Messianic: m,
+        Insecure: i,
+        Nuts: n,
+        Gallant: g,
+      },
+      meta: { color: "blue" },
+    }
   ];
 
   const PrimalPercent = parseFloat(
