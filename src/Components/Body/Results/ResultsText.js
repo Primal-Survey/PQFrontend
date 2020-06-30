@@ -1,4 +1,5 @@
-const ResultsText = {
+const ResultsText = [];
+ResultsText[0] = {
   relentless: {
     catTitle: "Relentless Primitive",
     catIntro:
@@ -35,6 +36,8 @@ const ResultsText = {
       "Primal Tip for RP’s #10: Go on “playdates” with friends/colleagues/employees that leave you charged up, excited, and ready to take on the world. Grown-ups have meetings that leave you drained, rarely seeming to accomplish anything. A relentless company nurtures independent thinking, where pitching new ideas and rethinking age-old techniques is not only tolerated but encouraged.",
     ],
   },
+};
+ResultsText[1] = {
   oppositional: {
     catTitle: "Oppositional Primitive",
     catIntro:
@@ -67,6 +70,8 @@ const ResultsText = {
       "Primal Tip for OP’s #8: Set redlines and hold yourself accountable to them. Don’t be afraid to re-establish new redlines, even if it means sacrificing short-term goals.",
     ],
   },
+};
+ResultsText[2] = {
   agnostic: {
     catTitle: "Agnostic Primitive",
     catIntro:
@@ -89,6 +94,8 @@ const ResultsText = {
       "Primal Tip for AP’s #3: Focus on reestablishing your values every time you make a big decision. Learn new skills and grow new muscles. Learn to evaluate employers in much the same way employers evaluate you. Constantly nudge and stretch and inflate comfort zones. Don’t be afraid to wear hats and crave more.",
     ],
   },
+};
+ResultsText[3] = {
   messianic: {
     catTitle: "Messianic Primitive",
     catIntro:
@@ -115,6 +122,8 @@ const ResultsText = {
       "Primal Tip for MP’s #5: Perform the “waive a magic wand” exercise by envisioning something that replaces and reinvents your current situation. Doing this will clarify your core values and provide a strongly needed reality check for how much progress is being made. This will help put your battles in context. This is the first step toward making a solution appear tangible instead of theoretical.",
     ],
   },
+};
+ResultsText[4] = {
   insecure: {
     catTitle: "Insecure Primitive",
     catIntro:
@@ -139,6 +148,8 @@ const ResultsText = {
       "Primal Tip for IP’s #4: Know what you don’t know! Take a page out of the insecure primitives playbook and avoid overconfidence, accept when you are an imposter, and be prudently paranoid. By practicing these precepts and operating on the bleeding edge of uncertainty, you will be more successful.",
     ],
   },
+};
+ResultsText[5] = {
   nuts: {
     catTitle: "Nuts Primitive",
     catIntro:
@@ -157,6 +168,8 @@ const ResultsText = {
       "Primal Tip for NP’s #1: Take a moment and think: what would be your childish response to a recent compilation? Jot that down immediately. If there weren’t any rules, how would you go about solving it? Now consider: what exactly is holding you back?",
     ],
   },
+};
+ResultsText[6] = {
   gallant: {
     catTitle: "Gallant Primitive",
     catIntro:

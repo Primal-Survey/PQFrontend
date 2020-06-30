@@ -10,6 +10,7 @@ const ResultVisual = (resultInfo) => {
 
   // const emailInfo =      Build out this object to send to email form
 
+  /////////////////////////////////////////////////  Setting up the resultTotals array
   const resultTotals = [];
   resultTotals[0] = {
     name: "relentless",
@@ -39,22 +40,24 @@ const ResultVisual = (resultInfo) => {
     name: "gallant",
     value: resultInfo.resultInfo.gallantResult,
   };
-
   console.log("resultTotals-->", resultTotals);
 
+  ///////////////////////////////////////////////////////  sorting the results
   const Sorted = resultTotals.sort(function (a, b) {
     return a.value - b.value;
   });
-
   console.log("values sorted-->", Sorted);
 
+  /////////////////////////////////////////////////////// taking the last / highest result to display info from result text
   const TopResult = Sorted.pop();
-
   console.log("TopResult-->", TopResult);
-  const Name = TopResult.name
-  const ResultValue = TopResult.value
 
-  while (Name ===)
+  /////////////////////////////////////////////////////// bringing in data from ResultsText to match the "TopResult" category and value
+  const Name = TopResult.name;
+  const Value = TopResult.value;
+  console.log("Results text-->", ResultsText);
+
+  //////////////////////////////////////////////////////  show results if value not 0 (initial state), if quiz not filled out, push to home
 
   if (TopResult.value !== 0) {
     return (
@@ -74,7 +77,6 @@ const ResultVisual = (resultInfo) => {
         <Section>
           <P>please fill out quiz to see results</P>
         </Section>
-        <EmailMeForm />
         {/* Have this else statement push to home page automatically if results are at 0 */}
       </Fade>
     );
