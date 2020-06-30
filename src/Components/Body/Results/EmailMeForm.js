@@ -45,11 +45,7 @@ const EmailMeForm = () => {
                 >
                   email
                 </i>
-                <input
-                  id="icon_prefix"
-                  type="text"
-                  className="validate"
-                ></input>
+                <input id="icon_prefix" type="text" class="validate"></input>
                 <label htmlFor="icon_prefix">Email Address</label>
               </div>
             </div>
@@ -67,13 +63,13 @@ const EmailMeForm = () => {
                 margin: "1em",
               }}
             >
-              <Button classNameName="waves-effect waves-light btn">
+              <Button className="waves-effect waves-light btn">
                 <i className="material-icons left">autorenew</i>
                 Back to start
               </Button>
             </Link>
             <Link to="/results/">
-              <Button classNameName="waves-effect waves-light btn">
+              <Button className="waves-effect waves-light btn">
                 <i className="material-icons right">send</i>
                 Email me my results.
               </Button>

@@ -11,7 +11,6 @@ function DataVisual(surveyInfo) {
   //   console.log(surveyInfo);
   const [DataInfo, setDataInfo] = useState(resultInfo);
   const [largeDataSet, setLargeDataSet] = useState({});
- 
 
   useEffect(() => {
     agrigateData();
@@ -26,12 +25,12 @@ function DataVisual(surveyInfo) {
   };
 
   const all = Object.values(largeDataSet);
-  console.log(all);
+  //   console.log(all);
 
   let RelentlessResult = 0;
   all.forEach(function (key) {
     if (Object.keys(key)[15] === "relentlessResult") {
-      console.log("here", Object.keys(key))
+      //   console.log("here", Object.keys(key))
       RelentlessResult = RelentlessResult + Object.values(key)[15];
     } else {
       console.log("didnt work");
@@ -92,22 +91,21 @@ function DataVisual(surveyInfo) {
     }
   });
 
-  const R = parseInt(RelentlessResult / all.length) / 15
-  const O = parseInt(OppositionalResult / all.length) / 15
-  const A = parseInt(AgnosticResult / all.length) / 15
-  const M = parseInt(MessianicResult / all.length) / 15
-  const I = parseInt(InsecureResult / all.length) / 15
-  const N = parseInt(NutsResult / all.length) / 15
-  const G = parseInt(GallantResult / all.length) / 15
- 
-  console.log(R)
-  console.log(O)
-  console.log(A)
-  console.log(M)
-  console.log(I)
-  console.log(N)
-  console.log(G)
+  const R = parseInt(RelentlessResult / all.length) / 15;
+  const O = parseInt(OppositionalResult / all.length) / 15;
+  const A = parseInt(AgnosticResult / all.length) / 15;
+  const M = parseInt(MessianicResult / all.length) / 15;
+  const I = parseInt(InsecureResult / all.length) / 15;
+  const N = parseInt(NutsResult / all.length) / 15;
+  const G = parseInt(GallantResult / all.length) / 15;
 
+  //   console.log(R)
+  //   console.log(O)
+  //   console.log(A)
+  //   console.log(M)
+  //   console.log(I)
+  //   console.log(N)
+  //   console.log(G)
 
   const agrigateData = () => {
     const formatData = () => {
@@ -230,8 +228,8 @@ function DataVisual(surveyInfo) {
         Nuts: N,
         Gallant: G,
       },
-      meta: { color: 'red' }
-    }
+      meta: { color: "red" },
+    },
   ];
 
   const PrimalPercent = parseFloat(
@@ -239,14 +237,14 @@ function DataVisual(surveyInfo) {
   ).toFixed();
 
   //   console.log(PrimalPercent);
-  const defaultOptions = {
-    captionProps: () => ({
-      className: "caption",
-      textAnchor: "middle",
-      fontSize: "20px",
-      fontFamily: "sans-serif",
-    }),
-  };
+  //   const defaultOptions = {
+  //     captionProps: () => ({
+  //       className: "caption",
+  //       textAnchor: "middle",
+  //       fontSize: "20px",
+  //       fontFamily: "sans-serif",
+  //     }),
+  //   };
 
   const captions = {
     // columns
@@ -262,7 +260,9 @@ function DataVisual(surveyInfo) {
   return (
     <Fade>
       <RadarChart captions={captions} data={data} size={350} />
-      <h3>You are {PrimalPercent}% Primal</h3>
+      <h4>
+        You are <strong>{PrimalPercent}% Primal</strong> overall.
+      </h4>
       <ResultVisual resultInfo={resultInfo} />
     </Fade>
   );
