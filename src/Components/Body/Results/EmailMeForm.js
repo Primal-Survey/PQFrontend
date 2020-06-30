@@ -12,6 +12,16 @@ const EmailMeForm = () => {
 		setEmail({ [e.target.name]: e.target.value })
 	}
 
+	const doSubmit = (e, emailAddy) => {
+		e.preventDefault();
+		console.log(17, emailAddy.email);
+		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
+			console.log(18, "email good");
+		} else {
+			console.log(21, "Nope");
+		}
+	}
+
 
   return (
     <Fade>
@@ -23,7 +33,7 @@ const EmailMeForm = () => {
         }}
       >
         <div class="row">
-          <form
+          <form onSubmit={(e) => doSubmit(e, emailAddy)}
             class="col s12"
             style={{
               display: "flex",
