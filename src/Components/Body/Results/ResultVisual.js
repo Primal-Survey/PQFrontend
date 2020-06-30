@@ -10,60 +10,77 @@ const ResultVisual = (resultInfo) => {
 
   // const emailInfo =      Build out this object to send to email form
 
-  const resultTotals = {
-    relentlessResult: resultInfo.resultInfo.relentlessResult,
-    oppositionalResult: resultInfo.resultInfo.oppositionalResult,
-    agnosticResult: resultInfo.resultInfo.agnosticResult,
-    messianicResult: resultInfo.resultInfo.messianicResult,
-    insecureResult: resultInfo.resultInfo.insecureResult,
-    nutsResult: resultInfo.resultInfo.nutsResult,
-    gallantResult: resultInfo.resultInfo.gallantResult,
+  /////////////////////////////////////////////////  Setting up the resultTotals array
+  const resultTotals = [];
+  resultTotals[0] = {
+    name: "relentless",
+    value: resultInfo.resultInfo.relentlessResult,
+  };
+  resultTotals[1] = {
+    name: "oppositional",
+    value: resultInfo.resultInfo.oppositionalResult,
+  };
+  resultTotals[2] = {
+    name: "agnostic",
+    value: resultInfo.resultInfo.agnosticResult,
+  };
+  resultTotals[3] = {
+    name: "messianic",
+    value: resultInfo.resultInfo.messianicResult,
+  };
+  resultTotals[4] = {
+    name: "insecure",
+    value: resultInfo.resultInfo.insecureResult,
+  };
+  resultTotals[5] = {
+    name: "nuts",
+    value: resultInfo.resultInfo.nutsResult,
+  };
+  resultTotals[6] = {
+    name: "gallant",
+    value: resultInfo.resultInfo.gallantResult,
   };
 
 
-  const sortedArr = [];
-
-  const Sorted = Object.values(resultTotals).sort(function (a, b) {
-    if (a[0] < b[0]) {
-      sortedArr.push();
-    }
-    return sortedArr;
+  ///////////////////////////////////////////////////////  sorting the results
+  const Sorted = resultTotals.sort(function (a, b) {
+    return a.value - b.value;
   });
+  console.log("values sorted-->", Sorted);
 
+  /////////////////////////////////////////////////////// taking the last / highest result to display info from result text
+  const TopResult = Sorted.pop();
+  console.log("TopResult-->", TopResult);
 
-  return (
-    <Fade>
-      <Section>
-        <P>
-          {ResultsText.relentless.catTitle}
-          <br />
-          The <strong>PQ ROAMING SURVEY</strong> is a 21-question
-          self-assessment unlike other personality quizzes. This is not
-          corporate BS, business jargon, or filled with platitudes. This survey
-          gets to the heart of the matter. It is based on a study conducted by a
-          St. Joe’s University Professor of Management in conjunction with a
-          methodology developed by Marco Greenberg in his book, "Primitive:
-          Tapping the Primal Drive that Powers the World’s Most Successful
-          People". Research indicates that you’ll make more money and be more
-          fulfilled the more you are able to tap into your primal drive. There
-          are seven different types of “Primitives,” each with its own distinct
-          qualities. This survey is meant to help stuck individuals feel
-          empowered and liberated. It provides you with a lucid roadmap on how
-          to start, reinvent, or recalibrate their careers. Likewise, this
-          survey seeks to assist managers in becoming conductors, who can more
-          effectively manage their teams. <br />
-          <br />
-          Take it by clicking <strong>“Begin Survey”</strong> below. And don’t
-          forget, this is a spectrum. The world cannot blossom without civilized
-          people! Civilized folks are key. But with the world changing right
-          under our feet, it is now more important than ever to tap into our
-          Primal sides.
-        </P>
-      </Section>
-      <EmailMeForm />
-      {/* Add props into form when rdy */}
-    </Fade>
-  );
+  /////////////////////////////////////////////////////// bringing in data from ResultsText to match the "TopResult" category and value
+  const Name = TopResult.name;
+  const Value = TopResult.value;
+  console.log("Results text-->", ResultsText);
+
+  //////////////////////////////////////////////////////  show results if value not 0 (initial state), if quiz not filled out, push to home
+
+  if (TopResult.value !== 0) {
+    return (
+      <Fade>
+        <Section>
+          <P>
+            {TopResult.name} {TopResult.value}
+          </P>
+        </Section>
+        <EmailMeForm />
+        {/* Add props into form when rdy */}
+      </Fade>
+    );
+  } else {
+    return (
+      <Fade>
+        <Section>
+          <P>please fill out quiz to see results</P>
+        </Section>
+        {/* Have this else statement push to home page automatically if results are at 0 */}
+      </Fade>
+    );
+  }
 };
 
 const P = styled.p`
