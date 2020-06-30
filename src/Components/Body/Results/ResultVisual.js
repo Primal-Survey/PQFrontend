@@ -56,7 +56,7 @@ const ResultVisual = (resultInfo) => {
   //
   /////////////////////////////////////////////////////// taking the last / highest result to display info from result text
   const TopResult = Sorted.pop();
-  console.log("TopResult-->", TopResult);
+  //   console.log("TopResult-->", TopResult);
 
   //
   //
@@ -64,21 +64,21 @@ const ResultVisual = (resultInfo) => {
   /////////////////////////////////////////////////////// bringing in data from ResultsText to match the "TopResult" category and value
   const Name = TopResult.name;
   const Value = TopResult.value;
-  console.log("Results text-->", ResultsText);
+  //   console.log("Results text-->", ResultsText);
 
   const TextBlock = [];
 
   const TopText = ResultsText.map((i) => {
-    console.log(Object.keys(i)[0]);
+    // console.log(Object.keys(i)[0]);
     if (Name !== Object.keys(i)[0]) {
     } else return TextBlock.push(Object.values(i)[0]);
   });
-  console.log("TextBlock", TextBlock[0]);
+  //   console.log("TextBlock", TextBlock[0]);
 
-  console.log("TextBlock", TextBlock[0].catTitle);
-  console.log("TextBlock", TextBlock[0].catIntro);
-  console.log("TextBlock", TextBlock[0].rangeInfo);
-  console.log("TextBlock", TextBlock[0].tips);
+  //   console.log("TextBlock", TextBlock[0].catTitle);
+  //   console.log("TextBlock", TextBlock[0].catIntro);
+  //   console.log("TextBlock", TextBlock[0].rangeInfo);
+  //   console.log("TextBlock", TextBlock[0].tips);
   //   console.log("top text2 -->", ResultsText[[0][0].catTitle]);
   //
   //
@@ -107,7 +107,7 @@ const ResultVisual = (resultInfo) => {
           {/* Have this else statement push to home page automatically if results are at 0 */}
         </Fade>
       );
-      break;
+
     case Value <= 6:
       range = TextBlock[0].rangeInfo.low;
       TextBlock[0].range = "low";
@@ -124,20 +124,19 @@ const ResultVisual = (resultInfo) => {
       console.log(110, "Broken Switch/Case in ResultVisual");
   }
 
+  let tips = TextBlock[0].tips;
+
   return (
     <Fade>
-      <h5>
+      <h5 className="teal-text">
         You tend to lean towards the {TextBlock[0].catTitle} side of life.{" "}
       </h5>
       <Section>
-        <P></P>
         <P>{TextBlock[0].catIntro}</P>
         <P>{range}</P>
-        <P>{TextBlock[0].tips}</P>
+        <ul>{tips}</ul>
       </Section>
       <EmailMeForm TextBlock={TextBlock} range={range} />
-      {/* <EmailMeForm TextBlock={TextBlock[0]} /> */}
-      {/* Add props into form when rdy */}
     </Fade>
   );
 };

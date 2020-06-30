@@ -261,6 +261,9 @@ function DataVisual(surveyInfo) {
 
   return (
     <Fade>
+      <h4 className="teal-text">
+        You are <strong>{PrimalPercent}% Primal</strong> overall.
+      </h4>
       <RadarChart captions={captions} data={data} size={350} />
       <Div>
         <GraphKey>
@@ -269,12 +272,11 @@ function DataVisual(surveyInfo) {
 
             <P>Blue Overlay : Your Result</P>
             <P>Red Overlay : Overall Survey Group</P>
+            <P>Yay!</P>
           </Text>
         </GraphKey>
       </Div>
-      <h5>
-        You are <strong>{PrimalPercent}% Primal</strong> overall.
-      </h5>
+
       <ResultVisual resultInfo={resultInfo} />
     </Fade>
   );
