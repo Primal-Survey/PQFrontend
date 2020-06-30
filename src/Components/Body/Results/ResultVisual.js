@@ -54,7 +54,7 @@ const ResultVisual = (resultInfo) => {
   const Name = TopResult.name
   const ResultValue = TopResult.value
 
-  while (Name ===)
+//   while (Name ===)
 
   if (TopResult.value !== 0) {
     return (

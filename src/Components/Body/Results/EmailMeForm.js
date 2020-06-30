@@ -1,9 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
 const EmailMeForm = () => {
+	const [emailAddy, setEmail] = useState({
+		email: ""
+	})
+	// console.log(10, emailAddy);
+	const doChange = (e) => {
+		setEmail({ [e.target.name]: e.target.value })
+	}
+
+
   return (
     <Fade>
       <div
@@ -45,7 +54,8 @@ const EmailMeForm = () => {
                 >
                   email
                 </i>
-                <input id="icon_prefix" type="text" class="validate"></input>
+				<input name="email" id="icon_prefix" type="text" class="validate"
+					onChange={doChange} value={emailAddy.email} />
                 <label for="icon_prefix">Email Address</label>
               </div>
             </div>
