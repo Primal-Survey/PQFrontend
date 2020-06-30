@@ -15,25 +15,25 @@ ResultsText[0] = {
         "Low RP - As a low RP, you are more prone to implementing a strict no-nonsense style that stresses self-motivation, sweat, and a perpetually positive attitude that never wavers, even when hard work yields little or no results. You naturally work hard and try hard, believe you can succeed, and get up and try again. This is worthwhile in pursuits like algebra, practicing piano, or various specialized tasks. Your working style is more on the traditional side of things. You find comfort in dropping your line in the water, sitting back, and waiting for a fish to bite. Work may always be about the long run rather than short bursts. You are structured, wedded to procedures, and like to feel that everything you do is part of an ongoing and orderly track that leads you very clearly from point A to point B. You are a marathon runner, not a sprinter. You may be more prone to “people please” and put the priorities of others before your own. You dislike wasting time at all.",
     },
     tips: [
-      "Primal Tip for RP’s #1: Practice the “five-to-one” rule: for every five unavoidable meetings in conference rooms with agendas and PowerPoint presentations, have one work playdate. Not necessarily drunken karaoke or catching a silly movie with a colleague, but getting together with someone or a team of people you like--friend, vendor, partner, boss, employee--and bounding ideas around in an environment that isn’t the office and doesn’t feel restrictive.",
+      "#1: Practice the “five-to-one” rule: for every five unavoidable meetings in conference rooms with agendas and PowerPoint presentations, have one work playdate. Not necessarily drunken karaoke or catching a silly movie with a colleague, but getting together with someone or a team of people you like--friend, vendor, partner, boss, employee--and bounding ideas around in an environment that isn’t the office and doesn’t feel restrictive.",
 
-      "Primal Tip for RP’s #2: Make a habit of scheduling regular meetups with friends and colleagues--whether it’s coffee, lunch, after-work drinks, or ski trips. It might sound trivial, but that old-fashioned social interaction can be as important to your overall health as hitting the gym. Play in real life. Playing around with people you enjoy connecting with is an excellent way to work that childlike muscle and escape whatever professional rut you may be stuck in.",
+      "#2: Make a habit of scheduling regular meetups with friends and colleagues--whether it’s coffee, lunch, after-work drinks, or ski trips. It might sound trivial, but that old-fashioned social interaction can be as important to your overall health as hitting the gym. Play in real life. Playing around with people you enjoy connecting with is an excellent way to work that childlike muscle and escape whatever professional rut you may be stuck in.",
 
-      "Primal Tip for RP’s #3: Rather than being quick to forgive slights and forget failures, find a physical object that reminds you of a past setback and look at it once a week. Reflect on your hardships, remember that your difficult beginnings, and use them to fuel your progression.",
+      "#3: Rather than being quick to forgive slights and forget failures, find a physical object that reminds you of a past setback and look at it once a week. Reflect on your hardships, remember that your difficult beginnings, and use them to fuel your progression.",
 
-      "Primal Tip for RP’s #4: Think like a door-to-door salesperson, not a Wall Street Banker. Focus on the quality and variety of the conversations with key stakeholders that will keep them coming back, not just the quality of your bottom line. Take your work personally.",
+      "#4: Think like a door-to-door salesperson, not a Wall Street Banker. Focus on the quality and variety of the conversations with key stakeholders that will keep them coming back, not just the quality of your bottom line. Take your work personally.",
 
-      "Primal Tip for RP’s #5: For those still choosing a career path, find something you are natural at and then milk it as much as humanly possible. Relentless primitives often do not have the patience to learn a new skill from scratch; they find something they are good at and then search for a way to monetize it. Try the same! When you focus on what you are good at, work inherently becomes more personal. You become valued for a skill you possess, and you can make more money doing that.",
+      "#5: For those still choosing a career path, find something you are natural at and then milk it as much as humanly possible. Relentless primitives often do not have the patience to learn a new skill from scratch; they find something they are good at and then search for a way to monetize it. Try the same! When you focus on what you are good at, work inherently becomes more personal. You become valued for a skill you possess, and you can make more money doing that.",
 
-      "Primal Tip for RP’s #6: Don’t be afraid or resistant to changing lanes. Don’t get too attached to your first moves. Be willing to change lanes comfortably and nimbly.",
+      "#6: Don’t be afraid or resistant to changing lanes. Don’t get too attached to your first moves. Be willing to change lanes comfortably and nimbly.",
 
-      "Primal Tip for RP’s #7: Hitting pause on your current career trajectory does not just mean taking a breather during lunch. It can also mean stopping to reassess the weeks, months, and years ahead. Take frequent breaks to reexamine your situation. Never stop reassessing.",
+      "#7: Hitting pause on your current career trajectory does not just mean taking a breather during lunch. It can also mean stopping to reassess the weeks, months, and years ahead. Take frequent breaks to reexamine your situation. Never stop reassessing.",
 
-      "Primal Tip for RP’s #8: Begin each day by laying out precisely what you want to accomplish. Only then do you open your inbox and determine what can wait a day, a week, or a month. Focus solely on what can help you meet your big goals for the day, even if you piss some people off in the process.",
+      "#8: Begin each day by laying out precisely what you want to accomplish. Only then do you open your inbox and determine what can wait a day, a week, or a month. Focus solely on what can help you meet your big goals for the day, even if you piss some people off in the process.",
 
-      "Primal Tip for RP’s #9: Let your brain roam occasionally without purpose, and wander off without being taxed by conventional tasks. Give yourself the freedom to make all sorts of new discoveries about you and your work. If circumstances allow it, give yourself short breaks during the workday dedicated to nothing but recharging. If possible, take a thirty-minute walk, bike around the park, take a midday yoga class, or catch a matinee. Find regular downtime during your day you can take advantage of.",
+      "#9: Let your brain roam occasionally without purpose, and wander off without being taxed by conventional tasks. Give yourself the freedom to make all sorts of new discoveries about you and your work. If circumstances allow it, give yourself short breaks during the workday dedicated to nothing but recharging. If possible, take a thirty-minute walk, bike around the park, take a midday yoga class, or catch a matinee. Find regular downtime during your day you can take advantage of.",
 
-      "Primal Tip for RP’s #10: Go on “playdates” with friends/colleagues/employees that leave you charged up, excited, and ready to take on the world. Grown-ups have meetings that leave you drained, rarely seeming to accomplish anything. A relentless company nurtures independent thinking, where pitching new ideas and rethinking age-old techniques is not only tolerated but encouraged.",
+      "#10: Go on “playdates” with friends/colleagues/employees that leave you charged up, excited, and ready to take on the world. Grown-ups have meetings that leave you drained, rarely seeming to accomplish anything. A relentless company nurtures independent thinking, where pitching new ideas and rethinking age-old techniques is not only tolerated but encouraged.",
     ],
   },
 };
@@ -53,21 +53,21 @@ ResultsText[1] = {
         "Low OP - As a low OP, you understand that healthy differences are a part of human nature. You may prize consensus building above other things, believing that a chorus of “I agree” may equate to a “good idea.” You are not as likely to advocate creatively and courageously for an idea or opinion that others may not support. Conflict does not come naturally to you. The societal conditioning from parents, teachers, and bosses may have left you thinning that conflict can be uncomfortable. You do believe in being optimistic and cheerful around others, and can be known as a “Team player.” You crave psychological safety, i.e. the safety to take risks and make mistakes, and being insulated from criticism for making mistakes among peers, friends, and colleagues. You have ideas but are perhaps afraid to bring up new ideas and challenged established ones. You often refuse to consider alternatives.",
     },
     tips: [
-      "Primal Tip for OP’s #1: For teams, break off into teams and be willing to debate and criticize. This will produce the most creative solutions! Debate and criticism do not inhibit ideas, but rather stimulate them relative to every other condition.",
+      "#1: For teams, break off into teams and be willing to debate and criticize. This will produce the most creative solutions! Debate and criticism do not inhibit ideas, but rather stimulate them relative to every other condition.",
 
-      "Primal Tip for OP’s #2: As a business owner or team manager, encourage constructive conflict. Be willing to handle conflict appropriately when it arises, encouraging cohesion and communication, and inviting, then resolving, healthy conflict. Try to reach consensus only after spirited debate.",
+      "#2: As a business owner or team manager, encourage constructive conflict. Be willing to handle conflict appropriately when it arises, encouraging cohesion and communication, and inviting, then resolving, healthy conflict. Try to reach consensus only after spirited debate.",
 
-      "Primal Tip for OP’s #3: For business owners, take note when executives are insulated from criticism. Pierce that veil by asking too many questions! Don’t be afraid to be irritating. Realize that asking questions is not a sign of weakness but healthy curiosity and interest in getting to the bottom of things. Learn to get better at asking questions. Those who never ask questions and dutifully follow orders often fare worse in the long run.",
+      "#3: For business owners, take note when executives are insulated from criticism. Pierce that veil by asking too many questions! Don’t be afraid to be irritating. Realize that asking questions is not a sign of weakness but healthy curiosity and interest in getting to the bottom of things. Learn to get better at asking questions. Those who never ask questions and dutifully follow orders often fare worse in the long run.",
 
-      "Primal Tip for OP’s #4: Ask nontrivial questions, those that demonstrate intelligence, a drive to learn, and curiosity. But be careful not to sound accusatory. Be respectful and focused on the answer while being oppositional.",
+      "#4: Ask nontrivial questions, those that demonstrate intelligence, a drive to learn, and curiosity. But be careful not to sound accusatory. Be respectful and focused on the answer while being oppositional.",
 
-      "Primal Tip for OP’s #5: Wrestle with constraints, do not try to escape them. Use them as building blocks. Physical vulnerability and psychological unease are often traits of success. Being forced to navigate a unique set of circumstances can make you likely to reach pinnacles in your field.",
+      "#5: Wrestle with constraints, do not try to escape them. Use them as building blocks. Physical vulnerability and psychological unease are often traits of success. Being forced to navigate a unique set of circumstances can make you likely to reach pinnacles in your field.",
 
-      "Primal Tip for OP’s #6: Instead of, or at least, in addition to, cursing the constraints foisted upon you, try to draw some inspiration from them. By seeing barriers as opportunities, you might be more inclined to develop imaginative ideas.",
+      "#6: Instead of, or at least, in addition to, cursing the constraints foisted upon you, try to draw some inspiration from them. By seeing barriers as opportunities, you might be more inclined to develop imaginative ideas.",
 
-      "Primal Tip for OP’s #7: For business owners or managers, deliver frequent praise! Positive reinforcement boosts productivity on the whole. True Oppositional Primitives are often the fastest to praise, just as they are the fastest to criticize. Learn to deliver praise as sincerely as you deliver rebuke. Be able to let go of ego and accept a good idea no matter its source.",
+      "#7: For business owners or managers, deliver frequent praise! Positive reinforcement boosts productivity on the whole. True Oppositional Primitives are often the fastest to praise, just as they are the fastest to criticize. Learn to deliver praise as sincerely as you deliver rebuke. Be able to let go of ego and accept a good idea no matter its source.",
 
-      "Primal Tip for OP’s #8: Set redlines and hold yourself accountable to them. Don’t be afraid to re-establish new redlines, even if it means sacrificing short-term goals.",
+      "#8: Set redlines and hold yourself accountable to them. Don’t be afraid to re-establish new redlines, even if it means sacrificing short-term goals.",
     ],
   },
 };
@@ -87,11 +87,11 @@ ResultsText[2] = {
         "Low AP - As a Low MP, you are risk averse. You tend to focus on issues within the organization or team you work with/for. At times you can tend to lose sight of broader trends in your industry and the economy as a whole, preferring to deliberately and meticulously refine a skill set that may be extinct in a matter of years. You can tend to be actively disengaged and/or bored with your work, but you are willing to get the job done. You are less willing to embrace new challenges, although hard work does not dissuade you. You tend to be less comfortable with failure, although this doesn’t mean you aren’t willing to wear new hats and take on new responsibilities. A Low AP is okay wearing different hats while staying in the same ecosystem. Staying in your lane requires the least amount of self-confidence. You are open to give up control in return for security, and a blind faith that the skills you rely on today will be relevant tomorrow.",
     },
     tips: [
-      "Primal Tip for AP’s #1: Find unorthodox uses for old skills, but learn new skills too. Never stop being a quitter. Seek out organizations that align with and adapt to your ever-changing interests. Roam to new careers, double back to old ones, and do it all over again.",
+      "#1: Find unorthodox uses for old skills, but learn new skills too. Never stop being a quitter. Seek out organizations that align with and adapt to your ever-changing interests. Roam to new careers, double back to old ones, and do it all over again.",
 
-      "Primal Tip for AP’s #2: Try applying internally at your company for a new job in an entirely different division or team. Inquire with HR about shifting from one department to another. If they are reluctant, ask about training programs.",
+      "#2: Try applying internally at your company for a new job in an entirely different division or team. Inquire with HR about shifting from one department to another. If they are reluctant, ask about training programs.",
 
-      "Primal Tip for AP’s #3: Focus on reestablishing your values every time you make a big decision. Learn new skills and grow new muscles. Learn to evaluate employers in much the same way employers evaluate you. Constantly nudge and stretch and inflate comfort zones. Don’t be afraid to wear hats and crave more.",
+      "#3: Focus on reestablishing your values every time you make a big decision. Learn new skills and grow new muscles. Learn to evaluate employers in much the same way employers evaluate you. Constantly nudge and stretch and inflate comfort zones. Don’t be afraid to wear hats and crave more.",
     ],
   },
 };
@@ -111,15 +111,15 @@ ResultsText[3] = {
         "Low MP - As a Low  MP, you have lesser belief in your own ability to transform an intractable, difficult to control, situation, whether at work or in the world. You are try to set more manageable goals and climb within organizations to lead them from the inside. You are willing to seek out institutional change along the defined path of the organization you work for. As a Low MP you prefer hard data and fact gathering before making any big decisions. You prefer defining challenges widely regarded as solvable, identifiable. You are integral to an organization where a big responsibility is predetermined; a situation where you can make contributions and work effectively.",
     },
     tips: [
-      "Primal Tip for MP’s #1: When you wake up in the morning ask yourself: What can I be more messianic about today? Recognize that raw primitive energy, if not harnessed, can be as destructive as it is empowering.",
+      "#1: When you wake up in the morning ask yourself: What can I be more messianic about today? Recognize that raw primitive energy, if not harnessed, can be as destructive as it is empowering.",
 
-      "Primal Tip for MP’s #2: Set one goal that you might find extraordinary and out of reach. Think about what keeps you up at night, what keeps you tossing and turning. Then write that down.",
+      "#2: Set one goal that you might find extraordinary and out of reach. Think about what keeps you up at night, what keeps you tossing and turning. Then write that down.",
 
-      "Primal Tip for MP’s #3: Think about what you are doing now. What is the biggest, grandest thing you can make that job into? What can your role become? What can it grow into? Write down these thoughts and keep them safe, you’ll need them later!",
+      "#3: Think about what you are doing now. What is the biggest, grandest thing you can make that job into? What can your role become? What can it grow into? Write down these thoughts and keep them safe, you’ll need them later!",
 
-      "Primal Tip for MP’s #4: Identify a major challenge and devote yourself to slaying it.",
+      "#4: Identify a major challenge and devote yourself to slaying it.",
 
-      "Primal Tip for MP’s #5: Perform the “waive a magic wand” exercise by envisioning something that replaces and reinvents your current situation. Doing this will clarify your core values and provide a strongly needed reality check for how much progress is being made. This will help put your battles in context. This is the first step toward making a solution appear tangible instead of theoretical.",
+      "#5: Perform the “waive a magic wand” exercise by envisioning something that replaces and reinvents your current situation. Doing this will clarify your core values and provide a strongly needed reality check for how much progress is being made. This will help put your battles in context. This is the first step toward making a solution appear tangible instead of theoretical.",
     ],
   },
 };
@@ -139,13 +139,13 @@ ResultsText[4] = {
         "Low IP - As a Low IP, you tend to be overconfident, preferring to follow society’s norms of what success is supposed to look like on paper or in culture. With higher self confidence, you may be less likely to pay attention to negative feedback. You may be less aware of your weaknesses. Overconfidence can also lead to less work being accomplished and less preparation for the tasks at hand. You may be a bit arrogant. You prefer to work at a slower, more methodical pace, being sure to stay within your comfort zone. Impostor syndrome greatly affects your ability to grow within your chosen career. You are less eager to acknowledge insecurities, and you prefer projecting a mask of confidence in most (if not everything) you do. Anxiety and paranoia are not germane to your daily life.",
     },
     tips: [
-      "Primal Tip for IP’s #1: Be willing to check your arrogance at the door. Be willing to apologize and open a dialogue about your flaws or insecurities.",
+      "#1: Be willing to check your arrogance at the door. Be willing to apologize and open a dialogue about your flaws or insecurities.",
 
-      "Primal Tip for IP’s #2: Ask for feedback constantly. Own your insecurities/flaws and transform them into strengths. Use them to connect with others.",
+      "#2: Ask for feedback constantly. Own your insecurities/flaws and transform them into strengths. Use them to connect with others.",
 
-      "Primal Tip for IP’s #3: Realize that a small dose of “impostor syndrome” can sometimes be a positive force. Experiencing self-doubt indicates you are challenging yourself. You are venturing outside your comfort zone. You are growing and experiencing new and exciting things. Be comfortable reaching out to others for support when things get too overwhelming.",
+      "#3: Realize that a small dose of “impostor syndrome” can sometimes be a positive force. Experiencing self-doubt indicates you are challenging yourself. You are venturing outside your comfort zone. You are growing and experiencing new and exciting things. Be comfortable reaching out to others for support when things get too overwhelming.",
 
-      "Primal Tip for IP’s #4: Know what you don’t know! Take a page out of the insecure primitives playbook and avoid overconfidence, accept when you are an imposter, and be prudently paranoid. By practicing these precepts and operating on the bleeding edge of uncertainty, you will be more successful.",
+      "#4: Know what you don’t know! Take a page out of the insecure primitives playbook and avoid overconfidence, accept when you are an imposter, and be prudently paranoid. By practicing these precepts and operating on the bleeding edge of uncertainty, you will be more successful.",
     ],
   },
 };
@@ -165,7 +165,7 @@ ResultsText[5] = {
         "Low NP - As a Low NP, you are a rational animal. You may tend to overthink your decisions and you focus largely on process and camaraderie. You are a by-the-book type of person who does not gravitate towards risks and impulsive decisions. You tend to get caught up in analysis paralysis, and you shy away from making gut decisions. Your behavior veers toward more standard practice, preferring to choose safety and caution in decision making. You tend to remove “naive goals” in favor of practical ones.",
     },
     tips: [
-      "Primal Tip for NP’s #1: Take a moment and think: what would be your childish response to a recent compilation? Jot that down immediately. If there weren’t any rules, how would you go about solving it? Now consider: what exactly is holding you back?",
+      "Tip: Take a moment and think: what would be your childish response to a recent compilation? Jot that down immediately. If there weren’t any rules, how would you go about solving it? Now consider: what exactly is holding you back?",
     ],
   },
 };
@@ -185,7 +185,7 @@ ResultsText[6] = {
         "Low GP - Low GP - As a Low GP,  you tend to perform cost-benefit analyses and stop in your tracks when impractical. You don’t gravitate towards helping others, even during times of immense personal struggle.",
     },
     tips: [
-      "Primal Tip for GP’s #1: Try making a gallant move each day. Train yourself to be a better coworker, a better friend, and a better person. This may be calling a family member, helping someone in need, or doing a random act of kindness. But try to do one per day.",
+      "Tip: Try making a gallant move each day. Train yourself to be a better coworker, a better friend, and a better person. This may be calling a family member, helping someone in need, or doing a random act of kindness. But try to do one per day.",
     ],
   },
 };

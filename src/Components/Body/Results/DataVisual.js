@@ -1,5 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
+
 import Fade from "react-reveal/Fade";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
@@ -260,6 +262,12 @@ function DataVisual(surveyInfo) {
   return (
     <Fade>
       <RadarChart captions={captions} data={data} size={350} />
+      <Div>
+        <GraphKey>
+          <P>Blue Overlay : You</P>
+          <P>Red Overlay : Overall Survey Users</P>
+        </GraphKey>
+      </Div>
       <h4>
         You are <strong>{PrimalPercent}% Primal</strong> overall.
       </h4>
@@ -267,5 +275,24 @@ function DataVisual(surveyInfo) {
     </Fade>
   );
 }
+const P = styled.p`
+  text-align: justify;
+  border: 1px solid black;
+`;
+const Div = styled.div`
+  text-align: justify;
+  border: 1px solid black;
+`;
 
+const GraphKey = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: justify;
+  max-width: 80%;
+  height: auto;
+  border: 1px solid black;
+`;
 export default DataVisual;

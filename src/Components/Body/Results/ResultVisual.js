@@ -81,9 +81,19 @@ const ResultVisual = (resultInfo) => {
   //
   //
   //////////////////////////////////////////////////////  show results if value not 0 (initial state), if quiz not filled out, push to home
+  let range = "";
+  let tips = TextBlock[0].tips;
+  console.log(tips);
+
+  let TipList = tips.map((tip) => {
+    return { tip };
+  });
+
+  console.log(TipList);
+
   if (TopResult.value !== 0) {
     ///////////////////////////sets range for result range
-    let range = "";
+
     Value >= 3 && Value <= 6
       ? (range = TextBlock[0].rangeInfo.low)
       : Value >= 7 && Value <= 11
@@ -105,7 +115,20 @@ const ResultVisual = (resultInfo) => {
         <Section>
           <P>{TextBlock[0].catIntro}</P>
           <P>{range}</P>
-          <P>{TextBlock[0].tips}</P>
+          <h5>Tips for the {TextBlock[0].catTitle}</h5>
+          <Section>
+            {
+              <ul>
+                {tips.map((tip) => {
+                  return (
+                    <li>
+                      <p>{tip}</p>
+                    </li>
+                  );
+                })}
+              </ul>
+            }
+          </Section>
         </Section>
         <EmailMeForm />
         {/* Add props into form when rdy */}
