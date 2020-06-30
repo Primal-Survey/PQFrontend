@@ -231,7 +231,7 @@ function DataVisual(surveyInfo) {
         Gallant: g,
       },
       meta: { color: "blue" },
-    }
+    },
   ];
 
   const PrimalPercent = parseFloat(
@@ -264,8 +264,12 @@ function DataVisual(surveyInfo) {
       <RadarChart captions={captions} data={data} size={350} />
       <Div>
         <GraphKey>
-          <P>Blue Overlay : You</P>
-          <P>Red Overlay : Overall Survey Users</P>
+          <Text>
+            <i className="material-icons tiny ">vpn_key</i>
+
+            <P>Blue Overlay : Your Result</P>
+            <P>Red Overlay : Overall Survey Group</P>
+          </Text>
         </GraphKey>
       </Div>
       <h4>
@@ -277,11 +281,15 @@ function DataVisual(surveyInfo) {
 }
 const P = styled.p`
   text-align: justify;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin: 1px;
 `;
 const Div = styled.div`
   text-align: justify;
-  border: 1px solid black;
+  margin-bottom: 2em;
+  /* border: 1px solid black; */
 `;
 
 const GraphKey = styled.section`
@@ -291,8 +299,20 @@ const GraphKey = styled.section`
   align-items: center;
   margin: auto;
   text-align: justify;
-  max-width: 80%;
+  max-width: 40vw;
   height: auto;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+`;
+const Text = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+  text-align: justify;
+  max-width: 40vw;
+  height: auto;
+  border: 2px solid black;
+  padding: 0.5px;
 `;
 export default DataVisual;

@@ -18,14 +18,16 @@ function Footer() {
             <LeftBox className="col l6 s12">
               <Section>
                 <div>
-                  <h5 className="teal-text">
-                    Captures insights and advice that everyone can use to thrive
-                    in the constantly evolving workplace.
-                  </h5>
-                  <H6>
+                  <div>
+                    <H5 className="teal-text">
+                      Captures insights and advice that everyone can use to
+                      thrive in the constantly evolving workplace.
+                    </H5>
+                  </div>
+                  <H5>
                     — DANIEL H. PINK, NEW YORK TIMES BESTSELLING AUTHOR OF WHEN,
                     DRIVE, AND TO SELL IS HUMAN.
-                  </H6>
+                  </H5>
                 </div>
                 <ImgBox>
                   <div>
@@ -37,10 +39,11 @@ function Footer() {
 
             {/* -----------------  right links ---------------------------*/}
             <RightBox className="col l6  s12">
-              <h5 className="teal-text">
-                PURCHASE THE BOOK AT YOUR FAVORITE RETAILER
-              </h5>
-
+              <div>
+                <H5 className="teal-text">
+                  PURCHASE THE BOOK AT YOUR FAVORITE RETAILER
+                </H5>
+              </div>
               <ImgBox className="col s12 m12 l12 ">
                 <a
                   target="_blank"
@@ -136,13 +139,13 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: space-between;
   min-width: 40vw;
-  min-height: 50vh;
+  min-height: 80vh;
 `;
 const RightBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 50vh;
+  height: 80vh;
   width: 45%;
   /* border: 1px solid yellow; */
 `;
@@ -151,8 +154,9 @@ const LeftBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 50vh;
-  width: 50%;
+  align-items: center;
+  height: 80vh;
+  width: 45%;
 
   /* border: 1px solid red; */
 `;
@@ -162,8 +166,8 @@ const ImgBox = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: auto;
-  /* border: 1px solid orange; */
+  min-height: 50vh;
+  /* border: 1px solid pink; */
 `;
 
 const Img = styled.img`
@@ -173,13 +177,13 @@ const Img = styled.img`
 `;
 
 const Img2 = styled.img`
-  max-width: 17vw;
+  max-width: 20vw;
   height: auto;
   border-radius: 100%;
-  /* border: 1px solid red; */
+  /* border: 1px solid black; */
 `;
 
-const H6 = styled.h6`
+const H5 = styled.h5`
   padding-left: 10px;
   /* border: 1px solid black; */
 `;
