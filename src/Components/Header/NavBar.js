@@ -5,10 +5,15 @@ import { AutoInit } from "materialize-css";
 const NavBar = () => {
   return (
     <div>
-      <nav>
+      <nav  className="nav-wrapper N/A transparent"
+      style={{
+           border: "none",
+           boxShadow: "none"
+          }}>
         <div
-          className="nav-wrapper black"
+          className="nav-wrapper N/A transparent"
           style={{
+            backgroundColor: "#00FFFFFF",
             width: "100%",
             height: "100%",
             display: "flex",
@@ -30,7 +35,7 @@ const NavBar = () => {
           </a>
           {/* main NavBar */}
           <ul className=" right hide-on-med-and-down">
-            <li>
+         <ListItem>
               <MainLink
                 target="_blank"
                 rel="noopener noreferrer"
@@ -39,8 +44,8 @@ const NavBar = () => {
               >
                 <i>BOOK</i>
               </MainLink>
-            </li>
-            <li>
+            </ListItem>
+         <ListItem>
               <MainLink
                 target="_blank"
                 rel="noopener noreferrer"
@@ -49,8 +54,8 @@ const NavBar = () => {
               >
                 <i>PURCHASE</i>
               </MainLink>
-            </li>
-            <li>
+            </ListItem>
+         <ListItem>
               <MainLink
                 target="_blank"
                 rel="noopener noreferrer"
@@ -59,9 +64,9 @@ const NavBar = () => {
               >
                 <i>ABOUT</i>
               </MainLink>
-            </li>
+            </ListItem>
 
-            <li>
+         <ListItem>
               <MainLink
                 target="_blank"
                 rel="noopener noreferrer"
@@ -70,9 +75,9 @@ const NavBar = () => {
               >
                 <i>AUTHOR</i>
               </MainLink>
-            </li>
+            </ListItem>
 
-            <li>
+         <ListItem>
               <MainLink
                 target="_blank"
                 rel="noopener noreferrer"
@@ -81,7 +86,7 @@ const NavBar = () => {
               >
                 <i>CONTACT</i>
               </MainLink>
-            </li>
+            </ListItem>
           </ul>
         </div>
       </nav>
@@ -162,7 +167,14 @@ const Li = styled.div`
   justify-content: space-between;
   width: 80%;
   height: 70%;
+  
 `;
+
+const ListItem = styled.li`
+  padding: 0 47px;
+  min-width: 15em;
+`;
+
 
 const MainLink = styled.a`
   color: white;
