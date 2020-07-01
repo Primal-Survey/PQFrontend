@@ -120,7 +120,10 @@ const EmailMeForm = (props) => {
               </Button>
             </Link>
             <Link to="/results/">
-              <Button className="waves-effect waves-light btn">
+				<Button className="waves-effect waves-light btn" onClick={(e) => {
+					console.log(54, TextBlock);
+					doSubmit(e, emailAddy, TextBlock);
+				}}>
                 <i className="material-icons right">send</i>
                 Email me my results.
               </Button>
