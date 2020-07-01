@@ -258,7 +258,7 @@ function DataVisual(surveyInfo) {
     Nuts: "Nuts",
     Gallant: "Gallant",
   };
-  console.log(DataInfo.gallantResult);
+
   return (
     <Fade>
       <h4 className="teal-text">
