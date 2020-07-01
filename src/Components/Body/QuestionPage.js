@@ -65,7 +65,7 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
               </Button>
             </Link>
           ) : (
-            <SubmitButton {...rest}/>
+            <SubmitButton {...rest} />
           )}
         </ButtonContainer>
       </div>
@@ -111,6 +111,7 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-bottom: 10px;
   /* border: 1px solid red; */
 `;
 const Button = styled.button`
@@ -125,7 +126,7 @@ const AgreeBox = styled.div`
   align-items: center;
   max-width: 100%;
   /* border: 1px solid red; */
-  margin: 1em;
+  margin: 0.75em;
 `;
 
 const AgreeBar = styled.div`
@@ -142,6 +143,5 @@ const P = styled.p`
   font-weight: 650;
   font-size: 1.5em;
 `;
-//make agree disagree component
 
 export default QuestionPage1;

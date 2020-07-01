@@ -258,7 +258,7 @@ function DataVisual(surveyInfo) {
     Nuts: "Nuts",
     Gallant: "Gallant",
   };
-
+  console.log(DataInfo.gallantResult);
   return (
     <Fade>
       <h4 className="teal-text">
@@ -272,7 +272,30 @@ function DataVisual(surveyInfo) {
 
             <P>Blue Overlay : Your Result</P>
             <P>Red Overlay : Overall Survey Group</P>
-            <P>Yay!</P>
+            <P>
+              You are {parseInt((resultInfo.relentlessResult / 15) * 100)}%
+              Relentless
+            </P>
+            <P>
+              You are {parseInt((resultInfo.oppositionalResult / 15) * 100)}%
+              Oppositional
+            </P>
+            <P>
+              You are {parseInt((resultInfo.agnosticResult / 15) * 100)}%
+              Agnostic
+            </P>
+            <P>
+              You are {parseInt((resultInfo.messianicResult / 15) * 100)}%
+              Messianic
+            </P>
+            <P>
+              You are {parseInt((resultInfo.insecureResult / 15) * 100)}%
+              Insecure
+            </P>
+            <P>You are {parseInt((resultInfo.nutsResult / 15) * 100)}% Nuts</P>
+            <P>
+              You are {parseInt((resultInfo.gallantResult / 15) * 100)}% Gallant
+            </P>
           </Text>
         </GraphKey>
       </Div>

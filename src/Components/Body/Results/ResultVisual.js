@@ -131,19 +131,21 @@ const ResultVisual = (resultInfo) => {
         You tend to lean towards the {TextBlock[0].catTitle} side of life.{" "}
       </h5>
       <Section>
-        <P>{TextBlock[0].catIntro}</P>
-        <P>{range}</P>
         <Section>
-          <h5>Tips</h5>
-          <ul>
-            {tips.map((tip) => {
-              return (
-                <li>
-                  <p>{tip}</p>
-                </li>
-              );
-            })}
-          </ul>
+          <P>{TextBlock[0].catIntro}</P>
+          <P>{range}</P>
+          <Section>
+            <h5>Tips</h5>
+            <ul>
+              {tips.map((tip) => {
+                return (
+                  <li>
+                    <p>{tip}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </Section>
         </Section>
       </Section>
       <EmailMeForm TextBlock={TextBlock} range={range} />
