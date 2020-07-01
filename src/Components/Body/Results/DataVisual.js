@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
+import "./chart.css"
 import ResultVisual from "./ResultVisual";
 import axios from "axios";
 
@@ -250,13 +251,13 @@ function DataVisual(surveyInfo) {
 
   const captions = {
     // columns
-    Relentless: "Relentless",
-    Oppositional: "Oppositional",
-    Agnostic: "Agnostic",
-    Messianic: "Messianic",
-    Insecure: "Insecure",
-    Nuts: "Nuts",
-    Gallant: "Gallant",
+    Relentless: "RP",
+    Oppositional: "OP",
+    Agnostic: "AP",
+    Messianic: "MP",
+    Insecure: "IP",
+    Nuts: "NP",
+    Gallant: "GP",
   };
 
   return (
