@@ -4,129 +4,136 @@ import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
 import axios from "axios";
+const BACKEND = process.env.REACT_APP_BACKEND;
 
 const EmailMeForm = (props) => {
-  const { TextBlock, range } = props;
-  TextBlock.rangeInfo = range;
-  console.log(10, TextBlock, range);
-  const [emailAddy, setEmail] = useState({
-    email: "",
-  });
-  const [emailerr, setEmailerr] = useState("");
+	const { TextBlock, range } = props;
+	TextBlock.rangeInfo = range;
+	console.log(10, TextBlock, range);
+	const [emailAddy, setEmail] = useState({
+		email: "",
+	});
+	const [emailerr, setEmailerr] = useState("");
 
-  const BACKEND = "http://localhost:5032";
 
-  // console.log(10, emailAddy);
-  const doChange = (e) => {
-    setEmail({ [e.target.name]: e.target.value });
-  };
+	// console.log(10, emailAddy);
+	const doChange = (e) => {
+		setEmail({ [e.target.name]: e.target.value });
+	};
 
-  const doSubmit = (e, emailAddy, TextBlock) => {
-    console.log(24, TextBlock);
-    e.preventDefault();
-    if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
-      axios
-        .post(`${BACKEND}/api/results/mailer/`, TextBlock)
-        .then((sent) => {
-          console.log(sent);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      setEmailerr("Nope.");
-      setEmail({ email: "" });
-    }
-  };
+	const doSubmit = (e, emailAddy, TextBlock) => {
+		console.log(24, TextBlock);
+		e.preventDefault();
+		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
+			TextBlock[0].targetEmail = emailAddy.email;
+			axios
+				.post(`${BACKEND}/api/results/mailer/`, TextBlock)
+				.then((sent) => {
+					if (sent.data[0].statusCode = 202){
+						setEmailerr(`Email sent to ${emailAddy.email}!`)
+					}
+					setEmail({ email: "" });
+				})
+				.catch((err) => {
+					setEmailerr(`There was an error sending the email. \n${err}`)
+				});
+		} else {
+			setEmailerr("Nope.");
+			setEmail({ email: "" });
+		}
+	};
 
-  return (
-    <Fade>
-      <div
-        style={{
-          minWidth: "99vw",
-          height: "auto",
-          //   border: "1px solid black",
-        }}
-      >
-        <div class="row">
-          <form
-            onSubmit={(e) => {
-              console.log(54, TextBlock);
-              doSubmit(e, emailAddy, TextBlock);
-            }}
-            class="col s12"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div
-              className="row"
-              style={{
-                width: "50%",
-              }}
-            >
-              <EmailErr>{emailerr}</EmailErr>
-              <div
-                className="input-field col s6 "
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <i
-                  className="material-icons prefix teal-text"
-                  style={{ fontSize: "3em", textColor: "teal" }}
-                >
-                  email
-                </i>
-                <input
-                  name="email"
-                  id="icon_prefix"
-                  type="text"
-                  class="validate"
-                  onChange={doChange}
-                  value={emailAddy.email}
-                />
-                <label for="icon_prefix">Email Address</label>
-              </div>
-            </div>
-          </form>{" "}
-          <div
-            style={{
-              minWidth: "99vw",
-              height: "auto",
-              //   border: "1px solid red",
-            }}
-          >
-            <Link
-              to="/"
-              style={{
-                margin: "1em",
-              }}
-            >
-              <Button className="waves-effect waves-light btn">
-                <i className="material-icons left">autorenew</i>
-                Back to start
-              </Button>
-            </Link>
-            <Link to="/results/">
-              <Button className="waves-effect waves-light btn">
-                <i className="material-icons right">send</i>
-                Email me my results.
-              </Button>
-            </Link>
-            <p>**Personal information is not collected**</p>
-          </div>
-        </div>
-      </div>
-    </Fade>
-  );
+	return (
+		<Fade>
+			<div
+				style={{
+					minWidth: "99vw",
+					height: "auto",
+					//   border: "1px solid black",
+				}}
+			>
+				<div class="row">
+					<form
+						onSubmit={(e) => {
+							console.log(54, TextBlock);
+							doSubmit(e, emailAddy, TextBlock);
+						}}
+						class="col s12"
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+						}}
+					>
+						<div
+							className="row"
+							style={{
+								width: "50%",
+							}}
+						>
+							<EmailErr>{emailerr}</EmailErr>
+							<div
+								className="input-field col s6 "
+								style={{
+									width: "100%",
+									display: "flex",
+									flexDirection: "row",
+									justifyContent: "space-between",
+									alignItems: "center",
+								}}
+							>
+								<i
+									className="material-icons prefix teal-text"
+									style={{ fontSize: "3em", textColor: "teal" }}
+								>
+									email
+                				</i>
+								<input
+									name="email"
+									id="icon_prefix"
+									type="text"
+									class="validate"
+									onChange={doChange}
+									value={emailAddy.email}
+								/>
+								<label for="icon_prefix">Email Address</label>
+							</div>
+						</div>
+					</form>{" "}
+					<div
+						style={{
+							minWidth: "99vw",
+							height: "auto",
+							//   border: "1px solid red",
+						}}
+					>
+						<Link
+							to="/"
+							style={{
+								margin: "1em",
+							}}
+						>
+							<Button className="waves-effect waves-light btn">
+								<i className="material-icons left">autorenew</i>
+                				Back to start
+              				</Button>
+						</Link>
+						<Link to="/results/">
+							<Button className="waves-effect waves-light btn" onClick={(e) => {
+								console.log(54, TextBlock);
+								doSubmit(e, emailAddy, TextBlock);
+							}}>
+								<i className="material-icons right">send</i>
+                				Email me my results.
+              				</Button>
+						</Link>
+						<p>**Personal information is not collected**</p>
+					</div>
+				</div>
+			</div>
+		</Fade>
+	);
 };
 
 const Button = styled.footer`
@@ -135,7 +142,9 @@ const Button = styled.footer`
 `;
 
 const EmailErr = styled.div`
-  min-height: 2rem;
+  min-height: 2.5rem;
+  margin: 1rem;
+  font-weight: bolder;
 `;
 
 export default EmailMeForm;
