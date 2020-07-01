@@ -19,12 +19,12 @@ function Footer() {
               <Section>
                 <div>
                   <div>
-                    <H5 className="teal-text">
+                    <H5>
                       Captures insights and advice that everyone can use to
                       thrive in the constantly evolving workplace.
                     </H5>
                   </div>
-                  <H5>
+                  <H5 className="teal-text">
                     — DANIEL H. PINK, NEW YORK TIMES BESTSELLING AUTHOR OF WHEN,
                     DRIVE, AND TO SELL IS HUMAN.
                   </H5>
@@ -40,9 +40,7 @@ function Footer() {
             {/* -----------------  right links ---------------------------*/}
             <RightBox className="col l6  s12">
               <div>
-                <H5 className="teal-text">
-                  PURCHASE THE BOOK AT YOUR FAVORITE RETAILER
-                </H5>
+                <H5>PURCHASE THE BOOK AT YOUR FAVORITE RETAILER</H5>
               </div>
               <ImgBox className="col s12 m12 l12 ">
                 <a

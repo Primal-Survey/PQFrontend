@@ -162,19 +162,18 @@ function DataVisual(surveyInfo) {
         parseInt(DataInfo.gallant1) +
         parseInt(DataInfo.gallant2) +
         parseInt(DataInfo.gallant3))
-	);
-	
-	  // if you're in DEV mode, it will RANDOM GEN the results..
-	  if (process.env.NODE_ENV === "development") {
-		  DataInfo.relentlessResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.oppositionalResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.agnosticResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.messianicResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.insecureResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.nutsResult = Math.floor(Math.random() * 15) + 1
-		  DataInfo.gallantResult = Math.floor(Math.random() * 15) + 1
-	  }
+    );
 
+    // if you're in DEV mode, it will RANDOM GEN the results..
+    if (process.env.NODE_ENV === "development") {
+      DataInfo.relentlessResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.oppositionalResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.agnosticResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.messianicResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.insecureResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.nutsResult = Math.floor(Math.random() * 15) + 1;
+      DataInfo.gallantResult = Math.floor(Math.random() * 15) + 1;
+    }
 
     setDataInfo(
       (DataInfo.IN_ShortScale =
@@ -262,6 +261,9 @@ function DataVisual(surveyInfo) {
 
   return (
     <Fade>
+      <h4 className="teal-text">
+        You are <strong>{PrimalPercent}% Primal</strong> overall.
+      </h4>
       <RadarChart captions={captions} data={data} size={350} />
       <Div>
         <GraphKey>
@@ -270,12 +272,34 @@ function DataVisual(surveyInfo) {
 
             <P>Blue Overlay : Your Result</P>
             <P>Red Overlay : Overall Survey Group</P>
+            <P>
+              You are {parseInt((resultInfo.relentlessResult / 15) * 100)}%
+              Relentless
+            </P>
+            <P>
+              You are {parseInt((resultInfo.oppositionalResult / 15) * 100)}%
+              Oppositional
+            </P>
+            <P>
+              You are {parseInt((resultInfo.agnosticResult / 15) * 100)}%
+              Agnostic
+            </P>
+            <P>
+              You are {parseInt((resultInfo.messianicResult / 15) * 100)}%
+              Messianic
+            </P>
+            <P>
+              You are {parseInt((resultInfo.insecureResult / 15) * 100)}%
+              Insecure
+            </P>
+            <P>You are {parseInt((resultInfo.nutsResult / 15) * 100)}% Nuts</P>
+            <P>
+              You are {parseInt((resultInfo.gallantResult / 15) * 100)}% Gallant
+            </P>
           </Text>
         </GraphKey>
       </Div>
-      <h4>
-        You are <strong>{PrimalPercent}% Primal</strong> overall.
-      </h4>
+
       <ResultVisual resultInfo={resultInfo} />
     </Fade>
   );
