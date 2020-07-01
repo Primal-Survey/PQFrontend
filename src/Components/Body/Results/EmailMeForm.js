@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
 import axios from "axios";
+const BACKEND = process.env.REACT_APP_BACKEND;
 
 const EmailMeForm = (props) => {
   const { TextBlock, range } = props;
@@ -16,27 +17,30 @@ const EmailMeForm = (props) => {
 
   const BACKEND = process.env.BACKEND;
 
-  // console.log(10, emailAddy);
-  const doChange = (e) => {
-    setEmail({ [e.target.name]: e.target.value });
-  };
+	// console.log(10, emailAddy);
+	const doChange = (e) => {
+		setEmail({ [e.target.name]: e.target.value });
+	};
 
   const doSubmit = (e, emailAddy, TextBlock) => {
-    console.log(24, TextBlock);
     e.preventDefault();
-    if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
-      axios
-        .post(`${BACKEND}/api/results/mailer/`, TextBlock)
-        .then((sent) => {
-          console.log(sent);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      setEmailerr("***Please enter a valid email address***");
-      setEmail({ email: "" });
-    }
+	  if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
+		  TextBlock[0].targetEmail = emailAddy.email;
+		  axios
+			  .post(`${BACKEND}/api/results/mailer/`, TextBlock)
+			  .then((sent) => {
+				  if (sent.data[0].statusCode = 202) {
+					  setEmailerr(`Email sent to ${emailAddy.email}!`)
+				  }
+				  setEmail({ email: "" });
+			  })
+			  .catch((err) => {
+				  setEmailerr(`There was an error sending the email. \n${err}`)
+			  });
+	  } else {
+		  setEmailerr("Nope.");
+		  setEmail({ email: "" });
+	  }
   };
 
   return (
@@ -135,7 +139,9 @@ const Button = styled.footer`
 `;
 
 const EmailErr = styled.div`
-  min-height: 2rem;
+  min-height: 2.5rem;
+  margin: 1rem;
+  font-weight: bolder;
 `;
 
 export default EmailMeForm;
