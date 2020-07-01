@@ -15,32 +15,32 @@ const EmailMeForm = (props) => {
   });
   const [emailerr, setEmailerr] = useState("");
 
-  const BACKEND = process.env.BACKEND;
+  //   const BACKEND = process.env.BACKEND;
 
-	// console.log(10, emailAddy);
-	const doChange = (e) => {
-		setEmail({ [e.target.name]: e.target.value });
-	};
+  // console.log(10, emailAddy);
+  const doChange = (e) => {
+    setEmail({ [e.target.name]: e.target.value });
+  };
 
   const doSubmit = (e, emailAddy, TextBlock) => {
     e.preventDefault();
-	  if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
-		  TextBlock[0].targetEmail = emailAddy.email;
-		  axios
-			  .post(`${BACKEND}/api/results/mailer/`, TextBlock)
-			  .then((sent) => {
-				  if (sent.data[0].statusCode = 202) {
-					  setEmailerr(`Email sent to ${emailAddy.email}!`)
-				  }
-				  setEmail({ email: "" });
-			  })
-			  .catch((err) => {
-				  setEmailerr(`There was an error sending the email. \n${err}`)
-			  });
-	  } else {
-		  setEmailerr("Nope.");
-		  setEmail({ email: "" });
-	  }
+    if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
+      TextBlock[0].targetEmail = emailAddy.email;
+      axios
+        .post(`${BACKEND}/api/results/mailer/`, TextBlock)
+        .then((sent) => {
+          if ((sent.data[0].statusCode = 202)) {
+            setEmailerr(`Email sent to ${emailAddy.email}!`);
+          }
+          setEmail({ email: "" });
+        })
+        .catch((err) => {
+          setEmailerr(`There was an error sending the email. \n${err}`);
+        });
+    } else {
+      setEmailerr("Please enter a valid email address.");
+      setEmail({ email: "" });
+    }
   };
 
   return (
@@ -120,10 +120,13 @@ const EmailMeForm = (props) => {
               </Button>
             </Link>
             <Link to="/results/">
-				<Button className="waves-effect waves-light btn" onClick={(e) => {
-					console.log(54, TextBlock);
-					doSubmit(e, emailAddy, TextBlock);
-				}}>
+              <Button
+                className="waves-effect waves-light btn"
+                onClick={(e) => {
+                  console.log(54, TextBlock);
+                  doSubmit(e, emailAddy, TextBlock);
+                }}
+              >
                 <i className="material-icons right">send</i>
                 Email me my results.
               </Button>
