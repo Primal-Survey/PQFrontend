@@ -10,6 +10,20 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
             <label>
               <input
                 onChange={handleChange}
+                value={0}
+                className="with-gap"
+                name={questionKey}
+                checked={surveyInfo[questionKey] === "0"}
+                type="radio"
+              />
+              <Strong>0</Strong>
+            </label>
+          </RadioButton>
+          <br />
+          <RadioButton>
+            <label>
+              <input
+                onChange={handleChange}
                 value={1}
                 className="with-gap"
                 name={questionKey}

@@ -123,7 +123,7 @@ const EmailMeForm = (props) => {
               <Button
                 className="waves-effect waves-light btn"
                 onClick={(e) => {
-                  console.log(54, TextBlock);
+                  //   console.log(54, TextBlock);
                   doSubmit(e, emailAddy, TextBlock);
                 }}
               >

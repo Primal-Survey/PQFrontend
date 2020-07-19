@@ -18,7 +18,7 @@ const SubmitButton = (surveyInfo) => {
   return (
     <Link to="/results/">
       <Button onClick={HandleSubmit} className="waves-effect waves-light btn">
-        <i class="material-icons right ">send</i>See my results!
+        <i className="material-icons right ">send</i>See my results!
       </Button>
     </Link>
   );
