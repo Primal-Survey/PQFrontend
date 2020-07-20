@@ -10,8 +10,8 @@ const WelcomeHeader = () => {
       </Section>
       <Section className="row">
         <h5>
-          Everyone has a "<i>Civilized</i>" side, but have you ever wondered
-          about your "<i>Primitive</i>" side?
+          Everyone has a "<i>Civilized </i> " side, but have you ever wondered
+          about your "<i>Primitive </i> " side?
         </h5>
       </Section>
     </Fade>
