@@ -6,18 +6,25 @@ import Fade from "react-reveal/Fade";
 import axios from "axios";
 const BACKEND = process.env.REACT_APP_BACKEND;
 
-const EmailMeForm = (props) => {
-	const { TextBlock, range } = props;
-	TextBlock.rangeInfo = range;
-	//   console.log(10, TextBlock, range);
+// 
+// script for
+// INVITIATION EMAIL FIELD 
+// 
+
+const InviteForm = () => {
+	// 
+	// Labels set here so you don't have to dig around
+	// 
+	const emailLabel = "EMAIL LABEL GOES HERE"
+	const inviteButtonLabel = "BUTTON LABEL HERE"
+
+
+	// end Lables
 	const [emailAddy, setEmail] = useState({
 		email: "",
 	});
 	const [emailerr, setEmailerr] = useState("");
 
-	//   const BACKEND = process.env.BACKEND;
-
-	// console.log(10, emailAddy);
 	const doChange = (e) => {
 		setEmail({ [e.target.name]: e.target.value });
 	};
@@ -25,12 +32,11 @@ const EmailMeForm = (props) => {
 	const doSubmit = (e, emailAddy, TextBlock) => {
 		e.preventDefault();
 		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
-			TextBlock[0].targetEmail = emailAddy.email;
 			axios
-				.post(`${BACKEND}/api/results/mailer/`, TextBlock)
+				.post(`${BACKEND}/api/results/mailer/`, emailAddy.email)
 				.then((sent) => {
 					if ((sent.data[0].statusCode = 202)) {
-						setEmailerr(`Email sent to ${emailAddy.email}!`);
+						setEmailerr(`Invitation sent to ${emailAddy.email}!`);
 					}
 					setEmail({ email: "" });
 				})
@@ -49,14 +55,12 @@ const EmailMeForm = (props) => {
 				style={{
 					minWidth: "99vw",
 					height: "auto",
-					//   border: "1px solid black",
 				}}
 			>
 				<div className="row">
 					<form
 						onSubmit={(e) => {
-							//   console.log(54, TextBlock);
-							doSubmit(e, emailAddy, TextBlock);
+							doSubmit(e, emailAddy);
 						}}
 						className="col s12"
 						style={{
@@ -97,7 +101,7 @@ const EmailMeForm = (props) => {
 									onChange={doChange}
 									value={emailAddy.email}
 								/>
-								<label htmlFor="icon_prefix">Email Address</label>
+								<label htmlFor="icon_prefix">{emailLabel}</label>
 							</div>
 						</div>
 					</form>{" "}
@@ -108,27 +112,16 @@ const EmailMeForm = (props) => {
 							//   border: "1px solid red",
 						}}
 					>
-						<Link
-							to="/"
-							style={{
-								margin: "1em",
-							}}
-						>
-							<Button className="waves-effect waves-light btn">
-								<i className="material-icons left">autorenew</i>
-                				Back to start
-							</Button>
-						</Link>
 						<Link to="/results/">
 							<Button
 								className="waves-effect waves-light btn"
 								onClick={(e) => {
 									//   console.log(54, TextBlock);
-									doSubmit(e, emailAddy, TextBlock);
+									doSubmit(e, emailAddy);
 								}}
 							>
 								<i className="material-icons right">send</i>
-                				Email me my results.
+                				{inviteButtonLabel}
 							</Button>
 						</Link>
 						<p>**Personal information is not collected**</p>
@@ -150,4 +143,4 @@ const EmailErr = styled.div`
   font-weight: bolder;
 `;
 
-export default EmailMeForm;
+export default InviteForm;

@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import ResultsText from "./ResultsText";
 import EmailMeForm from "./EmailMeForm.js";
+import InviteForm from "./InviteForm.js";
 
 const ResultVisual = (resultInfo) => {
   // const [range, setRange] = useState("")
@@ -147,6 +148,7 @@ const ResultVisual = (resultInfo) => {
         </Section>
       </Section>
       <EmailMeForm TextBlock={TextBlock} range={range} />
+      <InviteForm />
     </Fade>
   );
 };
