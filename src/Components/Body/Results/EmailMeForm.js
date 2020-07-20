@@ -6,6 +6,11 @@ import Fade from "react-reveal/Fade";
 import axios from "axios";
 const BACKEND = process.env.REACT_APP_BACKEND;
 
+// script for
+// 
+// EMAIL ME THE RESULTS 
+// 
+
 const EmailMeForm = (props) => {
 	const { TextBlock, range } = props;
 	TextBlock.rangeInfo = range;
@@ -40,6 +45,12 @@ const EmailMeForm = (props) => {
 		} else {
 			setEmailerr("Please enter a valid email address.");
 			setEmail({ email: "" });
+		}
+	};
+	const style = {
+		color: '#000000',
+		':focus': {
+			color: '#0f0'
 		}
 	};
 
@@ -96,6 +107,7 @@ const EmailMeForm = (props) => {
 									className="validate"
 									onChange={doChange}
 									value={emailAddy.email}
+									style={style}
 								/>
 								<label htmlFor="icon_prefix">Email Address</label>
 							</div>
@@ -120,7 +132,7 @@ const EmailMeForm = (props) => {
 							</Button>
 						</Link>
 						<Link to="/results/">
-							<Button
+							<Button 
 								className="waves-effect waves-light btn"
 								onClick={(e) => {
 									//   console.log(54, TextBlock);

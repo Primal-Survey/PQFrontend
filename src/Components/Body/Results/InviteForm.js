@@ -17,35 +17,39 @@ const InviteForm = () => {
 	// 
 	const emailLabel = "EMAIL LABEL GOES HERE"
 	const inviteButtonLabel = "BUTTON LABEL HERE"
+	// end Labels
 
-
-	// end Lables
-	const [emailAddy, setEmail] = useState({
-		email: "",
-	});
+	const [inviteAddy, setInvite] = useState("");
 	const [emailerr, setEmailerr] = useState("");
 
-	const doChange = (e) => {
-		setEmail({ [e.target.name]: e.target.value });
+	const inviteChange = (e) => {
+		setInvite(e.target.value);
 	};
 
-	const doSubmit = (e, emailAddy, TextBlock) => {
+	const inviteSubmit = (e, inviteAddy) => {
 		e.preventDefault();
-		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
+		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(inviteAddy)) {
 			axios
-				.post(`${BACKEND}/api/results/mailer/`, emailAddy.email)
+				.post(`${BACKEND}/api/results/invite/`, inviteAddy)
 				.then((sent) => {
 					if ((sent.data[0].statusCode = 202)) {
-						setEmailerr(`Invitation sent to ${emailAddy.email}!`);
+						setEmailerr(`Invitation sent to ${inviteAddy}!`);
 					}
-					setEmail({ email: "" });
+					setInvite("");
 				})
 				.catch((err) => {
-					setEmailerr(`There was an error sending the email. \n${err}`);
+					setEmailerr(`Invite email generated an error\n${err}`);
 				});
 		} else {
-			setEmailerr("Please enter a valid email address.");
-			setEmail({ email: "" });
+			setEmailerr("Please enter a valid email address for the invitation.");
+			setInvite("");
+		}
+	};
+
+	const style = {
+		color: 'green',
+		':focus': {
+			color: 'blue'
 		}
 	};
 
@@ -60,10 +64,11 @@ const InviteForm = () => {
 				<div className="row">
 					<form
 						onSubmit={(e) => {
-							doSubmit(e, emailAddy);
+							inviteSubmit(e, inviteAddy);
 						}}
 						className="col s12"
 						style={{
+							// background: "salmon",
 							display: "flex",
 							flexDirection: "column",
 							justifyContent: "center",
@@ -90,16 +95,15 @@ const InviteForm = () => {
 								<i
 									className="material-icons prefix teal-text"
 									style={{ fontSize: "3em", textColor: "teal" }}
-								>
-									email
-                </i>
+								>email</i>
 								<input
-									name="email"
+									name="invite"
 									id="icon_prefix"
 									type="text"
 									className="validate"
-									onChange={doChange}
-									value={emailAddy.email}
+									onChange={inviteChange}
+									value={inviteAddy}
+									style={style}
 								/>
 								<label htmlFor="icon_prefix">{emailLabel}</label>
 							</div>
@@ -116,8 +120,7 @@ const InviteForm = () => {
 							<Button
 								className="waves-effect waves-light btn"
 								onClick={(e) => {
-									//   console.log(54, TextBlock);
-									doSubmit(e, emailAddy);
+									inviteSubmit(e, inviteAddy);
 								}}
 							>
 								<i className="material-icons right">send</i>
