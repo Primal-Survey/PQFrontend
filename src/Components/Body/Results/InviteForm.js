@@ -74,7 +74,7 @@ const InviteForm = () => {
 							className="row" 
 							style={{
 								width: "50%",
-							}}
+							}} 
 						>
 							<EmailErr>{emailerr}</EmailErr>
 							<div
