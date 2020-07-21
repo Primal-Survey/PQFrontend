@@ -48,13 +48,6 @@ const InviteForm = () => {
 		}
 	};
 
-	const style = {
-		color: 'green',
-		':focus': {
-			color: 'blue'
-		}
-	};
-
 	return (
 		<Fade>
 			<div
@@ -78,7 +71,7 @@ const InviteForm = () => {
 						}}
 					>
 						<div
-							className="row"
+							className="row" 
 							style={{
 								width: "50%",
 							}}
@@ -92,22 +85,24 @@ const InviteForm = () => {
 									flexDirection: "row",
 									justifyContent: "space-between",
 									alignItems: "center",
+									
 								}}
-							>
+								>
 								<i
 									className="material-icons prefix teal-text"
 									style={{ fontSize: "3em", textColor: "teal" }}
-								>email</i>
+									>email</i>
+								<label htmlFor="inviter">{emailLabel}</label>
 								<input
+									// ref={focuser}
 									name="invite"
-									id="icon_prefix"
+									id="inviter"
 									type="text"
 									className="validate"
 									onChange={inviteChange}
 									value={inviteAddy}
-									style={style}
+									style={{ minHeight: "50px"}}
 								/>
-								<label htmlFor="icon_prefix">{emailLabel}</label>
 							</div>
 						</div>
 					</form>{" "}
@@ -115,7 +110,6 @@ const InviteForm = () => {
 						style={{
 							minWidth: "99vw",
 							height: "auto",
-							//   border: "1px solid red",
 						}}
 					>
 						<Link to="/results/">
