@@ -30,8 +30,9 @@ const InviteForm = () => {
 		e.preventDefault();
 		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(inviteAddy)) {
 			axios
-				.post(`${BACKEND}/api/results/invite/`, inviteAddy)
+				.post(`${BACKEND}/api/results/invite/`, {inviteAddy})
 				.then((sent) => {
+					console.log(32, "inside");
 					if ((sent.data[0].statusCode = 202)) {
 						setEmailerr(`Invitation sent to ${inviteAddy}!`);
 					}
@@ -41,6 +42,7 @@ const InviteForm = () => {
 					setEmailerr(`Invite email generated an error\n${err}`);
 				});
 		} else {
+			console.log(45, "inside with error");
 			setEmailerr("Please enter a valid email address for the invitation.");
 			setInvite("");
 		}
@@ -62,7 +64,7 @@ const InviteForm = () => {
 				}}
 			>
 				<div className="row">
-					<form
+					<form id="invite"
 						onSubmit={(e) => {
 							inviteSubmit(e, inviteAddy);
 						}}
@@ -124,7 +126,7 @@ const InviteForm = () => {
 								}}
 							>
 								<i className="material-icons right">send</i>
-                				{inviteButtonLabel}
+								{inviteButtonLabel}
 							</Button>
 						</Link>
 						<p>**Personal information is not collected**</p>
