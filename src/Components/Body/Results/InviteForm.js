@@ -6,51 +6,45 @@ import Fade from "react-reveal/Fade";
 import axios from "axios";
 const BACKEND = process.env.REACT_APP_BACKEND;
 
-// script for
 // 
-// EMAIL ME THE RESULTS 
+// script for
+// INVITIATION EMAIL FIELD 
 // 
 
-const EmailMeForm = (props) => {
-	const { TextBlock, range } = props;
-	TextBlock.rangeInfo = range;
-	//   console.log(10, TextBlock, range);
-	const [emailAddy, setEmail] = useState({
-		email: "",
-	});
+const InviteForm = () => {
+	// 
+	// Labels set here so you don't have to dig around
+	// 
+	const emailLabel = "EMAIL LABEL GOES HERE"
+	const inviteButtonLabel = "BUTTON LABEL HERE"
+	// end Labels
+
+	const [inviteAddy, setInvite] = useState("");
 	const [emailerr, setEmailerr] = useState("");
 
-	//   const BACKEND = process.env.BACKEND;
-
-	// console.log(10, emailAddy);
-	const doChange = (e) => {
-		setEmail({ [e.target.name]: e.target.value });
+	const inviteChange = (e) => {
+		setInvite(e.target.value);
 	};
 
-	const doSubmit = (e, emailAddy, TextBlock) => {
+	const inviteSubmit = (e, inviteAddy) => {
 		e.preventDefault();
-		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(emailAddy.email)) {
-			TextBlock[0].targetEmail = emailAddy.email;
+		if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(inviteAddy)) {
 			axios
-				.post(`${BACKEND}/api/results/mailer/`, TextBlock)
+				.post(`${BACKEND}/api/results/invite/`, {inviteAddy})
 				.then((sent) => {
+					console.log(32, "inside");
 					if ((sent.data[0].statusCode = 202)) {
-						setEmailerr(`Email sent to ${emailAddy.email}!`);
+						setEmailerr(`Invitation sent to ${inviteAddy}!`);
 					}
-					setEmail({ email: "" });
+					setInvite("");
 				})
 				.catch((err) => {
-					setEmailerr(`There was an error sending the email. \n${err}`);
+					setEmailerr(`Invite email generated an error\n${err}`);
 				});
 		} else {
-			setEmailerr("Please enter a valid email address.");
-			setEmail({ email: "" });
-		}
-	};
-	const style = {
-		color: '#000000',
-		':focus': {
-			color: '#0f0'
+			console.log(45, "inside with error");
+			setEmailerr("Please enter a valid email address for the invitation.");
+			setInvite("");
 		}
 	};
 
@@ -60,17 +54,16 @@ const EmailMeForm = (props) => {
 				style={{
 					minWidth: "99vw",
 					height: "auto",
-					//   border: "1px solid black",
 				}}
 			>
 				<div className="row">
-					<form id="results"
+					<form id="invite"
 						onSubmit={(e) => {
-							//   console.log(54, TextBlock);
-							doSubmit(e, emailAddy, TextBlock);
+							inviteSubmit(e, inviteAddy);
 						}}
 						className="col s12"
 						style={{
+							// background: "salmon",
 							display: "flex",
 							flexDirection: "column",
 							justifyContent: "center",
@@ -78,10 +71,10 @@ const EmailMeForm = (props) => {
 						}}
 					>
 						<div
-							className="row"
+							className="row" 
 							style={{
 								width: "50%",
-							}}
+							}} 
 						>
 							<EmailErr>{emailerr}</EmailErr>
 							<div
@@ -92,24 +85,24 @@ const EmailMeForm = (props) => {
 									flexDirection: "row",
 									justifyContent: "space-between",
 									alignItems: "center",
+									
 								}}
-							>
+								>
 								<i
 									className="material-icons prefix teal-text"
 									style={{ fontSize: "3em", textColor: "teal" }}
-								>
-									email
-                </i>
+									>email</i>
+								<label htmlFor="inviter">{emailLabel}</label>
 								<input
-									name="email"
-									id="icon_prefix"
+									// ref={focuser}
+									name="invite"
+									id="inviter"
 									type="text"
 									className="validate"
-									onChange={doChange}
-									value={emailAddy.email}
-									style={style}
+									onChange={inviteChange}
+									value={inviteAddy}
+									style={{ minHeight: "50px"}}
 								/>
-								<label htmlFor="icon_prefix">Email Address</label>
 							</div>
 						</div>
 					</form>{" "}
@@ -117,30 +110,17 @@ const EmailMeForm = (props) => {
 						style={{
 							minWidth: "99vw",
 							height: "auto",
-							//   border: "1px solid red",
 						}}
 					>
-						<Link
-							to="/"
-							style={{
-								margin: "1em",
-							}}
-						>
-							<Button className="waves-effect waves-light btn">
-								<i className="material-icons left">autorenew</i>
-                				Back to start
-							</Button>
-						</Link>
 						<Link to="/results/">
-							<Button 
+							<Button
 								className="waves-effect waves-light btn"
 								onClick={(e) => {
-									//   console.log(54, TextBlock);
-									doSubmit(e, emailAddy, TextBlock);
+									inviteSubmit(e, inviteAddy);
 								}}
 							>
 								<i className="material-icons right">send</i>
-                				Email me my results.
+								{inviteButtonLabel}
 							</Button>
 						</Link>
 						<p>**Personal information is not collected**</p>
@@ -162,4 +142,4 @@ const EmailErr = styled.div`
   font-weight: bolder;
 `;
 
-export default EmailMeForm;
+export default InviteForm;
