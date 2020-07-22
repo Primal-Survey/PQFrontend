@@ -4,7 +4,10 @@ import styled from "styled-components";
 
 import ResultsText from "./ResultsText";
 import EmailMeForm from "./EmailMeForm.js";
+
+import { Collapsible, CollapsibleItem, Icon } from "react-materialize";
 import InviteForm from "./InviteForm.js";
+
 
 const ResultVisual = (resultInfo) => {
   // const [range, setRange] = useState("")
@@ -128,6 +131,39 @@ const ResultVisual = (resultInfo) => {
 
   return (
     <Fade>
+
+      <Collapsible accordion>
+        <CollapsibleItem
+          expanded={false}
+          header="Better safe than sorry. That's my motto."
+          icon={<Icon>filter_drama</Icon>}
+          node="div"
+        >
+          Better safe than sorry. That's my motto.
+        </CollapsibleItem>
+        <CollapsibleItem
+          expanded={false}
+          header="Yeah, you do seem to have a little 'shit creek' action going."
+          icon={<Icon>place</Icon>}
+          node="div"
+        >
+          Yeah, you do seem to have a little 'shit creek' action going.
+        </CollapsibleItem>
+        <CollapsibleItem
+          expanded={false}
+          header="You know, FYI, you can buy a paddle. Did you not plan for this contingency?"
+          icon={<Icon>whatshot</Icon>}
+          node="div"
+        >
+          You know, FYI, you can buy a paddle. Did you not plan for this
+          contingency?
+        </CollapsibleItem>
+      </Collapsible>
+
+      <h5 className="teal-text">
+        You tend to lean towards the {TextBlock[0].catTitle} side of life.{" "}
+      </h5>
+
       <h5 className="teal-text">You are {TextBlock[0].catTitle}. </h5>
       <Section>
         <Section>

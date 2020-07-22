@@ -8,8 +8,8 @@ function Header() {
     <BackgroundLayer>
       <Section className="">
         <div className="container">
-          <NavBar />
           <h1>The Roaming Survey</h1>
+          <NavBar />
         </div>
       </Section>
     </BackgroundLayer>
@@ -18,6 +18,7 @@ function Header() {
 const Section = styled.header`
   /* padding-bottom: 25px; */
   min-height: 25vh;
+  display: flex;
 `;
 
 const BackgroundLayer = styled.div`
