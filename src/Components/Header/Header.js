@@ -8,7 +8,7 @@ function Header() {
     <BackgroundLayer>
       <Section className="">
         <div className="container">
-          <h1>The Roaming Survey</h1>
+          {/* <h3>The Roaming Survey</h3> */}
           <NavBar />
         </div>
       </Section>
@@ -17,7 +17,7 @@ function Header() {
 }
 const Section = styled.header`
   /* padding-bottom: 25px; */
-  min-height: 25vh;
+  height: 10vh;
   display: flex;
 `;
 
@@ -29,7 +29,7 @@ const BackgroundLayer = styled.div`
   -o-background-size: cover;
   background-size: cover;
   color: white;
-  min-height: 20vh;
+  min-height: 10vh;
   margin: auto;
 `;
 
