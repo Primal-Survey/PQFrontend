@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components";
+import "../../../App.css";
 
 import ResultsText from "./ResultsText";
 import EmailMeForm from "./EmailMeForm.js";
 
 import { Collapsible, CollapsibleItem, Icon } from "react-materialize";
 import InviteForm from "./InviteForm.js";
-
 
 const ResultVisual = (resultInfo) => {
   // const [range, setRange] = useState("")
@@ -131,46 +131,38 @@ const ResultVisual = (resultInfo) => {
 
   return (
     <Fade>
-
-      <Collapsible accordion>
-        <CollapsibleItem
-          expanded={false}
-          header="Better safe than sorry. That's my motto."
-          icon={<Icon>filter_drama</Icon>}
-          node="div"
-        >
-          Better safe than sorry. That's my motto.
-        </CollapsibleItem>
-        <CollapsibleItem
-          expanded={false}
-          header="Yeah, you do seem to have a little 'shit creek' action going."
-          icon={<Icon>place</Icon>}
-          node="div"
-        >
-          Yeah, you do seem to have a little 'shit creek' action going.
-        </CollapsibleItem>
-        <CollapsibleItem
-          expanded={false}
-          header="You know, FYI, you can buy a paddle. Did you not plan for this contingency?"
-          icon={<Icon>whatshot</Icon>}
-          node="div"
-        >
-          You know, FYI, you can buy a paddle. Did you not plan for this
-          contingency?
-        </CollapsibleItem>
-      </Collapsible>
-
-      <h5 className="teal-text">
-        You tend to lean towards the {TextBlock[0].catTitle} side of life.{" "}
-      </h5>
-
-      <h5 className="teal-text">You are {TextBlock[0].catTitle}. </h5>
       <Section>
-        <Section>
-          <P dangerouslySetInnerHTML={{ __html: TextBlock[0].catIntro }} />
-          <P dangerouslySetInnerHTML={{ __html: range }} />
+        <h5 className="teal-text" style={{ margin: "auto" }}>
+          You are {TextBlock[0].catTitle}.{" "}
+        </h5>
+        <P dangerouslySetInnerHTML={{ __html: TextBlock[0].catIntro }} />
+      </Section>
+      <Collapsible accordion className={"Accordian"}>
+        <CollapsibleItem
+          expanded={false}
+          header={
+            <h5 className="teal-text" style={{ margin: "auto" }}>
+              Click here for more details.
+            </h5>
+          }
+          node="div"
+        >
+          {" "}
           <Section>
-            <h5>Tips</h5>
+            <P dangerouslySetInnerHTML={{ __html: range }} />
+          </Section>
+        </CollapsibleItem>
+
+        <CollapsibleItem
+          expanded={false}
+          header={
+            <h5 className="teal-text" style={{ margin: "auto" }}>
+              Tips
+            </h5>
+          }
+          node="div"
+        >
+          <Section>
             <ul>
               {tips.map((tip) => {
                 return (
@@ -181,8 +173,9 @@ const ResultVisual = (resultInfo) => {
               })}
             </ul>
           </Section>
-        </Section>
-      </Section>
+        </CollapsibleItem>
+      </Collapsible>
+
       <EmailMeForm TextBlock={TextBlock} range={range} />
       <InviteForm />
     </Fade>
@@ -200,7 +193,7 @@ const Section = styled.section`
   align-items: center;
   margin: auto;
   text-align: justify;
-  max-width: 80%;
+  max-width: 70%;
 `;
 const Header = styled.section`
   display: flex;
@@ -208,6 +201,7 @@ const Header = styled.section`
   justify-content: center;
   align-items: center;
   margin: auto;
-  max-width: 80%;
+  max-width: 70%;
 `;
+
 export default ResultVisual;

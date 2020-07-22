@@ -8,6 +8,7 @@ import "react-svg-radar-chart/build/css/index.css";
 import "./chart.css"
 import ResultVisual from "./ResultVisual";
 import axios from "axios";
+import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg"
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
@@ -261,6 +262,7 @@ function DataVisual(surveyInfo) {
   };
 
   return (
+    
     <Fade>
       <h4 className="teal-text">
         You are <strong>{PrimalPercent}% Primal</strong> overall.
@@ -299,12 +301,29 @@ function DataVisual(surveyInfo) {
             </P>
           </Text>
         </GraphKey>
+        <BackgroundLayer></BackgroundLayer>
       </Div>
 
       <ResultVisual resultInfo={resultInfo} />
     </Fade>
+
+
   );
 }
+
+const BackgroundLayer = styled.div`
+
+  text-align: center;
+  background: url(${HeaderBanner}) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  min-height: 10vh;
+  margin: 10px 0;
+`;
+
 const P = styled.p`
   text-align: justify;
   /* border: 1px solid black; */

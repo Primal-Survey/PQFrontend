@@ -43,3 +43,8 @@ h4 {
 .App-link {
   color: #61dafb;
 }
+
+.Accordian{
+  margin: auto !important;
+  max-width: 80%;
+}
