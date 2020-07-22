@@ -9,10 +9,10 @@ const WelcomeHeader = () => {
         <H3>HOW PRIMAL ARE YOU?</H3>
       </Section>
       <Section className="row">
-        <h5>
-          Everyone has a <i>Civilized</i> side, but have you ever wondered about
-          your <i>Primitive</i> side?
-        </h5>
+        <H5>
+          Everyone has a <i>Civilized </i> side, but have you ever wondered
+          about your <i>Primitive </i> side?
+        </H5>
       </Section>
     </Fade>
   );
@@ -26,6 +26,9 @@ const Section = styled.section`
 `;
 
 const H3 = styled.h3`
+  color: black;
+`;
+const H5 = styled.h5`
   color: black;
 `;
 
