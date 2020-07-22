@@ -6,12 +6,12 @@ const WelcomeHeader = () => {
   return (
     <Fade>
       <Section className="row">
-        <h3>HOW PRIMITIVE ARE YOU?</h3>
+        <H3>HOW PRIMAL ARE YOU?</H3>
       </Section>
       <Section className="row">
         <h5>
-          Everyone has a "<i>Civilized </i> " side, but have you ever wondered
-          about your "<i>Primitive </i> " side?
+          Everyone has a <i>Civilized</i> side, but have you ever wondered about
+          your <i>Primitive</i> side?
         </h5>
       </Section>
     </Fade>
@@ -23,6 +23,10 @@ const Section = styled.section`
   align-items: center;
   margin: auto;
   max-width: 100%;
+`;
+
+const H3 = styled.h3`
+  color: black;
 `;
 
 export default WelcomeHeader;
