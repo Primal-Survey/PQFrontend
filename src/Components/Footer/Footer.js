@@ -19,21 +19,19 @@ function Footer() {
               <Section>
                 <div>
                   <div>
-                    <H5>
+                    <LeftH5>
                       Captures insights and advice that everyone can use to
                       thrive in the constantly evolving workplace.
-                    </H5>
+                    </LeftH5>
                   </div>
-                  <H5 className="teal-text">
+                  <LeftH5 className="teal-text">
                     — DANIEL H. PINK, NEW YORK TIMES BESTSELLING AUTHOR OF WHEN,
                     DRIVE, AND TO SELL IS HUMAN.
-                  </H5>
+                  </LeftH5>
                 </div>
-                <ImgBox>
-                  <div>
-                    <Img2 src={Marco} alt="Primitive Book" />
-                  </div>
-                </ImgBox>
+                {/* <ImgBox>
+                  <div><Img2 src={Marco} alt="Primitive Book" /></div>
+                </ImgBox> */}
               </Section>
             </LeftBox>
 
@@ -115,12 +113,11 @@ function Footer() {
   );
 }
 const Foot = styled.footer`
-  display: flex;
-  flex-direction: column;
+  height: 60vh;
+  display: contents;
   /* justify-content: center; */
   align-items: center;
   justify-content: space-evenly;
-  min-height: 100vh;
 `;
 
 const Content = styled.div`
@@ -137,13 +134,11 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: space-between;
   min-width: 40vw;
-  min-height: 80vh;
 `;
 const RightBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 80vh;
   width: 45%;
   /* border: 1px solid yellow; */
 `;
@@ -153,9 +148,7 @@ const LeftBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 80vh;
   width: 45%;
-
   /* border: 1px solid red; */
 `;
 
@@ -164,8 +157,8 @@ const ImgBox = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  min-height: 50vh;
-  /* border: 1px solid pink; */
+  margin: 3% 0;
+ /* border: 1px solid pink; */
 `;
 
 const Img = styled.img`
@@ -183,6 +176,13 @@ const Img2 = styled.img`
 
 const H5 = styled.h5`
   padding-left: 10px;
+  margin-top: 10%;
+  /* border: 1px solid black; */
+`;
+
+const LeftH5 = styled.h5`
+  padding-left: 10px;
+  margin: 20% 0;
   /* border: 1px solid black; */
 `;
 

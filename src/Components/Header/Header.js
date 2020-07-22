@@ -8,8 +8,8 @@ function Header() {
     <BackgroundLayer>
       <Section className="">
         <div className="container">
+          <h1>The Primative Quiz</h1>
           <NavBar />
-          <h1>The Primitive Book Quiz</h1>
         </div>
       </Section>
     </BackgroundLayer>
@@ -18,6 +18,7 @@ function Header() {
 const Section = styled.header`
   /* padding-bottom: 25px; */
   min-height: 25vh;
+  display: flex;
 `;
 
 const BackgroundLayer = styled.div`

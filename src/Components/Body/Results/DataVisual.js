@@ -251,13 +251,13 @@ function DataVisual(surveyInfo) {
 
   const captions = {
     // columns
-    Relentless: "RP",
-    Oppositional: "OP",
-    Agnostic: "AP",
-    Messianic: "MP",
-    Insecure: "IP",
-    Nuts: "NP",
-    Gallant: "GP",
+    Relentless: "Rel",
+    Oppositional: "Opp",
+    Agnostic: "Agn",
+    Messianic: "Mes",
+    Insecure: "Ins",
+    Nuts: "Nut",
+    Gallant: "Gal",
   };
 
   return (
