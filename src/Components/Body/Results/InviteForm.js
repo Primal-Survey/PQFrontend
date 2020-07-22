@@ -15,8 +15,8 @@ const InviteForm = () => {
 	// 
 	// Labels set here so you don't have to dig around
 	// 
-	const emailLabel = "EMAIL LABEL GOES HERE"
-	const inviteButtonLabel = "BUTTON LABEL HERE"
+	const emailLabel = "Friends Email Address"
+	const inviteButtonLabel = "Invite a friend to take this quiz."
 	// end Labels
 
 	const [inviteAddy, setInvite] = useState("");

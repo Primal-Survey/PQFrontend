@@ -109,7 +109,7 @@ const EmailMeForm = (props) => {
 									value={emailAddy.email}
 									style={style}
 								/>
-								<label htmlFor="icon_prefix">Email Address</label>
+								<label htmlFor="icon_prefix">Your Email Address</label>
 							</div>
 						</div>
 					</form>{" "}
@@ -143,7 +143,7 @@ const EmailMeForm = (props) => {
                 				Email me my results.
 							</Button>
 						</Link>
-						<p>**Personal information is not collected**</p>
+					
 					</div>
 				</div>
 			</div>
