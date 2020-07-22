@@ -4,7 +4,10 @@ import styled from "styled-components";
 
 import ResultsText from "./ResultsText";
 import EmailMeForm from "./EmailMeForm.js";
+
 import { Collapsible, CollapsibleItem, Icon } from "react-materialize";
+import InviteForm from "./InviteForm.js";
+
 
 const ResultVisual = (resultInfo) => {
   // const [range, setRange] = useState("")
@@ -128,6 +131,7 @@ const ResultVisual = (resultInfo) => {
 
   return (
     <Fade>
+
       <Collapsible accordion>
         <CollapsibleItem
           expanded={false}
@@ -159,17 +163,19 @@ const ResultVisual = (resultInfo) => {
       <h5 className="teal-text">
         You tend to lean towards the {TextBlock[0].catTitle} side of life.{" "}
       </h5>
+
+      <h5 className="teal-text">You are {TextBlock[0].catTitle}. </h5>
       <Section>
         <Section>
-          <P>{TextBlock[0].catIntro}</P>
-          <P>{range}</P>
+          <P dangerouslySetInnerHTML={{ __html: TextBlock[0].catIntro }} />
+          <P dangerouslySetInnerHTML={{ __html: range }} />
           <Section>
             <h5>Tips</h5>
             <ul>
               {tips.map((tip) => {
                 return (
                   <li>
-                    <p>{tip}</p>
+                    <p dangerouslySetInnerHTML={{ __html: tip }} />
                   </li>
                 );
               })}
@@ -178,6 +184,7 @@ const ResultVisual = (resultInfo) => {
         </Section>
       </Section>
       <EmailMeForm TextBlock={TextBlock} range={range} />
+      <InviteForm />
     </Fade>
   );
 };

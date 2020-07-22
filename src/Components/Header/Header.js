@@ -8,7 +8,7 @@ function Header() {
     <BackgroundLayer>
       <Section className="">
         <div className="container">
-          <h1>The Primative Quiz</h1>
+          <h1>The Roaming Survey</h1>
           <NavBar />
         </div>
       </Section>
