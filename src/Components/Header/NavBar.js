@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { AutoInit } from "materialize-css";
+import { Row } from "react-materialize";
 
 const NavBar = () => {
   return (
@@ -8,19 +9,25 @@ const NavBar = () => {
       <nav
         className="nav-wrapper N/A transparent"
         style={{
-          border: "none",
+          height: "10vh",
+          //   border: "1px solid orange",
           boxShadow: "none",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <div
           className="nav-wrapper N/A transparent"
           style={{
             backgroundColor: "#00FFFFFF",
-            width: "100%",
-            height: "100%",
+            width: "95%",
+            height: "10vh",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            // border: "1px solid red",
           }}
         >
           {/* Icon for mobile screen menu */}
@@ -29,15 +36,15 @@ const NavBar = () => {
             data-target="mobile-demo"
             className="sidenav-trigger white-text"
           >
-            <i
+            <I
               className=" material-icons"
               style={{ fontSize: "4em", textColor: "darkcyan" }}
             >
               menu
-            </i>
+            </I>
           </a>
           {/* main NavBar */}
-          <ul className=" right hide-on-med-and-down">
+          <NavContainer className=" right hide-on-med-and-down">
             <ListItem>
               <MainLink
                 target="_blank"
@@ -45,7 +52,7 @@ const NavBar = () => {
                 title="Main Site"
                 href="https://www.primitivebook.com/#book-section"
               >
-                <i>BOOK</i>
+                <I>BOOK</I>
               </MainLink>
             </ListItem>
             <ListItem>
@@ -55,28 +62,18 @@ const NavBar = () => {
                 title="Buy it Here!"
                 href="https://www.primitivebook.com/#purchase-section"
               >
-                <i>PURCHASE</i>
+                <I>PURCHASE</I>
               </MainLink>
             </ListItem>
+            <h2>The Roaming Survey</h2>
             <ListItem>
               <MainLink
                 target="_blank"
                 rel="noopener noreferrer"
                 title="About the book"
-                href="https://www.primitivebook.com/#about-section"
-              >
-                <i>ABOUT</i>
-              </MainLink>
-            </ListItem>
-
-            <ListItem>
-              <MainLink
-                target="_blank"
-                rel="noopener noreferrer"
-                title="About Marco Greenberg"
                 href="https://www.primitivebook.com/#author-section"
               >
-                <i>AUTHOR</i>
+                <I>ABOUT</I>
               </MainLink>
             </ListItem>
 
@@ -87,10 +84,10 @@ const NavBar = () => {
                 title="Contact Marco"
                 href="https://www.primitivebook.com/contact"
               >
-                <i>CONTACT</i>
+                <I>CONTACT</I>
               </MainLink>
             </ListItem>
-          </ul>
+          </NavContainer>
         </div>
       </nav>
 
@@ -122,20 +119,9 @@ const NavBar = () => {
               target="_blank"
               rel="noopener noreferrer"
               title="About the book"
-              href="https://www.primitivebook.com/#about-section"
-            >
-              <P>ABOUT</P>
-            </StyledLink>
-          </Li>
-
-          <Li>
-            <StyledLink
-              target="_blank"
-              rel="noopener noreferrer"
-              title="About Marco Greenberg"
               href="https://www.primitivebook.com/#author-section"
             >
-              <P>AUTHOR</P>
+              <P>ABOUT</P>
             </StyledLink>
           </Li>
 
@@ -154,6 +140,15 @@ const NavBar = () => {
     </div>
   );
 };
+
+const NavContainer = styled.ul`
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid blue; */
+`;
 
 const Ul = styled.ul`
   display: flex;
@@ -174,14 +169,16 @@ const Div = styled.div`
 `;
 
 const ListItem = styled.li`
-  min-width: 10vw;
+  width: 8vw;
+  height: auto;
+  /* border: 1px solid lightGray; */
 `;
 const Li = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid white; */
+  border: none;
 `;
 
 const P = styled.p`
@@ -196,10 +193,21 @@ const P = styled.p`
   }
 `;
 
+const I = styled.i`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 40px;
+  font-size: 1em;
+  /* border: 1px solid lightGray; */
+`;
+
 const MainLink = styled.a`
   color: white;
   /* text-decoration: none; */
-  margin: 1%;
+  /* margin: 1%; */
+  /* border: 1px solid orange; */
 
   &:hover {
     color: darkcyan;
@@ -214,7 +222,7 @@ const StyledLink = styled.a`
   align-items: center;
   margin: 1%;
   min-height: 18vh;
-  /* border: 1px solid orange; */
+  border: 1px solid orange;
   &:hover {
     color: darkcyan;
     transition: 0.4s;
