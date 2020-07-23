@@ -8,7 +8,7 @@ import EmailMeForm from "./EmailMeForm.js";
 
 import { Collapsible, CollapsibleItem, Icon } from "react-materialize";
 import InviteForm from "./InviteForm.js";
-
+import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg"
 const ResultVisual = (resultInfo) => {
   // const [range, setRange] = useState("")
   let range = "";
@@ -61,6 +61,8 @@ const ResultVisual = (resultInfo) => {
   /////////////////////////////////////////////////////// taking the last / highest result to display info from result text
   const TopResult = Sorted.pop();
   //   console.log("TopResult-->", TopResult);
+  const BottomResult = Sorted[Sorted.length -1]
+
 
   //
   //
@@ -70,13 +72,30 @@ const ResultVisual = (resultInfo) => {
   const Value = TopResult.value;
   //   console.log("Results text-->", ResultsText);
 
+
+ 
+
+
   const TextBlock = [];
+  const LowTextBlock = [];
+
+
+  const LowName = BottomResult.name
+
+  const BottomText = ResultsText.map((i) => {
+    // console.log(Object.keys(i)[0]);
+    if (LowName !== Object.keys(i)[0]) {
+    } else return LowTextBlock.push(Object.values(i)[0]);
+  });
+
 
   const TopText = ResultsText.map((i) => {
     // console.log(Object.keys(i)[0]);
     if (Name !== Object.keys(i)[0]) {
     } else return TextBlock.push(Object.values(i)[0]);
   });
+
+
   //   console.log("TextBlock", TextBlock[0]);
   //   console.log("TextBlock", TextBlock[0].catTitle);
   //   console.log("TextBlock", TextBlock[0].catIntro);
@@ -174,13 +193,40 @@ const ResultVisual = (resultInfo) => {
             </ul>
           </Section>
         </CollapsibleItem>
+        <CollapsibleItem
+          expanded={false}
+          header={
+            <h5 className="teal-text" style={{ margin: "auto" }}>
+              You are least {LowTextBlock[0].catTitle}.  <br/>
+            </h5>
+          }
+          node="div"
+        >
+          <Section>
+            <h5>{LowTextBlock[0].catTitle}'s are described as such.</h5>
+          <P dangerouslySetInnerHTML={{ __html: LowTextBlock[0].catIntro }} />
+          </Section>
+        </CollapsibleItem>
       </Collapsible>
-
+      <BackgroundLayer></BackgroundLayer>
       <EmailMeForm TextBlock={TextBlock} range={range} />
       <InviteForm />
     </Fade>
   );
 };
+
+const BackgroundLayer = styled.div`
+
+  text-align: center;
+  background: url(${HeaderBanner}) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  min-height: 10vh;
+  margin: 10px 0;
+`;
 
 const P = styled.p`
   text-align: justify;

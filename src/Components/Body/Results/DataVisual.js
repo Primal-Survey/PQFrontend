@@ -5,10 +5,10 @@ import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
-import "./chart.css"
+import "./chart.css";
 import ResultVisual from "./ResultVisual";
 import axios from "axios";
-import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg"
+import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg";
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
@@ -262,10 +262,10 @@ function DataVisual(surveyInfo) {
   };
 
   return (
-    
     <Fade>
       <h4 className="teal-text">
-        You are <strong>{PrimalPercent}% Primal</strong> overall.
+        You are <strong>{PrimalPercent}% Primal</strong> and{" "}
+        <strong>{100 - PrimalPercent}% Civilized</strong>
       </h4>
       <RadarChart captions={captions} data={data} size={350} />
       <Div>
@@ -274,7 +274,7 @@ function DataVisual(surveyInfo) {
             <i className="material-icons tiny ">vpn_key</i>
 
             <P>Blue Overlay : Your Result</P>
-            <P>Red Overlay : Overall Survey Group</P>
+            <P>Red Overlay : Overall Survey Group of {all.length} users</P>
             {/* <P>
               You are {parseInt((resultInfo.relentlessResult / 15) * 100)}%
               Relentless
@@ -306,13 +306,10 @@ function DataVisual(surveyInfo) {
 
       <ResultVisual resultInfo={resultInfo} />
     </Fade>
-
-
   );
 }
 
 const BackgroundLayer = styled.div`
-
   text-align: center;
   background: url(${HeaderBanner}) no-repeat center center fixed;
   -webkit-background-size: cover;

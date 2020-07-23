@@ -2,7 +2,7 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components";
 
-import StartButton from "./StartButton";
+
 import WelcomeHeader from "./WelcomeHeader";
 import WelcomeContent from "./WelcomeContent";
 
@@ -12,7 +12,7 @@ function Welcome() {
       <Container>
         <WelcomeHeader />
         <WelcomeContent />
-        <StartButton />
+   
       </Container>
     </Fade>
   );
