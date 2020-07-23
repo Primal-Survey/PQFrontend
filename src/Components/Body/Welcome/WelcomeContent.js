@@ -67,7 +67,7 @@ const WelcomeContent = () => {
             expanded={false}
             header={
               <h5 className="teal-text" style={{ margin: "auto" }}>
-                Why Primitive?
+                Why Primal?
               </h5>
             }
             node="div"
@@ -99,7 +99,7 @@ const WelcomeContent = () => {
             expanded={false}
             header={
               <h5 className="teal-text" style={{ margin: "auto" }}>
-               What is your Primative Quotient.
+               What is your Primitive Quotient.
               </h5>
             }
             node="div"
