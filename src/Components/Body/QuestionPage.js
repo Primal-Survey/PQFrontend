@@ -8,7 +8,7 @@ import OneFiveForm1 from "./QuestionForms/OneFiveForm";
 
 import SubmitButton from "./QuestionForms/SubmitButton";
 
-function QuestionPage1({ prev, next, questions, keys, ...rest }) {
+function QuestionPage1({ prev, current, next, questions, keys, ...rest }) {
   // if you're in DEV mode, it will skip the survey.
   // if (process.env.NODE_ENV === "development") {
   //   next = false;
@@ -23,7 +23,17 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
           {/* <i className="material-icons small">fiber_manual_record</i> */}
           <P>Completely Disagree</P>
           {/* <i className="material-icons tiny">fiber_manual_record</i> */}
-          <i className="material-icons ">fiber_manual_record</i>
+          <i className="material-icons " style={{ margin: "0 1%" }}>
+            fiber_manual_record
+          </i>
+          {/* <i className="material-icons tiny">fiber_manual_record</i> */}
+          <i className="material-icons " style={{ margin: "0 1%" }}>
+            fiber_manual_record
+          </i>
+          {/* <i className="material-icons tiny">fiber_manual_record</i> */}
+          <i className="material-icons " style={{ margin: "0 1%" }}>
+            fiber_manual_record
+          </i>
           {/* <i className="material-icons tiny">fiber_manual_record</i> */}
           <P>Completely Agree</P>
           {/* <i className="material-icons small">fiber_manual_record</i> */}
@@ -57,6 +67,9 @@ function QuestionPage1({ prev, next, questions, keys, ...rest }) {
               </Button>
             </Link>
           )}
+
+            Page {current} of 7
+
           {next ? (
             <Link to={`/questionpage${next}/`}>
               <Button className="hoverable  btn">

@@ -36,6 +36,7 @@ function BodyBox() {
             <QuestionPage1
               {...props}
               prev={0}
+              current={1}
               next={2}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
@@ -50,6 +51,7 @@ function BodyBox() {
             <QuestionPage1
               {...props}
               prev={1}
+              current={2}
               next={3}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
@@ -64,6 +66,7 @@ function BodyBox() {
             <QuestionPage1
               {...props}
               prev={2}
+              current={3}
               next={4}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
@@ -78,6 +81,7 @@ function BodyBox() {
             <QuestionPage1
               {...props}
               prev={3}
+              current={4}
               next={5}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
@@ -92,6 +96,7 @@ function BodyBox() {
             <QuestionPage1
               {...props}
               prev={4}
+              current={5}
               next={6}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
@@ -106,6 +111,7 @@ function BodyBox() {
             <QuestionPage1
               {...props}
               prev={5}
+              current={6}
               next={7}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
@@ -120,6 +126,7 @@ function BodyBox() {
             <QuestionPage1
               {...props}
               prev={6}
+              current={7}
               next={null}
               surveyInfo={surveyInfo}
               handleChange={handleChange}

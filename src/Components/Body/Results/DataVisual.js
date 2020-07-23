@@ -275,7 +275,7 @@ function DataVisual(surveyInfo) {
 
             <P>Blue Overlay : Your Result</P>
             <P>Red Overlay : Overall Survey Group</P>
-            <P>
+            {/* <P>
               You are {parseInt((resultInfo.relentlessResult / 15) * 100)}%
               Relentless
             </P>
@@ -298,7 +298,7 @@ function DataVisual(surveyInfo) {
             <P>You are {parseInt((resultInfo.nutsResult / 15) * 100)}% Nuts</P>
             <P>
               You are {parseInt((resultInfo.gallantResult / 15) * 100)}% Gallant
-            </P>
+            </P> */}
           </Text>
         </GraphKey>
         <BackgroundLayer></BackgroundLayer>
