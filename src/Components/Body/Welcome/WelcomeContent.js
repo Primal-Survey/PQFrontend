@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components";
 import { Collapsible, CollapsibleItem, Icon } from "react-materialize";
@@ -6,8 +6,25 @@ import "../../../App.css";
 import StartButton from "./StartButton";
 import SecondButton from "./SecondButton";
 import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg";
+import PrimitiveTypesContainer from "./PrimitiveTypesContainer";
+import axios from "axios";
 
 const WelcomeContent = () => {
+  const [largeDataSet, setLargeDataSet] = useState({});
+
+  useEffect(() => {
+    pullAndCompare();
+    // averageTheResults()
+  }, []);
+
+  const pullAndCompare = () => {
+    axios.get(`https://pq-backend.herokuapp.com/api/results`).then((res) => {
+      setLargeDataSet(res.data);
+    });
+  };
+
+  const all = Object.values(largeDataSet);
+
   return (
     <Fade>
       <Section>
@@ -73,9 +90,7 @@ const WelcomeContent = () => {
             node="div"
           >
             <Section>
-              <P>
-                Research Shows:
-              </P>
+              <P>Research Shows:</P>
               <P>
                 1. 2.5x = Those with a “high Primitive Quotient” are more likely
                 to star an entrepreneurial venture
@@ -93,41 +108,35 @@ const WelcomeContent = () => {
                 with “miserable work experiences”
               </P>
               <SecondButton />
+              <p>
+                ** "High PQ" is defined as those in the top 75% and "Low PQ" is
+                defined as those who are less than 25%.
+              </p>
             </Section>
           </CollapsibleItem>
           <CollapsibleItem
             expanded={false}
             header={
               <h5 className="teal-text" style={{ margin: "auto" }}>
-               What is your Primitive Quotient.
+                What Primitive Types are there?
               </h5>
             }
             node="div"
           >
             <Section>
-              <P>
-                Research Shows:
-              </P>
-              <P>
-                1. 2.5x = Those with a “high Primitive Quotient” are more likely
-                to star an entrepreneurial venture
-              </P>
-              <P>
-                2. 3x = Those with a high PQ report greater success in their
-                entrepreneurial ventures
-              </P>
-              <P>
-                3. 67% = people who say they are sometimes, very often, or
-                always burned out at work (cite to Gallup)
-              </P>
-              <P>
-                4. 13% = people who describe themselves as “actively disengaged”
-                with “miserable work experiences”
-              </P>
-              <SecondButton />
+              <PrimitiveTypesContainer />
             </Section>
           </CollapsibleItem>
         </Collapsible>
+        <BackgroundLayer></BackgroundLayer>
+
+        <div>
+          <h5 className="teal-text">See How You Compare</h5>
+          <P>
+            So far, {all.length} people have taken the ROAMING Survey to find
+            their Primal Quotient.
+          </P>
+        </div>
       </Section>
     </Fade>
   );
@@ -160,7 +169,7 @@ const BackgroundLayer = styled.div`
   color: white;
   min-height: 10vh;
   margin: 10px 0;
-  width:100vw
+  width: 100vw;
 `;
 
 export default WelcomeContent;
