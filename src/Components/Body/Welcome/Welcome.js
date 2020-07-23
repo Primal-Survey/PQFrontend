@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components";
-
+// import axios from "axios";
 
 import WelcomeHeader from "./WelcomeHeader";
 import WelcomeContent from "./WelcomeContent";
 
 function Welcome() {
+  //   const [largeDataSet, setLargeDataSet] = useState({});
+
+  //   useEffect(() => {
+  //     pullAndCompare();
+  //     // averageTheResults()
+  //   }, []);
+
+  //   const pullAndCompare = () => {
+  //     axios.get(`https://pq-backend.herokuapp.com/api/results`).then((res) => {
+  //       setLargeDataSet(res.data);
+  //     });
+  //   };
+
+  //   const all = Object.values(largeDataSet);
+
   return (
     <Fade>
       <Container>
         <WelcomeHeader />
         <WelcomeContent />
-   
       </Container>
     </Fade>
   );

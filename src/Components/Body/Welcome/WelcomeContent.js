@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components";
 import { Collapsible, CollapsibleItem, Icon } from "react-materialize";
@@ -7,23 +7,24 @@ import StartButton from "./StartButton";
 import SecondButton from "./SecondButton";
 import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg";
 import PrimitiveTypesContainer from "./PrimitiveTypesContainer";
-import axios from "axios";
 
 const WelcomeContent = () => {
-  const [largeDataSet, setLargeDataSet] = useState({});
+  //   const [largeDataSet, setLargeDataSet] = useState({});
 
-  useEffect(() => {
-    pullAndCompare();
-    // averageTheResults()
-  }, []);
+  //   useEffect(() => {
+  //     pullAndCompare();
+  //     // averageTheResults()
+  //   }, []);
 
-  const pullAndCompare = () => {
-    axios.get(`https://pq-backend.herokuapp.com/api/results`).then((res) => {
-      setLargeDataSet(res.data);
-    });
-  };
+  //   const pullAndCompare = () => {
+  //     axios.get(`https://pq-backend.herokuapp.com/api/results`).then((res) => {
+  //       setLargeDataSet(res.data);
+  //     });
+  //   };
 
-  const all = Object.values(largeDataSet);
+  //   const all = Object.values(largeDataSet);
+
+  //this axios call for some reason breaks the dropdowns. no matter where it is placed in app.
 
   return (
     <Fade>
@@ -70,9 +71,6 @@ const WelcomeContent = () => {
             <br />
             <br />
             <br />
-            <Cite>
-              <sup>1</sup> Need Cite info for the reference here
-            </Cite>
           </P>
           <StartButton />
         </Section>
@@ -128,15 +126,9 @@ const WelcomeContent = () => {
             </Section>
           </CollapsibleItem>
         </Collapsible>
-        <BackgroundLayer></BackgroundLayer>
-
-        <div>
-          <h5 className="teal-text">See How You Compare</h5>
-          <P>
-            So far, {all.length} people have taken the ROAMING Survey to find
-            their Primal Quotient.
-          </P>
-        </div>
+        <Cite>
+          <sup>1</sup> Need Cite info for the reference here
+        </Cite>
       </Section>
     </Fade>
   );
@@ -152,7 +144,7 @@ const Cite = styled.p`
 
 const Section = styled.section`
   display: flex;
-  justify-content: space;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
   margin: auto;
