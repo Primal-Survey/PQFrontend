@@ -62,7 +62,7 @@ const WelcomeContent = () => {
 
         <BackgroundLayer></BackgroundLayer>
 
-        <Collapsible accordion className={"Accordian"}>
+        <Collapsible accordion={false} className={"Accordian"}>
           <CollapsibleItem
             expanded={false}
             header={
@@ -73,9 +73,7 @@ const WelcomeContent = () => {
             node="div"
           >
             <Section>
-              <P>
-                Research Shows:
-              </P>
+              <P>Research Shows:</P>
               <P>
                 1. 2.5x = Those with a “high Primitive Quotient” are more likely
                 to star an entrepreneurial venture
@@ -99,15 +97,13 @@ const WelcomeContent = () => {
             expanded={false}
             header={
               <h5 className="teal-text" style={{ margin: "auto" }}>
-               What is your Primitive Quotient.
+                What is your Primitive Quotient.
               </h5>
             }
             node="div"
           >
             <Section>
-              <P>
-                Research Shows:
-              </P>
+              <P>Research Shows:</P>
               <P>
                 1. 2.5x = Those with a “high Primitive Quotient” are more likely
                 to star an entrepreneurial venture
@@ -160,7 +156,7 @@ const BackgroundLayer = styled.div`
   color: white;
   min-height: 10vh;
   margin: 10px 0;
-  width:100vw
+  width: 100vw;
 `;
 
 export default WelcomeContent;
