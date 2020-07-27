@@ -1,5 +1,5 @@
 .caption {
-  background-image: url("paper.gif");
+  background: url(${HeaderBanner}) no-repeat center center fixed;
   fill: #444;
   font-size: 1rem;
   font-weight: bold;
