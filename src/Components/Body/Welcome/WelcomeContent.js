@@ -45,71 +45,112 @@ const WelcomeContent = () => {
             developed by Marco Greenberg in his new book, <i>Primitive</i>:
             Tapping the Primal Drive that Powers the World’s Most Successful
             People.
-            <br />
-            <br />
-            <br />
-            <br />
           </P>
           <StartButton />
         </Section>
 
         <BackgroundLayer></BackgroundLayer>
 
-        <Collapsible accordion className={"Accordian"}>
-          <CollapsibleItem
-            expanded={false}
-            header={
-              <h5 className="teal-text" style={{ margin: "auto" }}>
-                Why Primal?
-              </h5>
-            }
-            node="div"
-          >
-            <Section>
-              <P>Research Shows:</P>
-              <P>
-                2.5x = Those with a “high Primitive Quotient” are more likely to
-                start an entrepreneurial venture
-              </P>
-              <P>
-                3x = Those with a high PQ report greater success in their
-                entrepreneurial ventures
-              </P>
-              <P>
-                67% = people who say they are sometimes, very often, or always
-                burned out at work<sup>2</sup> (cite to Gallup)
-              </P>
-              <P>
-                13% = people who describe themselves as “actively disengaged”
-                with “miserable work experiences”
-              </P>
-              <SecondButton />
-              <p>
-                ** "High PQ" is defined as those in the top 75% and "Low PQ" is
-                defined as those who are less than 25%.
-              </p>
-            </Section>
-          </CollapsibleItem>
-          <CollapsibleItem
-            expanded={false}
-            header={
-              <h5 className="teal-text" style={{ margin: "auto" }}>
-                What Primitive Types are there?
-              </h5>
-            }
-            node="div"
-          >
-            <Section>
-              <PrimitiveTypesContainer />
-            </Section>
-          </CollapsibleItem>
-        </Collapsible>
-        <Cite>
-          <sup>1</sup> Need Cite info for the reference here
-        </Cite>
-        <Cite>
-          <sup>2</sup> Need Cite info for the reference here
-        </Cite>
+        <Section>
+          <H2>Why Primal?</H2>
+
+          <CenteredText>
+            Research Shows that, when we use our strengths, we're happier, more
+            engaged and more likely to achieve our goals. This doesn't just
+            benefit you, but also the people, groups, teams, and organizations
+            you work with. When each person knows their strengths and makes use
+            of them, group and team relationships are stronger and people
+            achieve better results.{" "}
+          </CenteredText>
+
+          <StatSection>
+            <div className="row">
+              <div>
+                <StatContainer className="col s12 m6 l3">
+                  <Div>
+                    <Number>2.5x</Number>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      <i className="material-icons ">remove</i>
+                    </CenteredP>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      Those with a “high Primal Quotient” are more likely to
+                      start an entrepreneurial venture
+                    </CenteredP>
+                  </Div>
+                </StatContainer>
+
+                <StatContainer className="col s12 m6 l3">
+                  <Div>
+                    <Number>3x</Number>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      <i className="material-icons ">remove</i>
+                    </CenteredP>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      Those with a high PQ report greater success in their
+                      entrepreneurial ventures
+                    </CenteredP>
+                  </Div>
+                </StatContainer>
+
+                <StatContainer className="col s12 m6 l3">
+                  <Div>
+                    <Number>67%</Number>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      <i className="material-icons ">remove</i>
+                    </CenteredP>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      People who say they are sometimes, very often, or always
+                      burned out at work.
+                    </CenteredP>
+                  </Div>
+                </StatContainer>
+
+                <StatContainer className="col s12 m6 l3">
+                  <Div>
+                    <Number>13%</Number>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      <i className="material-icons ">remove</i>
+                    </CenteredP>
+                  </Div>
+                  <Div>
+                    {" "}
+                    <CenteredP>
+                      People who describe themselves as “actively disengaged”
+                      with “miserable work experiences”
+                    </CenteredP>
+                  </Div>
+                </StatContainer>
+              </div>
+            </div>
+            <SecondButton />
+          </StatSection>
+
+          <P>
+            ** "High PQ" is defined as those in the top 75% and "Low PQ" is
+            defined as those who are less than 25%.
+          </P>
+        </Section>
+
+        <BackgroundLayer></BackgroundLayer>
+
+        <Section>
+          <H2>What Primitive Types are there?</H2>
+          <PrimitiveTypesContainer />
+        </Section>
       </Section>
     </Fade>
   );
@@ -117,11 +158,14 @@ const WelcomeContent = () => {
 
 const P = styled.p`
   text-align: justify;
+  margin-bottom: 10em;
+  /* border: 1px solid red; */
 `;
-const Cite = styled.p`
-  /* display: flex; */
-  font-weight: 900;
-  font-size: 0.65em;
+
+const H2 = styled.h2`
+  font-size: 5rem;
+  color: black;
+  margin: 1em 0em;
 `;
 
 const Section = styled.section`
@@ -131,19 +175,61 @@ const Section = styled.section`
   align-items: center;
   margin: auto;
   max-width: 80%;
+  /* border: 1px solid orange; */
+`;
+
+const Number = styled.p`
+  font-size: 5em;
+  font-weight: 100;
+  /* border: 1px solid red; */
+  margin: 0;
+`;
+const CenteredP = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border: 1px solid black; */
+  margin: 0;
+  height: 100%;
+`;
+const Div = styled.div`
+  margin: 1em;
+  text-align: center;
+  /* border: 1px solid black; */
+`;
+const CenteredText = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border: 1px solid pink; */
+  /* margin: 5em; */
+  min-height: 5em;
+  width: 100%;
+`;
+const StatSection = styled.div`
+  /* display: flex;
+  justify-content: space-evenly;
+  flex-direction: wrap;
+  align-items: center;
+  width: 100%; */
+  min-height: 500px;
+  /* border: 1px solid blue; */
+`;
+const StatContainer = styled.div`
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  /* border: 1px solid red; */
 `;
 
 const BackgroundLayer = styled.div`
-  text-align: center;
-  background: url(${HeaderBanner}) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: white;
-  min-height: 10vh;
-  margin: 10px 0;
-  width: 100vw;
+  border-bottom: 2px lightgray solid;
+  width: 100%;
+  margin: auto;
 `;
-
 export default WelcomeContent;
