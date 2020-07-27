@@ -6,8 +6,26 @@ import "../../../App.css";
 import StartButton from "./StartButton";
 import SecondButton from "./SecondButton";
 import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg";
+import PrimitiveTypesContainer from "./PrimitiveTypesContainer";
 
 const WelcomeContent = () => {
+  //   const [largeDataSet, setLargeDataSet] = useState({});
+
+  //   useEffect(() => {
+  //     pullAndCompare();
+  //     // averageTheResults()
+  //   }, []);
+
+  //   const pullAndCompare = () => {
+  //     axios.get(`https://pq-backend.herokuapp.com/api/results`).then((res) => {
+  //       setLargeDataSet(res.data);
+  //     });
+  //   };
+
+  //   const all = Object.values(largeDataSet);
+
+  //this axios call for some reason breaks the dropdowns. no matter where it is placed in app.
+
   return (
     <Fade>
       <Section>
@@ -53,9 +71,6 @@ const WelcomeContent = () => {
             <br />
             <br />
             <br />
-            <Cite>
-              <sup>1</sup> Need Cite info for the reference here
-            </Cite>
           </P>
           <StartButton />
         </Section>
@@ -91,13 +106,18 @@ const WelcomeContent = () => {
                 with “miserable work experiences”
               </P>
               <SecondButton />
+              <p>
+                ** "High PQ" is defined as those in the top 75% and "Low PQ" is
+                defined as those who are less than 25%.
+              </p>
             </Section>
           </CollapsibleItem>
           <CollapsibleItem
             expanded={false}
             header={
               <h5 className="teal-text" style={{ margin: "auto" }}>
-                What is your Primitive Quotient.
+                What is your Primal Quotient.
+                What Primal Types are there?
               </h5>
             }
             node="div"
@@ -121,9 +141,13 @@ const WelcomeContent = () => {
                 with “miserable work experiences”
               </P>
               <SecondButton />
+              <PrimitiveTypesContainer />
             </Section>
           </CollapsibleItem>
         </Collapsible>
+        <Cite>
+          <sup>1</sup> Need Cite info for the reference here
+        </Cite>
       </Section>
     </Fade>
   );
@@ -139,7 +163,7 @@ const Cite = styled.p`
 
 const Section = styled.section`
   display: flex;
-  justify-content: space;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
   margin: auto;
