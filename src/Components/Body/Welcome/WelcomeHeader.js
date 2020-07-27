@@ -11,7 +11,7 @@ const WelcomeHeader = () => {
       <Section className="row">
         <H5>
           Everyone has a <i>Civilized </i> side, but have you ever wondered
-          about your <i>Primitive </i> side?
+          about your <i>Primal </i> side?
         </H5>
       </Section>
     </Fade>
