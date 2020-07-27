@@ -48,7 +48,28 @@ h4 {
 }
 
 .Accordian {
-  margin: auto !important;
+  margin: 8em auto !important;
   max-width: 80%;
   min-width: 80%;
+  box-shadow:none !important;
+
+}
+
+.collapsible {
+border-bottom: 2px lightgray solid !important;
+border-top: none !important;
+border-left: none !important;
+border-right: none !important;
+}
+
+.collapsible-header {
+  border: none !important;
+}
+
+.collapsible-body {
+  border: none !important;
+}
+.material-icons{
+  font-size: 3rem !important;
+  color: darkcyan;
 }

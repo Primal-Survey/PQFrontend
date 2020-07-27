@@ -8,7 +8,14 @@ import "react-svg-radar-chart/build/css/index.css";
 import "./chart.css";
 import ResultVisual from "./ResultVisual";
 import axios from "axios";
-import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg";
+import RP from "../Welcome/typeImages/R-Med.png";
+import OP from "../Welcome/typeImages/O.ico";
+import AP from "../Welcome/typeImages/A.ico";
+import MP from "../Welcome/typeImages/M.ico";
+import IP from "../Welcome/typeImages/I.ico";
+import NP from "../Welcome/typeImages/N.ico";
+import GP from "../Welcome/typeImages/G.ico";
+
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
@@ -252,30 +259,32 @@ function DataVisual(surveyInfo) {
 
   const captions = {
     // columns
-    Relentless: "Rel",
-    Oppositional: "Opp",
-    Agnostic: "Agn",
-    Messianic: "Mes",
-    Insecure: "Ins",
-    Nuts: "Nut",
-    Gallant: "Gal",
+    Relentless: "R",
+    Oppositional: "O",
+    Agnostic: "A",
+    Messianic: "M",
+    Insecure: "I",
+    Nuts: "N",
+    Gallant: "G",
   };
 
   return (
     <Fade>
-      <h4 className="teal-text">
-        You are <strong>{PrimalPercent}% Primal</strong> and{" "}
-        <strong>{100 - PrimalPercent}% Civilized</strong>
-      </h4>
-      <RadarChart captions={captions} data={data} size={350} />
-      <Div>
-        <GraphKey>
-          <Text>
-            <i className="material-icons tiny ">vpn_key</i>
+      <H2 className="teal-text">
+        You are <strong>{PrimalPercent}% Primal</strong>
+        {/* and{" "}
+        <strong>{100 - PrimalPercent}% Civilized</strong> */}
+      </H2>
+      <GraphDiv>
+        <RadarChart captions={captions} data={data} size={525} />
+        <Div>
+          <GraphKey>
+            <Text>
+              <i className="material-icons tiny ">vpn_key</i>
 
-            <P>Blue Overlay : Your Result</P>
-            <P>Red Overlay : Overall Survey Group of {all.length} users</P>
-            {/* <P>
+              <P>Blue Overlay : Your Result</P>
+              <P>Red Overlay : Overall Survey Group of {all.length} users</P>
+              {/* <P>
               You are {parseInt((resultInfo.relentlessResult / 15) * 100)}%
               Relentless
             </P>
@@ -299,26 +308,22 @@ function DataVisual(surveyInfo) {
             <P>
               You are {parseInt((resultInfo.gallantResult / 15) * 100)}% Gallant
             </P> */}
-          </Text>
-        </GraphKey>
-        <BackgroundLayer></BackgroundLayer>
-      </Div>
-
+            </Text>
+          </GraphKey>
+         
+        </Div>
+        
+      </GraphDiv>
+      <BackgroundLayer></BackgroundLayer>
       <ResultVisual resultInfo={resultInfo} />
     </Fade>
   );
 }
 
 const BackgroundLayer = styled.div`
-  text-align: center;
-  background: url(${HeaderBanner}) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: white;
-  min-height: 10vh;
-  margin: 10px 0;
+  border-bottom:2px lightgray solid;
+  width: 80%;
+  margin: auto;
 `;
 
 const P = styled.p`
@@ -334,12 +339,19 @@ const Div = styled.div`
   /* border: 1px solid black; */
 `;
 
+const GraphDiv = styled.div`
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+`;
+
 const GraphKey = styled.section`
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 80% 0;
   text-align: justify;
   max-width: 40vw;
   height: auto;
@@ -353,8 +365,12 @@ const Text = styled.section`
   margin: auto;
   text-align: justify;
   max-width: 40vw;
-  height: auto;
-  border: 2px solid black;
-  padding: 0.5px;
+  height: 200px;
+  padding: 5%;
+`;
+
+const H2 = styled.h2`
+  font-size: 3rem;
+  color: black !important;
 `;
 export default DataVisual;
