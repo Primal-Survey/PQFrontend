@@ -8,7 +8,14 @@ import "react-svg-radar-chart/build/css/index.css";
 import "./chart.css";
 import ResultVisual from "./ResultVisual";
 import axios from "axios";
-import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg";
+import RP from "../Welcome/typeImages/R-Med.png";
+import OP from "../Welcome/typeImages/O.ico";
+import AP from "../Welcome/typeImages/A.ico";
+import MP from "../Welcome/typeImages/M.ico";
+import IP from "../Welcome/typeImages/I.ico";
+import NP from "../Welcome/typeImages/N.ico";
+import GP from "../Welcome/typeImages/G.ico";
+
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
@@ -252,13 +259,13 @@ function DataVisual(surveyInfo) {
 
   const captions = {
     // columns
-    Relentless: "Rel",
-    Oppositional: "Opp",
-    Agnostic: "Agn",
-    Messianic: "Mes",
-    Insecure: "Ins",
-    Nuts: "Nut",
-    Gallant: "Gal",
+    Relentless: "R",
+    Oppositional: "O",
+    Agnostic: "A",
+    Messianic: "M",
+    Insecure: "I",
+    Nuts: "N",
+    Gallant: "G",
   };
 
   return (
