@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 import SecondButton from "./SecondButton";
 
-import R from "./typeImages/R.ico";
-import O from "./typeImages/O.ico";
-import A from "./typeImages/A.ico";
-import M from "./typeImages/M.ico";
-import I from "./typeImages/I.ico";
-import N from "./typeImages/N.ico";
-import G from "./typeImages/G.ico";
+import R from "./typeImages/R-LG.png";
+import O from "./typeImages/O-Lg.png";
+import A from "./typeImages/A-Lg.png";
+import M from "./typeImages/M-Lg.png";
+import I from "./typeImages/I-Lg.png";
+import N from "./typeImages/N-Lg.png";
+import G from "./typeImages/G-Lg.png";
 
 import moduleName from "module";
 import PrimitiveTypeCard from "./PrimitiveTypeCard";

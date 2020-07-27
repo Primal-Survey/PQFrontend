@@ -31,123 +31,126 @@ const WelcomeContent = () => {
       <Section>
         <Section>
           <P>
-            The <strong>“ROAMING” SURVEY</strong>is a 21-question
-            self-assessment designed to discover your Primitive Quotient (PQ).
-            Similar to your IQ and EQ, your PQ tells you what innate,
-            instinctive, and intuitive qualities you gravitate most towards.
-            Based on your responses, find out whether you are more{" "}
-            <strong>R</strong>elentless, <strong>O</strong>ppositional,{" "}
-            <strong>A</strong>gnostic, <strong>M</strong>essianic,{" "}
-            <strong>I</strong>nsecure, <strong>N</strong>uts, or{" "}
-            <strong>G</strong>allant. Compare your score to everyone who has
-            taken the assessment and email a detailed analysis to yourself upon
-            completion. <br />
+            The <strong>“ROAMING SURVEY”</strong> is a 21-question
+            self-assessment created to discover your Primal Quotient (PQ). Your
+            PQ is an overall score that tells you how likely you are to follow
+            your innate, instinctive, and intuitive side in your professional
+            life. <br />
             <br />
             This is not corporate BS or business jargon. It is also not meant to
             be psychology. This survey gets to the heart of the matter for those
             eager to jump ahead of the pack in an unusually challenging economic
-            landscape. The ROAMING SURVEY is based on a study<sup>1</sup>{" "}
-            created by a St. Joseph’s University Professor of Management in
-            conjunction with a methodology developed by Marco Greenberg in his
-            new book, <i>Primitive</i>: Tapping the Primal Drive that Powers the
-            World’s Most Successful People.
-            <br />
-            <br />
-            Research indicates that you’ll be more fulfilled and make more money
-            the more you are able to tap into your Primitive side. As it stands,
-            67% of people feel burnt out one way or another. This survey is
-            meant to help stuck individuals feel empowered and liberated. It
-            provides you with a lucid roadmap on how to start, reinvent, or
-            recalibrate their careers.
-            <br />
-            <br />
-            Start by clicking <strong>“Begin Survey”</strong> below. And don’t
-            forget, this is a spectrum. It is the balance between{" "}
-            <i>Civilized</i> and <i>Primitive</i>, the push and the pull. The
-            world cannot blossom without Civilized people! Civilized folks are
-            key. You need both. But with the world changing right under our
-            feet, it is now more important than ever to tap into our Primitive
-            sides
-            <br />
-            <br />
-            <br />
+            landscape. This survey is based on a study created by a St. Joseph’s
+            University Professor of Management in conjunction with a methodology
+            developed by Marco Greenberg in his new book, <i>Primitive</i>:
+            Tapping the Primal Drive that Powers the World’s Most Successful
+            People.
           </P>
           <StartButton />
         </Section>
 
         <BackgroundLayer></BackgroundLayer>
 
-        <Collapsible accordion={false} className={"Accordian"}>
-          <CollapsibleItem
-            expanded={false}
-            header={
-              <h5 className="teal-text" style={{ margin: "auto" }}>
-                Why Primal?
-              </h5>
-            }
-            node="div"
-          >
-            <Section>
-              <P>Research Shows:</P>
-              <P>
-                1. 2.5x = Those with a “high Primitive Quotient” are more likely
-                to star an entrepreneurial venture
-              </P>
-              <P>
-                2. 3x = Those with a high PQ report greater success in their
-                entrepreneurial ventures
-              </P>
-              <P>
-                3. 67% = people who say they are sometimes, very often, or
-                always burned out at work (cite to Gallup)
-              </P>
-              <P>
-                4. 13% = people who describe themselves as “actively disengaged”
-                with “miserable work experiences”
-              </P>
-              <SecondButton />
-              <p>
-                ** "High PQ" is defined as those in the top 75% and "Low PQ" is
-                defined as those who are less than 25%.
-              </p>
-            </Section>
-          </CollapsibleItem>
-          <CollapsibleItem
-            expanded={false}
-            header={
-              <h5 className="teal-text" style={{ margin: "auto" }}>
-                What is your Primal Quotient.
-                What Primal Types are there?
-              </h5>
-            }
-            node="div"
-          >
-            <Section>
-              <P>Research Shows:</P>
-              <P>
-                1. 2.5x = Those with a “high Primitive Quotient” are more likely
-                to star an entrepreneurial venture
-              </P>
-              <P>
-                2. 3x = Those with a high PQ report greater success in their
-                entrepreneurial ventures
-              </P>
-              <P>
-                3. 67% = people who say they are sometimes, very often, or
-                always burned out at work (cite to Gallup)
-              </P>
-              <P>
-                4. 13% = people who describe themselves as “actively disengaged”
-                with “miserable work experiences”
-              </P>
-              <SecondButton />
-              <PrimitiveTypesContainer />
-            </Section>
-          </CollapsibleItem>
-        </Collapsible>
-        <Cite>
-          <sup>1</sup> Need Cite info for the reference here
-        </Cite>
+        <Section>
+          <H2>Why Primal?</H2>
+
+          <CenteredText>
+            Research Shows that, when we use our strengths, we're happier, more
+            engaged and more likely to achieve our goals. This doesn't just
+            benefit you, but also the people, groups, teams, and organizations
+            you work with. When each person knows their strengths and makes use
+            of them, group and team relationships are stronger and people
+            achieve better results.{" "}
+          </CenteredText>
+
+          <StatSection>
+            <div className="row">
+              <div>
+                <StatContainer className="col s12 m6 l3">
+                  <Div>
+                    <Number>2.5x</Number>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      <i className="material-icons ">remove</i>
+                    </CenteredP>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      Those with a “high Primal Quotient” are more likely to
+                      start an entrepreneurial venture
+                    </CenteredP>
+                  </Div>
+                </StatContainer>
+
+                <StatContainer className="col s12 m6 l3">
+                  <Div>
+                    <Number>3x</Number>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      <i className="material-icons ">remove</i>
+                    </CenteredP>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      Those with a high PQ report greater success in their
+                      entrepreneurial ventures
+                    </CenteredP>
+                  </Div>
+                </StatContainer>
+
+                <StatContainer className="col s12 m6 l3">
+                  <Div>
+                    <Number>67%</Number>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      <i className="material-icons ">remove</i>
+                    </CenteredP>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      People who say they are sometimes, very often, or always
+                      burned out at work.
+                    </CenteredP>
+                  </Div>
+                </StatContainer>
+
+                <StatContainer className="col s12 m6 l3">
+                  <Div>
+                    <Number>13%</Number>
+                  </Div>
+                  <Div>
+                    <CenteredP>
+                      <i className="material-icons ">remove</i>
+                    </CenteredP>
+                  </Div>
+                  <Div>
+                    {" "}
+                    <CenteredP>
+                      People who describe themselves as “actively disengaged”
+                      with “miserable work experiences”
+                    </CenteredP>
+                  </Div>
+                </StatContainer>
+              </div>
+            </div>
+            <SecondButton />
+          </StatSection>
+
+          <P>
+            ** "High PQ" is defined as those in the top 75% and "Low PQ" is
+            defined as those who are less than 25%.
+          </P>
+        </Section>
+
+        <BackgroundLayer></BackgroundLayer>
+
+        <Section>
+          <H2>What Primitive Types are there?</H2>
+          <PrimitiveTypesContainer />
+        </Section>
       </Section>
     </Fade>
   );
@@ -155,10 +158,14 @@ const WelcomeContent = () => {
 
 const P = styled.p`
   text-align: justify;
+  margin-bottom: 10em;
+  /* border: 1px solid red; */
 `;
-const Cite = styled.p`
-  font-weight: 900;
-  font-size: 0.75em;
+
+const H2 = styled.h2`
+  font-size: 5rem;
+  color: black;
+  margin: 1em 0em;
 `;
 
 const Section = styled.section`
@@ -168,19 +175,61 @@ const Section = styled.section`
   align-items: center;
   margin: auto;
   max-width: 80%;
+  /* border: 1px solid orange; */
+`;
+
+const Number = styled.p`
+  font-size: 5em;
+  font-weight: 100;
+  /* border: 1px solid red; */
+  margin: 0;
+`;
+const CenteredP = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border: 1px solid black; */
+  margin: 0;
+  height: 100%;
+`;
+const Div = styled.div`
+  margin: 1em;
+  text-align: center;
+  /* border: 1px solid black; */
+`;
+const CenteredText = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border: 1px solid pink; */
+  /* margin: 5em; */
+  min-height: 5em;
+  width: 100%;
+`;
+const StatSection = styled.div`
+  /* display: flex;
+  justify-content: space-evenly;
+  flex-direction: wrap;
+  align-items: center;
+  width: 100%; */
+  min-height: 500px;
+  /* border: 1px solid blue; */
+`;
+const StatContainer = styled.div`
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  /* border: 1px solid red; */
 `;
 
 const BackgroundLayer = styled.div`
-  text-align: center;
-  background: url(${HeaderBanner}) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: white;
-  min-height: 10vh;
-  margin: 10px 0;
-  width: 100vw;
+  border-bottom: 2px lightgray solid;
+  width: 100%;
+  margin: auto;
 `;
-
 export default WelcomeContent;

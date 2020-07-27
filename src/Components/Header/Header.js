@@ -17,7 +17,7 @@ function Header() {
 }
 const Section = styled.header`
   /* padding-bottom: 25px; */
-  height: 10vh;
+  height: 12vh;
   display: flex;
 `;
 
