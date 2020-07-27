@@ -263,11 +263,11 @@ function DataVisual(surveyInfo) {
 
   return (
     <Fade>
-      <h4 className="teal-text">
+      <H2 className="teal-text">
         You are <strong>{PrimalPercent}% Primal</strong>
         {/* and{" "}
         <strong>{100 - PrimalPercent}% Civilized</strong> */}
-      </h4>
+      </H2>
       <GraphDiv>
         <RadarChart captions={captions} data={data} size={525} />
         <Div>
@@ -303,7 +303,9 @@ function DataVisual(surveyInfo) {
             </P> */}
             </Text>
           </GraphKey>
+         
         </Div>
+        
       </GraphDiv>
       <BackgroundLayer></BackgroundLayer>
       <ResultVisual resultInfo={resultInfo} />
@@ -312,15 +314,9 @@ function DataVisual(surveyInfo) {
 }
 
 const BackgroundLayer = styled.div`
-  text-align: center;
-  background: url(${HeaderBanner}) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: white;
-  min-height: 10vh;
-  margin: 10px 0;
+  border-bottom:2px lightgray solid;
+  width: 80%;
+  margin: auto;
 `;
 
 const P = styled.p`
@@ -343,6 +339,7 @@ const GraphDiv = styled.div`
 `;
 
 const GraphKey = styled.section`
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -350,7 +347,7 @@ const GraphKey = styled.section`
   margin: 80% 0;
   text-align: justify;
   max-width: 40vw;
-  height: 200px;
+  height: auto;
   /* border: 1px solid black; */
 `;
 const Text = styled.section`
@@ -361,8 +358,12 @@ const Text = styled.section`
   margin: auto;
   text-align: justify;
   max-width: 40vw;
-  height: auto;
-  border: 2px solid black;
-  padding: 0.5px;
+  height: 200px;
+  padding: 5%;
+`;
+
+const H2 = styled.h2`
+  font-size: 3rem;
+  color: black !important;
 `;
 export default DataVisual;
