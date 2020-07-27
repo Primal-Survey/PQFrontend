@@ -264,18 +264,20 @@ function DataVisual(surveyInfo) {
   return (
     <Fade>
       <h4 className="teal-text">
-        You are <strong>{PrimalPercent}% Primal</strong> and{" "}
-        <strong>{100 - PrimalPercent}% Civilized</strong>
+        You are <strong>{PrimalPercent}% Primal</strong>
+        {/* and{" "}
+        <strong>{100 - PrimalPercent}% Civilized</strong> */}
       </h4>
-      <RadarChart captions={captions} data={data} size={350} />
-      <Div>
-        <GraphKey>
-          <Text>
-            <i className="material-icons tiny ">vpn_key</i>
+      <GraphDiv>
+        <RadarChart captions={captions} data={data} size={525} />
+        <Div>
+          <GraphKey>
+            <Text>
+              <i className="material-icons tiny ">vpn_key</i>
 
-            <P>Blue Overlay : Your Result</P>
-            <P>Red Overlay : Overall Survey Group of {all.length} users</P>
-            {/* <P>
+              <P>Blue Overlay : Your Result</P>
+              <P>Red Overlay : Overall Survey Group of {all.length} users</P>
+              {/* <P>
               You are {parseInt((resultInfo.relentlessResult / 15) * 100)}%
               Relentless
             </P>
@@ -299,11 +301,11 @@ function DataVisual(surveyInfo) {
             <P>
               You are {parseInt((resultInfo.gallantResult / 15) * 100)}% Gallant
             </P> */}
-          </Text>
-        </GraphKey>
-        <BackgroundLayer></BackgroundLayer>
-      </Div>
-
+            </Text>
+          </GraphKey>
+        </Div>
+      </GraphDiv>
+      <BackgroundLayer></BackgroundLayer>
       <ResultVisual resultInfo={resultInfo} />
     </Fade>
   );
@@ -334,15 +336,21 @@ const Div = styled.div`
   /* border: 1px solid black; */
 `;
 
+const GraphDiv = styled.div`
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+`;
+
 const GraphKey = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 80% 0;
   text-align: justify;
   max-width: 40vw;
-  height: auto;
+  height: 200px;
   /* border: 1px solid black; */
 `;
 const Text = styled.section`
