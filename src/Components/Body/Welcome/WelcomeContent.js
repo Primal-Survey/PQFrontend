@@ -136,19 +136,18 @@ const WelcomeContent = () => {
                 </StatContainer>
               </div>
             </div>
-            <SecondButton />
           </StatSection>
-
+          <SecondButton />
           <P>
             ** "High PQ" is defined as those in the top 75% and "Low PQ" is
-            defined as those who are less than 25%.
+            defined as those who are less than 25% Primal.
           </P>
         </Section>
 
         <BackgroundLayer></BackgroundLayer>
 
         <Section>
-          <H2>What Primitive Types are there?</H2>
+          <H2>What Primal Types are there?</H2>
           <PrimitiveTypesContainer />
         </Section>
       </Section>
@@ -158,7 +157,7 @@ const WelcomeContent = () => {
 
 const P = styled.p`
   text-align: justify;
-  margin-bottom: 10em;
+  margin-bottom: 5em;
   /* border: 1px solid red; */
 `;
 
@@ -230,6 +229,6 @@ const StatContainer = styled.div`
 const BackgroundLayer = styled.div`
   border-bottom: 2px lightgray solid;
   width: 100%;
-  margin: auto;
+  margin: 10em 0em;
 `;
 export default WelcomeContent;

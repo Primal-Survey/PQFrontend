@@ -3,15 +3,14 @@ import styled from "styled-components";
 
 import SecondButton from "./SecondButton";
 
-import R from "./typeImages/R-LG.png";
-import O from "./typeImages/O-Lg.png";
-import A from "./typeImages/A-Lg.png";
-import M from "./typeImages/M-Lg.png";
-import I from "./typeImages/I-Lg.png";
-import N from "./typeImages/N-Lg.png";
-import G from "./typeImages/G-Lg.png";
+import R from "./typeImages/R-Med.png";
+import O from "./typeImages/O-Med.png";
+import A from "./typeImages/A-Med.png";
+import M from "./typeImages/M-Med.png";
+import I from "./typeImages/I-Med.png";
+import N from "./typeImages/N-Med.png";
+import G from "./typeImages/G-Med.png";
 
-import moduleName from "module";
 import PrimitiveTypeCard from "./PrimitiveTypeCard";
 
 const PrimitiveTypesContainer = () => {

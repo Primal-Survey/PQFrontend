@@ -12,6 +12,6 @@ const StartButton = () => {
   );
 };
 const Button = styled.button`
-  margin-bottom: 10em;
+  /* margin-bottom: 10em; */
 `;
 export default StartButton;

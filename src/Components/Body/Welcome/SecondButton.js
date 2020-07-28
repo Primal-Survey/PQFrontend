@@ -13,6 +13,6 @@ const SecondButton = () => {
   );
 };
 const Button = styled.button`
-  margin: 0.25em 0em;
+  margin: 3em 0em;
 `;
 export default SecondButton;

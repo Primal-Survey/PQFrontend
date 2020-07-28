@@ -5,43 +5,64 @@ const PrimitiveTypeCard = (props) => {
   //   console.log(props.skill);
   return (
     <SkillStyle
-      className="card medium"
+      className="card small"
       style={{
         width: "15vw",
         // height: "300px",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-evenly",
+        justifyContent: "space-between",
         alignItems: "center",
+        boxShadow: "none",
       }}
     >
-      <div
+      <CardImage
         className="card-image"
         style={{
-          maxWidth: "95%",
-          maxHeight: "95%",
+          maxWidth: "28%",
+          maxHeight: "28%",
           display: "block",
         }}
       >
         <img src={props.primitiveType.image} alt="primitiveType img" />
-      </div>
+      </CardImage>
 
-      <div className="card-content center">
-        <p>
-          <strong>{props.primitiveType.title}</strong>
-        </p>
-        <p>{props.primitiveType.description}</p>
-      </div>
+      <CardText className="card-content center">
+        <Div>
+          <p>
+            <strong>{props.primitiveType.title}</strong>
+          </p>
+        </Div>
+        <Div>
+          <p>{props.primitiveType.description}</p>
+        </Div>
+      </CardText>
     </SkillStyle>
   );
 };
 const SkillStyle = styled.div`
-  padding: 3%;
+  /* border: 1px solid black; */
+  margin-bottom: 1em;
+`;
 
-  &:hover {
-    transition: 0.4s;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
-  }
+const CardImage = styled.div`
+  /* border: 1px solid orange; */
+`;
+
+const CardText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  width: 100%;
+  min-height: 75%;
+
+  /* border: 1px solid blue; */
+`;
+
+const Div = styled.div`
+  /* border: 1px solid red; */
+  margin-top: 1em;
 `;
 
 export default PrimitiveTypeCard;
