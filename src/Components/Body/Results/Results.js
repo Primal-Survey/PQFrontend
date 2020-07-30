@@ -7,11 +7,9 @@ import DataVisual from "./DataVisual";
 
 function Results(surveyInfo) {
   return (
-    <Fade>
-      <Container>
-        <DataVisual surveyInfo={surveyInfo} />
-      </Container>
-    </Fade>
+    <Container>
+      <DataVisual surveyInfo={surveyInfo} />
+    </Container>
   );
 }
 const Container = styled.div`

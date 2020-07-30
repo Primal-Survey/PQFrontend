@@ -6,7 +6,7 @@ const SecondButton = () => {
   return (
     <Link to="/questionpage1/">
       <Button className="waves-effect waves-light btn">
-        <i className="material-icons right">send</i>FIND YOUR PRIMITIVE QUOTIENT
+        <i className="material-icons right">send</i>FIND YOUR PRIMAL QUOTIENT
         NOW
       </Button>
     </Link>

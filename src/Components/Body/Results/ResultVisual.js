@@ -224,12 +224,12 @@ const ResultVisual = (resultInfo) => {
   let SecondTips = SecondTextBlock[0].tips;
   let ThirdTips = ThirdTextBlock[0].tips;
 
-  {
-    console.log("----> textblock", TextBlock);
-  }
+  //   {
+  //     console.log("----> textblock", TextBlock);
+  //   }
 
   return (
-    <Fade>
+    <div>
       {/* Section 1 */}
       <Collapsible accordion className={"Accordian"}>
         <CollapsibleItem
@@ -401,10 +401,9 @@ const ResultVisual = (resultInfo) => {
         </CollapsibleItem>
       </Collapsible>
 
-   
       <EmailMeForm TextBlock={TextBlock} range={range} />
       <InviteForm />
-    </Fade>
+    </div>
   );
 };
 

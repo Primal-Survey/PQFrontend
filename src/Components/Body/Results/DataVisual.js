@@ -16,7 +16,6 @@ import IP from "../Welcome/typeImages/I.ico";
 import NP from "../Welcome/typeImages/N.ico";
 import GP from "../Welcome/typeImages/G.ico";
 
-
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
   //   console.log(surveyInfo);
@@ -269,7 +268,7 @@ function DataVisual(surveyInfo) {
   };
 
   return (
-    <Fade>
+    <>
       <H2 className="teal-text">
         You are <strong>{PrimalPercent}% Primal</strong>
         {/* and{" "}
@@ -283,7 +282,7 @@ function DataVisual(surveyInfo) {
               <i className="material-icons tiny ">vpn_key</i>
 
               <P>Blue Overlay : Your Result</P>
-              <P>Red Overlay : Overall Survey Group of {all.length} users</P>
+              <P>Red Overlay : Overall Survey Results of {all.length} users</P>
               {/* <P>
               You are {parseInt((resultInfo.relentlessResult / 15) * 100)}%
               Relentless
@@ -310,18 +309,16 @@ function DataVisual(surveyInfo) {
             </P> */}
             </Text>
           </GraphKey>
-         
         </Div>
-        
       </GraphDiv>
       <BackgroundLayer></BackgroundLayer>
       <ResultVisual resultInfo={resultInfo} />
-    </Fade>
+    </>
   );
 }
 
 const BackgroundLayer = styled.div`
-  border-bottom:2px lightgray solid;
+  border-bottom: 2px lightgray solid;
   width: 80%;
   margin: auto;
 `;
@@ -346,7 +343,6 @@ const GraphDiv = styled.div`
 `;
 
 const GraphKey = styled.section`
-
   display: flex;
   flex-direction: column;
   justify-content: center;
