@@ -146,9 +146,10 @@ const RightBox = styled.div`
 const LeftBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 45%;
+  height: 100%;
   /* border: 1px solid red; */
 `;
 
@@ -158,7 +159,7 @@ const ImgBox = styled.div`
   align-items: center;
   width: 100%;
   margin: 3% 0;
- /* border: 1px solid pink; */
+  /* border: 1px solid pink; */
 `;
 
 const Img = styled.img`
@@ -181,9 +182,9 @@ const H5 = styled.h5`
 `;
 
 const LeftH5 = styled.h5`
-  padding-left: 10px;
-  margin: 20% 0;
-  /* border: 1px solid black; */
+  /* padding-left: 10px; */
+  margin: 5% 0;
+  /* border: 1px solid blue; */
 `;
 
 const BackgroundLayer = styled.div`
