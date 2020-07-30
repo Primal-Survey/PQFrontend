@@ -128,12 +128,12 @@ const ResultVisual = (resultInfo) => {
   switch (true) {
     case Value === 0:
       return (
-        <Fade>
+        <>
           <Section>
             <P>please fill out quiz to see results</P>
           </Section>
           {/* Have this else statement push to home page automatically if results are at 0 */}
-        </Fade>
+        </>
       );
 
     case Value <= 6:
@@ -169,12 +169,12 @@ const ResultVisual = (resultInfo) => {
   switch (true) {
     case SecondValue === 0:
       return (
-        <Fade>
+        <>
           <Section>
             <P>please fill out quiz to see results</P>
           </Section>
           {/* Have this else statement push to home page automatically if results are at 0 */}
-        </Fade>
+        </>
       );
 
     case SecondValue <= 6:
@@ -196,12 +196,12 @@ const ResultVisual = (resultInfo) => {
   switch (true) {
     case ThirdValue === 0:
       return (
-        <Fade>
+        <>
           <Section>
             <P>please fill out quiz to see results</P>
           </Section>
           {/* Have this else statement push to home page automatically if results are at 0 */}
-        </Fade>
+        </>
       );
     case ThirdValue <= 6:
       thirdRange = ThirdTextBlock[0].rangeInfo.low;
