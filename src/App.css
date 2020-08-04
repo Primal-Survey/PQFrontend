@@ -17,7 +17,7 @@ h5 {
   font-family: "TitlingGothicFBComp";
 }
 p {
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }
 
 h1,
@@ -48,7 +48,7 @@ h4 {
 }
 
 .Accordian {
-  margin: 8em auto !important;
+  margin: 0em auto !important;
   max-width: 80%;
   min-width: 80%;
   box-shadow: none !important;

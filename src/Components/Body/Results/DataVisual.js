@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
 import "./chart.css";
@@ -15,6 +15,7 @@ import MP from "../Welcome/typeImages/M.ico";
 import IP from "../Welcome/typeImages/I.ico";
 import NP from "../Welcome/typeImages/N.ico";
 import GP from "../Welcome/typeImages/G.ico";
+import { Container } from "react-materialize";
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
@@ -271,45 +272,24 @@ function DataVisual(surveyInfo) {
     <>
       <H2 className="teal-text">
         You are <strong>{PrimalPercent}% Primal</strong>
-        {/* and{" "}
-        <strong>{100 - PrimalPercent}% Civilized</strong> */}
       </H2>
+
       <GraphDiv>
-        <RadarChart captions={captions} data={data} size={525} />
-        <Div>
+        <Box></Box>
+        <Box>
+          {" "}
+          <RadarChart captions={captions} data={data} size={525} />
+        </Box>
+        <Box>
           <GraphKey>
             <Text>
               <i className="material-icons tiny ">vpn_key</i>
 
               <P>Blue Overlay : Your Result</P>
               <P>Red Overlay : Overall Survey Results of {all.length} users</P>
-              {/* <P>
-              You are {parseInt((resultInfo.relentlessResult / 15) * 100)}%
-              Relentless
-            </P>
-            <P>
-              You are {parseInt((resultInfo.oppositionalResult / 15) * 100)}%
-              Oppositional
-            </P>
-            <P>
-              You are {parseInt((resultInfo.agnosticResult / 15) * 100)}%
-              Agnostic
-            </P>
-            <P>
-              You are {parseInt((resultInfo.messianicResult / 15) * 100)}%
-              Messianic
-            </P>
-            <P>
-              You are {parseInt((resultInfo.insecureResult / 15) * 100)}%
-              Insecure
-            </P>
-            <P>You are {parseInt((resultInfo.nutsResult / 15) * 100)}% Nuts</P>
-            <P>
-              You are {parseInt((resultInfo.gallantResult / 15) * 100)}% Gallant
-            </P> */}
             </Text>
           </GraphKey>
-        </Div>
+        </Box>
       </GraphDiv>
       <BackgroundLayer></BackgroundLayer>
       <ResultVisual resultInfo={resultInfo} />
@@ -330,16 +310,28 @@ const P = styled.p`
   font-weight: 700;
   margin: 1px;
 `;
-const Div = styled.div`
-  text-align: justify;
-  margin-bottom: 2em;
-  /* border: 1px solid black; */
-`;
+// const Div = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   text-align: justify;
+//   border: 1px solid black;
+// `;
 
 const GraphDiv = styled.div`
   display: flex;
-  margin: 0 auto;
+  margin: 2em auto;
   justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+`;
+
+const Box = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px lightgray solid; */
+  width: 33%;
+  /* min-height: 100%; */
 `;
 
 const GraphKey = styled.section`
@@ -347,11 +339,11 @@ const GraphKey = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 80% 0;
+  /* margin: 80% 0; */
   text-align: justify;
-  max-width: 40vw;
+  width: 100%;
   height: auto;
-  /* border: 1px solid black; */
+  /* border: 1px solid blue; */
 `;
 const Text = styled.section`
   display: flex;
@@ -360,8 +352,8 @@ const Text = styled.section`
   align-items: flex-start;
   margin: auto;
   text-align: justify;
-  max-width: 40vw;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   padding: 5%;
 `;
 

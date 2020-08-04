@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components";
 import { Collapsible, CollapsibleItem, Icon } from "react-materialize";
@@ -7,23 +7,23 @@ import StartButton from "./StartButton";
 import SecondButton from "./SecondButton";
 import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg";
 import PrimitiveTypesContainer from "./PrimitiveTypesContainer";
+import axios from "axios";
 
 const WelcomeContent = () => {
-  //   const [largeDataSet, setLargeDataSet] = useState({});
+  const [largeDataSet, setLargeDataSet] = useState({});
 
-  //   useEffect(() => {
-  //     pullAndCompare();
-  //     // averageTheResults()
-  //   }, []);
+  useEffect(() => {
+    pullAndCompare();
+  }, []);
 
-  //   const pullAndCompare = () => {
-  //     axios.get(`https://pq-backend.herokuapp.com/api/results`).then((res) => {
-  //       setLargeDataSet(res.data);
-  //     });
-  //   };
+  const pullAndCompare = () => {
+    axios.get(`https://pq-backend.herokuapp.com/api/results`).then((res) => {
+      setLargeDataSet(res.data);
+    });
+  };
 
-  //   const all = Object.values(largeDataSet);
-
+  const all = Object.values(largeDataSet);
+  console.log(all.length);
   //this axios call for some reason breaks the dropdowns. no matter where it is placed in app.
 
   return (
