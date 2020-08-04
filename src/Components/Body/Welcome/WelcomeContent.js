@@ -178,7 +178,7 @@ const Section = styled.section`
 `;
 
 const Number = styled.p`
-  font-size: 5em;
+  font-size: 5rem;
   font-weight: 100;
   /* border: 1px solid red; */
   margin: 0;

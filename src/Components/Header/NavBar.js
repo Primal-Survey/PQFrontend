@@ -222,7 +222,7 @@ const StyledLink = styled.a`
   align-items: center;
   margin: 1%;
   min-height: 18vh;
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
   &:hover {
     color: darkcyan;
     transition: 0.4s;

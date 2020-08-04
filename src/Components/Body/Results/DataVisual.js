@@ -173,7 +173,7 @@ function DataVisual(surveyInfo) {
         parseInt(DataInfo.gallant3))
     );
 
-    // if you're in DEV mode, it will RANDOM GEN the results..
+    // if you're in DEV mode, this will RANDOM GEN the results..
     if (process.env.NODE_ENV === "development") {
       DataInfo.relentlessResult = Math.floor(Math.random() * 15) + 1;
       DataInfo.oppositionalResult = Math.floor(Math.random() * 15) + 1;
@@ -310,12 +310,6 @@ const P = styled.p`
   font-weight: 700;
   margin: 1px;
 `;
-// const Div = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   text-align: justify;
-//   border: 1px solid black;
-// `;
 
 const GraphDiv = styled.div`
   display: flex;

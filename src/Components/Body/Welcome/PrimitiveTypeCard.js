@@ -19,8 +19,8 @@ const PrimitiveTypeCard = (props) => {
       <CardImage
         className="card-image"
         style={{
-          maxWidth: "28%",
-          maxHeight: "28%",
+          maxWidth: "75px",
+          maxHeight: "75px",
           display: "block",
         }}
       >
