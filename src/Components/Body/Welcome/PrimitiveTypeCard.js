@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const PrimitiveTypeCard = (props) => {
-  //   console.log(props.skill);
   return (
     <SkillStyle
       className="card small"
       style={{
-        width: "15vw",
+        width: "250px",
         // height: "300px",
         display: "flex",
         flexDirection: "column",
