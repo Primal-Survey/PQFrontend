@@ -149,6 +149,11 @@ const WelcomeContent = () => {
         <Section>
           <H2>What Primal Types are there?</H2>
           <PrimitiveTypesContainer />
+          <H2>See How You Compare:</H2>
+          <H3>
+            Already, <strong>{all.length}</strong> people have taken the ROAMING
+            Survey to find their Primitive Quotient.
+          </H3>
         </Section>
       </Section>
     </Fade>
@@ -163,6 +168,11 @@ const P = styled.p`
 
 const H2 = styled.h2`
   font-size: 5rem;
+  color: black;
+  margin: 1em 0em;
+`;
+const H3 = styled.h3`
+  font-size: 2.5rem;
   color: black;
   margin: 1em 0em;
 `;
@@ -213,7 +223,7 @@ const StatSection = styled.div`
   flex-direction: wrap;
   align-items: center;
   width: 100%; */
-  min-height: 500px;
+  min-height: 40vh;
   /* border: 1px solid blue; */
 `;
 const StatContainer = styled.div`
