@@ -32,19 +32,18 @@ const WelcomeContent = () => {
         <Section>
           <P>
             The <strong>“ROAMING SURVEY”</strong> is a 21-question
-            self-assessment created to discover your Primal Quotient (PQ). Your
-            PQ is an overall score that tells you how likely you are to follow
-            your innate, instinctive, and intuitive side in your professional
-            life. <br />
+            self-assessment created to discover your Primitive Quotient (PQ).
+            Your PQ is an overall score that tells you how likely you are to
+            follow your innate, instinctive, and intuitive side in your
+            professional life. <br />
             <br />
             This is not corporate BS or business jargon. It is also not meant to
             be psychology. This survey gets to the heart of the matter for those
             eager to jump ahead of the pack in an unusually challenging economic
-            landscape. This survey is based on a study created by a St. Joseph’s
-            University Professor of Management in conjunction with a methodology
-            developed by Marco Greenberg in his new book, <i>Primitive</i>:
-            Tapping the Primal Drive that Powers the World’s Most Successful
-            People.
+            landscape. This survey is based on a study created by a St. Joseph's
+            University Professor of Management, building on the model developed
+            by Marco Greenberg in his book, <i>Primitive</i>: Tapping the
+            Primitive Drive that Powers the World’s Most Successful People.
           </P>
           <StartButton />
         </Section>
@@ -52,7 +51,7 @@ const WelcomeContent = () => {
         <BackgroundLayer></BackgroundLayer>
 
         <Section>
-          <H2>Why Primal?</H2>
+          <H2>Why Primitive?</H2>
 
           <CenteredText>
             Research Shows that, when we use our strengths, we're happier, more
@@ -77,7 +76,7 @@ const WelcomeContent = () => {
                   </Div>
                   <Div>
                     <CenteredP>
-                      Those with a “high Primal Quotient” are more likely to
+                      Those with a “high Primitive Quotient” are more likely to
                       start an entrepreneurial venture
                     </CenteredP>
                   </Div>
@@ -140,14 +139,14 @@ const WelcomeContent = () => {
           <SecondButton />
           <P>
             ** "High PQ" is defined as those in the top 75% and "Low PQ" is
-            defined as those who are less than 25% Primal.
+            defined as those who are less than 25% Primitive.
           </P>
         </Section>
 
         <BackgroundLayer></BackgroundLayer>
 
         <Section>
-          <H2>What Primal Types are there?</H2>
+          <H2>What Primitive Types are there?</H2>
           <PrimitiveTypesContainer />
           <H2>See How You Compare:</H2>
           <H3>

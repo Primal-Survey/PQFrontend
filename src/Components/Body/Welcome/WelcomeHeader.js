@@ -6,12 +6,12 @@ const WelcomeHeader = () => {
   return (
     <Fade>
       <Section className="row">
-        <H2>HOW PRIMAL ARE YOU?</H2>
+        <H2>HOW PRIMITIVE ARE YOU?</H2>
       </Section>
       <Section className="row">
         <H5>
           Everyone has a <i>Civilized </i> side, but have you ever wondered
-          about your <i>Primal </i> side?
+          about your <i>Primitive </i> side?
         </H5>
       </Section>
     </Fade>

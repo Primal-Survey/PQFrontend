@@ -271,7 +271,7 @@ function DataVisual(surveyInfo) {
   return (
     <>
       <H2 className="teal-text">
-        You are <strong>{PrimalPercent}% Primal</strong>
+        You are <strong>{PrimalPercent}% Primitive</strong>
       </H2>
 
       <GraphDiv>
