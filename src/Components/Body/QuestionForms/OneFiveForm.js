@@ -6,7 +6,7 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
     <div>
       <Form action="#">
         <RadioButtonContainer>
-          <RadioButton>
+          {/* <RadioButton>
             <label>
               <input
                 onChange={handleChange}
@@ -18,7 +18,7 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
               />
               <Strong>0</Strong>
             </label>
-          </RadioButton>
+          </RadioButton> */}
           <br />
           <RadioButton>
             <label>

@@ -63,6 +63,29 @@ const Questions = {
   Nuts3: {
     text: "I sometimes make impulsive decisions.",
   },
+  Relentless4: {
+    text: "I am very patient with others",
+  },
+  Oppositional4: {
+    text: "I accept that conflict is inevitable.",
+  },
+  Agnostic4: {
+    text: "I focus on building very specific skills.",
+  },
+  Messianic4: {
+    text:
+      "I work with intensity and purpose as if I'm not going to be around forever.",
+  },
+  Gallant4: {
+    text:
+      "I am motivated at work to do the right thing even if it means risking financial gain.",
+  },
+  Insecure4: {
+    text: "I am driven to prove my doubters wrong.",
+  },
+  Nuts4: {
+    text: "I see my successes as being rooted in taking risks.",
+  },
 };
 
 export default Questions;
