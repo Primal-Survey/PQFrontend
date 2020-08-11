@@ -150,7 +150,7 @@ const WelcomeContent = () => {
           <PrimitiveTypesContainer />
           <H2>See How You Compare:</H2>
           <H3>
-            Already, <strong>{all.length}</strong> people have taken the ROAMING
+					  Already, <strong style={{fontWeight: "bolder"}}>{all.length}</strong> people have taken the ROAMING
             Survey to find their Primitive Quotient.
           </H3>
         </Section>
