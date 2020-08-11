@@ -10,6 +10,7 @@ import QuestionsContext from "./Components/Contexts/QuestionContext";
 import Questions from "./Components/Contexts/Questions";
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
+import "./tweak.css"
 
 function App() {
   useEffect(() => {

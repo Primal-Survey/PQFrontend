@@ -97,21 +97,28 @@ function Footer() {
           {/* -----------------  right links ---------------------------*/}
         </Content>
 
-        <div
+      </Foot>
+        <Copyright
           className="footer-copyright N/A transparent"
-          style={{
-            border: "none",
-            boxShadow: "none",
-          }}
+        //   style={{
+        //     border: "none",
+        //     boxShadow: "none",
+        //   }}
         >
           <div className="container">
             © 2020 Marco Greenberg. All Rights Reserved.
           </div>
-        </div>
-      </Foot>
+        </Copyright>
     </BackgroundLayer>
   );
 }
+const Copyright = styled.div`
+border: none;
+box-shadow: none;
+margin-top: -20px;
+padding-bottom: 20px
+`;
+
 const Foot = styled.footer`
   height: 60vh;
   display: contents;
@@ -197,6 +204,7 @@ const BackgroundLayer = styled.div`
   color: white;
   min-height: 20vh;
   margin: auto;
-`;
+  `;
+//   padding-bottom: 50px;
 
 export default Footer;

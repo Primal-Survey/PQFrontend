@@ -271,15 +271,15 @@ function DataVisual(surveyInfo) {
   return (
     <>
       <H2 className="teal-text">
-        You are <strong>{PrimalPercent}% Primitive</strong>
+        You are <strong>{PrimalPercent}%</strong> Primitive
       </H2>
 
       <GraphDiv>
-        <Box></Box>
-        <Box>
+        <BoxLeft></BoxLeft>
+        <BoxMid>
           {" "}
           <RadarChart captions={captions} data={data} size={525} />
-        </Box>
+        </BoxMid>
         <Box>
           <GraphKey>
             <Text>
@@ -316,7 +316,27 @@ const GraphDiv = styled.div`
   margin: 2em auto;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid red; */
+    @media (max-width: 991px) {
+	  flex-direction: column;
+  }
+
+`;
+
+const BoxLeft = styled.div`
+  width: 33%;
+  @media (max-width: 991px) {
+	  display: none;
+  }
+`;
+
+const BoxMid = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px lightgray solid; */
+  width: 33%;
+  /* min-height: 100%; */
+    min-width: 420px;
 `;
 
 const Box = styled.div`

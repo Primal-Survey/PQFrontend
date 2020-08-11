@@ -78,11 +78,8 @@ const EmailMeForm = (props) => {
               alignItems: "center",
             }}
           >
-            <div
+            <Emails
               className="row"
-              style={{
-                width: "50%",
-              }}
             >
               <EmailErr>{emailerr}</EmailErr>
               <div
@@ -112,7 +109,7 @@ const EmailMeForm = (props) => {
                 />
                 <label htmlFor="icon_prefix">Your Email Address</label>
               </div>
-            </div>
+            </Emails>
           </form>{" "}
           <div
             style={{
@@ -154,6 +151,13 @@ const EmailMeForm = (props) => {
 const Button = styled.footer`
   margin-bottom: 20px;
   min-width: 275px;
+`;
+
+const Emails = styled.div`
+	width: 50%;
+	@media (max-width: 782px) {
+		width: 75%;
+	}
 `;
 
 const EmailErr = styled.div`

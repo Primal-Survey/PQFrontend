@@ -70,11 +70,8 @@ const InviteForm = () => {
 							alignItems: "center",
 						}}
 					>
-						<div
+						<Emails
 							className="row" 
-							style={{
-								width: "50%",
-							}} 
 						>
 							<EmailErr>{emailerr}</EmailErr>
 							<div
@@ -104,7 +101,7 @@ const InviteForm = () => {
 									style={{ minHeight: "50px"}}
 								/>
 							</div>
-						</div>
+						</Emails>
 					</form>{" "}
 					<div
 						style={{
@@ -134,6 +131,13 @@ const InviteForm = () => {
 const Button = styled.footer`
   margin-bottom: 20px;
   min-width: 275px;
+`;
+
+const Emails = styled.div`
+	width: 50%;
+	@media (max-width: 782px) {
+		width: 75%;
+	}
 `;
 
 const EmailErr = styled.div`
