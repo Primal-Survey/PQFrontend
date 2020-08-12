@@ -1,0 +1,28 @@
+/* Generic Override */
+html {
+  background-color: #121212;
+  color: #fdfdfd;
+}
+
+/* Header Text Override */
+section h2, h5 {
+  color: #fdfdfd !important;
+}
+
+/* Primitive Types Cards Override */
+div.card.small {
+  background-color: #121212;
+  color: #fdfdfd;
+}
+
+section h3 {
+  color: #fdfdfd !important;
+}
+
+/* div .container {
+  background-color: #121212 !important;
+} */
+
+/* h1, h2, h3, h4, h5 {
+  color: #fdfdfd;
+} */
