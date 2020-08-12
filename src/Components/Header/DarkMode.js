@@ -5,9 +5,9 @@ function DarkMode() {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div>
+    <div className="darkmode-switch">
       {darkMode ? <link rel="stylesheet" type="text/css" href={process.env.PUBLIC_URL + "/darkmode.css"} /> : null}
-      <Switch id="darkmode-switch" onChange={() => setDarkMode((darkMode) => !darkMode)} />
+      <Switch id="darkmode" onChange={() => setDarkMode((darkMode) => !darkMode)} />
     </div>
   );
 }

@@ -1,1 +1,17 @@
 strong {font-weight: bolder; letter-spacing: 2px;}
+
+
+/* Darkmode toggle tweaks */
+.main-header {
+  display: flex;
+  justify-content: center;
+}
+.darkmode-right, .darkmode-left {
+  width: 2%;
+  display: flex;
+  align-items: center;
+}
+
+.switch label input[type="checkbox"] + .lever {
+  background-color: #bdbdbd;
+}

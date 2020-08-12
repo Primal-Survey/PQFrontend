@@ -8,7 +8,10 @@ import { Row } from "react-materialize";
 
 const NavBar = () => {
   return (
-    <div>
+    <div className="main-header">
+
+      <div className="darkmode-left"></div>
+
       <nav
         className="nav-wrapper N/A transparent"
         style={{
@@ -47,7 +50,7 @@ const NavBar = () => {
             </I>
           </a>
           {/* main NavBar */}
-          <NavContainer className=" right hide-on-med-and-down">
+          <NavContainer className="right hide-on-med-and-down">
             <ListItem>
               <MainLink
                 target="_blank"
@@ -90,13 +93,11 @@ const NavBar = () => {
                 <I>CONTACT</I>
               </MainLink>
             </ListItem>
-
-            <ListItem>
-              <DarkMode />
-            </ListItem>
           </NavContainer>
         </div>
       </nav>
+      
+      <div className="darkmode-right"><DarkMode /></div>
 
       {/* for mobile screen menu */}
       <Ul className="sidenav" id="mobile-demo">
@@ -149,10 +150,10 @@ const NavBar = () => {
 };
 
 const NavContainer = styled.ul`
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   /* border: 1px solid blue; */
 `;
