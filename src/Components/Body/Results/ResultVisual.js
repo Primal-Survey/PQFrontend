@@ -231,14 +231,13 @@ const ResultVisual = (resultInfo) => {
   return (
     <div>
       <Section>
+        <H2>Your Top Primitive Qualities</H2>
         {/* Section 1 */}
         <Collapsible accordion className={"Accordian"}>
           <CollapsibleItem
             expanded={true}
             header={
-              <H2 className="teal-text" style={{ margin: "auto" }}>
-                You are {TextBlock[0].catTitle}.{" "}
-              </H2>
+              <H2 style={{ margin: "auto" }}>{TextBlock[0].catTitle}. </H2>
             }
             node="div"
             icon={
@@ -246,46 +245,47 @@ const ResultVisual = (resultInfo) => {
                 <LgIcon>looks_one</LgIcon>
               </Icon>
             }
+            style={{
+              margin: "auto",
+              width: "100%",
+              //   border: "1px solid red",
+            }}
           >
-            <Section>
-              <P dangerouslySetInnerHTML={{ __html: TextBlock[0].catIntro }} />
-            </Section>
+            <P dangerouslySetInnerHTML={{ __html: TextBlock[0].catIntro }} />
+
             <Collapsible accordion className={"Accordian"}>
               <CollapsibleItem
+                style={{
+                  margin: "auto",
+                  width: "100%",
+                  //   border: "1px solid black",
+                }}
                 expanded={false}
-                header={
-                  <H3 className="teal-text" style={{ margin: "auto" }}>
-                    More details
-                  </H3>
-                }
+                header={<H3 style={{ margin: "auto" }}>More details</H3>}
                 node="div"
               >
-                {" "}
-                <Section>
-                  <P dangerouslySetInnerHTML={{ __html: range }} />
-                </Section>
+                <P dangerouslySetInnerHTML={{ __html: range }} />
               </CollapsibleItem>
 
               <CollapsibleItem
                 expanded={false}
-                header={
-                  <H3 className="teal-text" style={{ margin: "auto" }}>
-                    Tips
-                  </H3>
-                }
+                header={<H3 style={{ margin: "auto" }}>Tips</H3>}
                 node="div"
+                style={{
+                  margin: "auto",
+                  width: "100%",
+                  //   border: "1px solid pink",
+                }}
               >
-                <Section>
-                  <ul>
-                    {tips.map((tip) => {
-                      return (
-                        <li>
-                          <p dangerouslySetInnerHTML={{ __html: tip }} />
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </Section>
+                <ul>
+                  {tips.map((tip) => {
+                    return (
+                      <li>
+                        <p dangerouslySetInnerHTML={{ __html: tip }} />
+                      </li>
+                    );
+                  })}
+                </ul>
               </CollapsibleItem>
             </Collapsible>
           </CollapsibleItem>
@@ -295,7 +295,7 @@ const ResultVisual = (resultInfo) => {
           <CollapsibleItem
             expanded={false}
             header={
-              <H2 className="teal-text" style={{ margin: "auto" }}>
+              <H2 style={{ margin: "auto" }}>
                 {SecondTextBlock[0].catTitle}.{" "}
               </H2>
             }
@@ -306,39 +306,31 @@ const ResultVisual = (resultInfo) => {
               </Icon>
             }
           >
-            <Section>
+            <>
               <P
                 dangerouslySetInnerHTML={{
                   __html: SecondTextBlock[0].catIntro,
                 }}
               />
-            </Section>
+            </>
             <Collapsible accordion className={"Accordian"}>
               <CollapsibleItem
                 expanded={false}
-                header={
-                  <H3 className="teal-text" style={{ margin: "auto" }}>
-                    More details
-                  </H3>
-                }
+                header={<H3 style={{ margin: "auto" }}>More details</H3>}
                 node="div"
               >
                 {" "}
-                <Section>
+                <>
                   <P dangerouslySetInnerHTML={{ __html: secondRange }} />
-                </Section>
+                </>
               </CollapsibleItem>
 
               <CollapsibleItem
                 expanded={false}
-                header={
-                  <H3 className="teal-text" style={{ margin: "auto" }}>
-                    Tips
-                  </H3>
-                }
+                header={<H3 style={{ margin: "auto" }}>Tips</H3>}
                 node="div"
               >
-                <Section>
+                <>
                   <ul>
                     {SecondTips.map((tip) => {
                       return (
@@ -348,20 +340,17 @@ const ResultVisual = (resultInfo) => {
                       );
                     })}
                   </ul>
-                </Section>
+                </>
               </CollapsibleItem>
             </Collapsible>
           </CollapsibleItem>
         </Collapsible>
-
         {/* Section 3 */}
         <Collapsible accordion className={"Accordian"}>
           <CollapsibleItem
             expanded={false}
             header={
-              <H2 className="teal-text" style={{ margin: "auto" }}>
-                {ThirdTextBlock[0].catTitle}.{" "}
-              </H2>
+              <H2 style={{ margin: "auto" }}>{ThirdTextBlock[0].catTitle}. </H2>
             }
             node="div"
             icon={
@@ -370,37 +359,29 @@ const ResultVisual = (resultInfo) => {
               </Icon>
             }
           >
-            <Section>
+            <SubSection>
               <P
                 dangerouslySetInnerHTML={{ __html: ThirdTextBlock[0].catIntro }}
               />
-            </Section>
+            </SubSection>
             <Collapsible accordion className={"Accordian"}>
               <CollapsibleItem
                 expanded={false}
-                header={
-                  <H3 className="teal-text" style={{ margin: "auto" }}>
-                    More details
-                  </H3>
-                }
+                header={<H3 style={{ margin: "auto" }}>More details</H3>}
                 node="div"
               >
                 {" "}
-                <Section>
+                <SubSection>
                   <P dangerouslySetInnerHTML={{ __html: thirdRange }} />
-                </Section>
+                </SubSection>
               </CollapsibleItem>
 
               <CollapsibleItem
                 expanded={false}
-                header={
-                  <H3 className="teal-text" style={{ margin: "auto" }}>
-                    Tips
-                  </H3>
-                }
+                header={<H3 style={{ margin: "auto" }}>Tips</H3>}
                 node="div"
               >
-                <Section>
+                <SubSection>
                   <ul>
                     {ThirdTips.map((tip) => {
                       return (
@@ -410,13 +391,15 @@ const ResultVisual = (resultInfo) => {
                       );
                     })}
                   </ul>
-                </Section>
+                </SubSection>
               </CollapsibleItem>
             </Collapsible>
           </CollapsibleItem>
         </Collapsible>
       </Section>
+
       <EmailMeForm TextBlock={TextBlock} range={range} />
+
       <InviteForm />
     </div>
   );
@@ -433,7 +416,17 @@ const Section = styled.section`
   align-items: center;
   margin: auto;
   text-align: justify;
-  max-width: 80%;
+  max-width: 95%;
+`;
+
+const SubSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: justify;
+  width: 100%;
 `;
 const Header = styled.section`
   display: flex;
