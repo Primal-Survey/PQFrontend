@@ -40,8 +40,13 @@ function BodyBox() {
               next={2}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
-              keys={["relentless1", "oppositional1", "agnostic1"]}
-              questions={["Relentless1", "Oppositional1", "Agnostic1"]}
+              keys={["relentless1", "oppositional1", "agnostic1", "messianic1"]}
+              questions={[
+                "Relentless1",
+                "Oppositional1",
+                "Agnostic1",
+                "Messianic1",
+              ]}
             />
           )}
         />
@@ -55,8 +60,8 @@ function BodyBox() {
               next={3}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
-              keys={["messianic1", "gallant1", "insecure1"]}
-              questions={["Messianic1", "Gallant1", "Insecure1"]}
+              keys={["gallant1", "insecure1", "nuts1", "relentless2"]}
+              questions={["Gallant1", "Insecure1", "Nuts1", "Relentless2"]}
             />
           )}
         />
@@ -70,8 +75,13 @@ function BodyBox() {
               next={4}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
-              keys={["nuts1", "relentless2", "agnostic2"]}
-              questions={["Nuts1", "Relentless2", "Agnostic2"]}
+              keys={["agnostic2", "oppositional2", "messianic2", "gallant2"]}
+              questions={[
+                "Agnostic2",
+                "Oppositional2",
+                "Messianic2",
+                "Gallant2",
+              ]}
             />
           )}
         />
@@ -85,8 +95,8 @@ function BodyBox() {
               next={5}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
-              keys={["oppositional2", "messianic2", "gallant2"]}
-              questions={["Oppositional2", "Messianic2", "Gallant2"]}
+              keys={["nuts2", "insecure2", "relentless3", "oppositional3"]}
+              questions={["Nuts2", "Insecure2", "Relentless3", "Oppositional3"]}
             />
           )}
         />
@@ -100,8 +110,8 @@ function BodyBox() {
               next={6}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
-              keys={["nuts2", "insecure2", "relentless3"]}
-              questions={["Nuts2", "Insecure2", "Relentless3"]}
+              keys={["agnostic3", "messianic3", "gallant3", "insecure3"]}
+              questions={["Agnostic3", "Messianic3", "Gallant3", "Insecure3"]}
             />
           )}
         />
@@ -115,8 +125,8 @@ function BodyBox() {
               next={7}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
-              keys={["oppositional3", "agnostic3", "messianic3"]}
-              questions={["Oppositional3", "Agnostic3", "Messianic3"]}
+              keys={["nuts3", "relentless4", "oppositional4", "agnostic4"]}
+              questions={["Nuts3", "Relentless4", "Oppositional4", "Agnostic4"]}
             />
           )}
         />
@@ -130,8 +140,8 @@ function BodyBox() {
               next={null}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
-              keys={["gallant3", "insecure3", "nuts3"]}
-              questions={["Gallant3", "Insecure3", "Nuts3"]}
+              keys={["messianic4", "gallant4", "insecure4", "Nuts4"]}
+              questions={["Messianic4", "Gallant4", "Insecure4", "Nuts4"]}
             />
           )}
         />

@@ -17,29 +17,29 @@ function QuestionPage1({ prev, current, next, questions, keys, ...rest }) {
 
   return (
     <Fade>
-      <AgreeBox>
-        <AgreeBar>
+      {/* <AgreeBox> */}
+      {/* <AgreeBar>
           <i className="material-icons medium left">navigate_before</i>{" "}
           {/* <i className="material-icons small">fiber_manual_record</i> */}
-          <P>Completely Disagree</P>
-          {/* <i className="material-icons tiny">fiber_manual_record</i> */}
-          <i className="material-icons " style={{ margin: "0 1%" }}>
+      {/* <P>Completely Disagree</P> */}
+      {/* <i className="material-icons tiny">fiber_manual_record</i> */}
+      {/* <i className="material-icons " style={{ margin: "0 1%" }}>
             fiber_manual_record
-          </i>
-          {/* <i className="material-icons tiny">fiber_manual_record</i> */}
-          <i className="material-icons " style={{ margin: "0 1%" }}>
+          </i> */}
+      {/* <i className="material-icons tiny">fiber_manual_record</i> */}
+      {/* <i className="material-icons " style={{ margin: "0 1%" }}>
             fiber_manual_record
-          </i>
-          {/* <i className="material-icons tiny">fiber_manual_record</i> */}
-          <i className="material-icons " style={{ margin: "0 1%" }}>
+          </i> */}
+      {/* <i className="material-icons tiny">fiber_manual_record</i> */}
+      {/* <i className="material-icons " style={{ margin: "0 1%" }}>
             fiber_manual_record
-          </i>
-          {/* <i className="material-icons tiny">fiber_manual_record</i> */}
-          <P>Completely Agree</P>
-          {/* <i className="material-icons small">fiber_manual_record</i> */}
-          <i className="material-icons medium right">navigate_next</i>
-        </AgreeBar>
-      </AgreeBox>
+          </i> */}
+      {/* <i className="material-icons tiny">fiber_manual_record</i> */}
+      {/* <P>Completely Agree</P> */}
+      {/* <i className="material-icons small">fiber_manual_record</i> */}
+      {/* <i className="material-icons medium right">navigate_next</i> */}
+      {/* </AgreeBar>  */}
+      {/* </AgreeBox> */}
       <div>
         {questions.map((question, i) => (
           <QuestionContainer>
@@ -67,9 +67,7 @@ function QuestionPage1({ prev, current, next, questions, keys, ...rest }) {
               </Button>
             </Link>
           )}
-
-            Page {current} of 7
-
+          Page {current} of 7
           {next ? (
             <Link to={`/questionpage${next}/`}>
               <Button className="hoverable  btn">
