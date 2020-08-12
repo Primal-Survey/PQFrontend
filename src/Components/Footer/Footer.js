@@ -96,27 +96,26 @@ function Footer() {
 
           {/* -----------------  right links ---------------------------*/}
         </Content>
-
       </Foot>
-        <Copyright
-          className="footer-copyright N/A transparent"
+      <Copyright
+        className="footer-copyright N/A transparent"
         //   style={{
         //     border: "none",
         //     boxShadow: "none",
         //   }}
-        >
-          <div className="container">
-            © 2020 Marco Greenberg. All Rights Reserved.
-          </div>
-        </Copyright>
+      >
+        <div className="container">
+          © 2020 Marco Greenberg. All Rights Reserved.
+        </div>
+      </Copyright>
     </BackgroundLayer>
   );
 }
 const Copyright = styled.div`
-border: none;
-box-shadow: none;
-margin-top: -20px;
-padding-bottom: 20px
+  border: none;
+  box-shadow: none;
+  /* margin-top: -20px; */
+  padding-bottom: 20px;
 `;
 
 const Foot = styled.footer`
@@ -125,14 +124,17 @@ const Foot = styled.footer`
   /* justify-content: center; */
   align-items: center;
   justify-content: space-evenly;
+  /* border: 1px solid pink; */
 `;
 
 const Content = styled.div`
   display: flex;
   /* border: 1px solid blue; */
   justify-content: space-evenly;
-  min-width: 95vw;
-  min-height: 40vh;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 50vh;
+  /* border: 1px solid pink; */
 `;
 
 const Section = styled.section`
@@ -146,7 +148,8 @@ const RightBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 45%;
+  min-width: 49%;
+  height: auto;
   /* border: 1px solid yellow; */
 `;
 
@@ -155,8 +158,8 @@ const LeftBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 45%;
-  height: 100%;
+  min-width: 49%;
+  height: 50vh;
   /* border: 1px solid red; */
 `;
 
@@ -178,7 +181,7 @@ const Img = styled.img`
 const Img2 = styled.img`
   max-width: 20vw;
   height: auto;
-  border-radius: 100%;
+  /* border-radius: 100%; */
   /* border: 1px solid black; */
 `;
 
@@ -202,9 +205,10 @@ const BackgroundLayer = styled.div`
   -o-background-size: cover;
   background-size: cover;
   color: white;
-  min-height: 20vh;
+  width: 100%;
+  height: 100%;
   margin: auto;
-  `;
-//   padding-bottom: 50px;
+  /* border: 2px solid orange; */
+`;
 
 export default Footer;
