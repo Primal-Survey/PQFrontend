@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+
+import DarkMode from "./DarkMode";
+
 import { AutoInit } from "materialize-css";
 import { Row } from "react-materialize";
 
@@ -86,6 +89,10 @@ const NavBar = () => {
               >
                 <I>CONTACT</I>
               </MainLink>
+            </ListItem>
+
+            <ListItem>
+              <DarkMode />
             </ListItem>
           </NavContainer>
         </div>
