@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Switch } from "react-materialize";
 
 function DarkMode() {
-  const [darkMode, setDarkMode] = useState(1);
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <div>
