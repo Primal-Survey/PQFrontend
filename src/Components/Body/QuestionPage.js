@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components";
@@ -8,15 +8,51 @@ import OneFiveForm1 from "./QuestionForms/OneFiveForm";
 
 import SubmitButton from "./QuestionForms/SubmitButton";
 
+function ValidationErrorCard({ visible }) {
+  return visible ? (
+    <Fade>
+      <ErrorCard>
+        <ErrorCardText>Please answer each question before moving to the next page.</ErrorCardText>
+      </ErrorCard>
+    </Fade>
+  ) : null;
+}
+
 function QuestionPage1({ prev, current, next, questions, keys, ...rest }) {
+  const [showError, setShowError] = useState(false);
+
+  useEffect(() => {
+    setShowError(false);
+  }, [current]);
+
+  function navigate(e) {
+    /*
+      1. Ignore validation if app env is set to development
+      2. Determine if every question has a checked radio button
+        2.1. (true) Allow next page render
+        2.2. (false) Block and present validation error to user
+    */
+
+    if (process.env.REACT_APP_ENV != "development") {
+      const valid = keys.every((key) => rest.surveyInfo[key] > 0);
+
+      if (!valid) {
+        e.preventDefault();
+        setShowError(true);
+      }
+    }
+  }
+
   // if you're in DEV mode, it will skip the survey.
   // if (process.env.NODE_ENV === "development") {
   //   next = false;
   // }
+
   const Questions = useContext(QuestionsContext);
 
   return (
     <Fade>
+      <ValidationErrorCard visible={showError} />
       {/* <AgreeBox> */}
       {/* <AgreeBar>
           <i className="material-icons medium left">navigate_before</i>{" "}
@@ -69,7 +105,7 @@ function QuestionPage1({ prev, current, next, questions, keys, ...rest }) {
           )}
           Page {current} of 7
           {next ? (
-            <Link to={`/questionpage${next}/`}>
+            <Link to={`/questionpage${next}/`} onClick={navigate}>
               <Button className="hoverable  btn">
                 <i className="material-icons right">arrow_forward</i>
                 Next
@@ -91,6 +127,20 @@ const QuestionContainer = styled.div`
   align-items: center;
   max-width: 99vw;
   /* border: 1px solid pink; */
+`;
+
+const ErrorCard = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 4rem;
+  background-color: rgba(195, 42, 42, 0.88);
+`;
+
+const ErrorCardText = styled.p`
+  color: white;
+  font-style: italic;
 `;
 
 const Question = styled.div`
