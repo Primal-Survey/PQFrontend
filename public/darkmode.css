@@ -1,0 +1,64 @@
+/* Generic Override */
+html {
+  background-color: #121212;
+  color: #fdfdfd;
+}
+
+/* Header Text Override */
+section h2, h5 {
+  color: #fdfdfd !important;
+}
+
+/* Primitive Types Cards Override */
+div.card.small {
+  background-color: #121212;
+  color: #fdfdfd;
+}
+
+/* Landing Page Bottom Text CTA */
+section h3 {
+  color: #fdfdfd !important;
+}
+
+/* Quiz Label Override */
+label span {
+  color: #fdfdfd !important;
+}
+
+/* Result Text Override */
+main div h2.teal-text {
+  color: #fdfdfd !important;
+}
+
+/* Result Text Override */
+main div h2 strong {
+  color: #fdfdfd;
+}
+
+/* Chart Caption Override */
+g text.caption {
+  fill: #cac4bc;
+}
+
+/* Results Types Override */
+div.collapsible-header {
+  background-color: #121212;
+}
+
+div.collapsible-header h2{
+  color: #fdfdfd !important;
+}
+
+/* Results More Details Override */
+div.collapsible-header h3 {
+  color: #fdfdfd !important;
+}
+
+/* Form Override */
+input[type="text"] {
+  color: #fdfdfd !important;
+}
+
+div.input-field label {
+  color: #fdfdfd;
+}
