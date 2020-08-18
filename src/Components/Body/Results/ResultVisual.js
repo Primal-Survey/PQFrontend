@@ -231,7 +231,7 @@ const ResultVisual = (resultInfo) => {
   return (
     <div>
       <Section>
-        <H2>Your Top Primitive Qualities</H2>
+        <H2 className="teal-text">Your Top Primitive Qualities</H2>
         {/* Section 1 */}
         <Collapsible accordion className={"Accordian"}>
           <CollapsibleItem
