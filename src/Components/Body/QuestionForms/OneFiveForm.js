@@ -6,18 +6,22 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
     <div>
       <Form action="#">
         <RadioButtonContainer>
+          <Strong>
+            <p className="red-text text-darken-3">Disagree </p>
+          </Strong>
           <RadioButton>
-            <label>
+            <Label>
               <input
                 onChange={handleChange}
                 value={1}
-                className="with-gap"
+                className="with-gap teal-text"
                 name={questionKey}
                 checked={surveyInfo[questionKey] === "1"}
                 type="radio"
               />
-              <Strong>1</Strong>
-            </label>
+
+              <Strong className="red-text text-darken-3">1</Strong>
+            </Label>
           </RadioButton>
           <br />
           <RadioButton>
@@ -30,7 +34,7 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
                 checked={surveyInfo[questionKey] === "2"}
                 type="radio"
               />
-              <Strong>2</Strong>
+              <Strong className="red-text text-lighten-2 ">2</Strong>
             </label>
           </RadioButton>
 
@@ -58,7 +62,7 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
                 checked={surveyInfo[questionKey] === "4"}
                 type="radio"
               />
-              <Strong>4</Strong>
+              <Strong className="teal-text text-lighten-2">4</Strong>
             </label>
           </RadioButton>
 
@@ -72,10 +76,13 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
                 checked={surveyInfo[questionKey] === "5"}
                 type="radio"
               />
-              <Strong>5</Strong>
+              <Strong className="teal-text text-darken-2">5</Strong>
             </label>
           </RadioButton>
-        </RadioButtonContainer>{" "}
+          <Strong>
+            <p className="teal-text text-darken-2"> Agree</p>
+          </Strong>
+        </RadioButtonContainer>
       </Form>
     </div>
   );
@@ -107,5 +114,11 @@ const Strong = styled.span`
   font-weight: 700;
   color: black;
   /* border: 1px solid purple; */
+`;
+
+const Label = styled.label`
+  /* font-size: 1em !important; */
+  font-weight: 900;
+  text-decoration-color: blue;
 `;
 export default OneFiveForm;
