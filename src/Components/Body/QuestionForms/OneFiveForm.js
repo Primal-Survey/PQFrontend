@@ -6,9 +6,9 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
     <div>
       <Form action="#">
         <RadioButtonContainer>
-          <Strong className="deep-purple-text ">
+          <StrongWord className="deep-purple-text ">
             <p>Strongly Disagree </p>
-          </Strong>
+          </StrongWord>
           <RadioButton>
             <label style={{ transform: "scale(1.65)", padding: "10px" }}>
               <input
@@ -20,7 +20,9 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
                 type="radio"
               />
 
-              <Strong className="deep-purple-text text-lighten-1">1</Strong>
+              <StrongNumber className="deep-purple-text text-lighten-1">
+                1
+              </StrongNumber>
             </label>
           </RadioButton>
           <br />
@@ -34,7 +36,9 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
                 checked={surveyInfo[questionKey] === "2"}
                 type="radio"
               />
-              <Strong className="deep-purple-text text-lighten-3">2</Strong>
+              <StrongNumber className="deep-purple-text text-lighten-3">
+                2
+              </StrongNumber>
             </label>
           </RadioButton>
 
@@ -48,7 +52,7 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
                 checked={surveyInfo[questionKey] === "3"}
                 type="radio"
               />
-              <Strong>3</Strong>
+              <StrongNumber>3</StrongNumber>
             </label>
           </RadioButton>
 
@@ -62,7 +66,7 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
                 checked={surveyInfo[questionKey] === "4"}
                 type="radio"
               />
-              <Strong className="teal-text text-darken-1">4</Strong>
+              <StrongNumber className="teal-text text-darken-1">4</StrongNumber>
             </label>
           </RadioButton>
 
@@ -76,12 +80,12 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
                 checked={surveyInfo[questionKey] === "5"}
                 type="radio"
               />
-              <Strong className="teal-text text-darken-2">5</Strong>
+              <StrongNumber className="teal-text text-darken-2">5</StrongNumber>
             </label>
           </RadioButton>
-          <Strong className="teal-text text-darken-3">
+          <StrongWord className="teal-text text-darken-3">
             <p>Strongly Agree</p>
-          </Strong>
+          </StrongWord>
         </RadioButtonContainer>
       </Form>
     </div>
@@ -108,7 +112,6 @@ const RadioButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0em 0.25em;
 `;
 
 // const Input = styled.input`
@@ -121,9 +124,18 @@ const RadioButton = styled.div`
 //   margin: 0em 1em; */
 // `;
 
-const Strong = styled.span`
+const StrongWord = styled.span`
   font-weight: 700;
   color: black;
+  margin: 0em 1em;
+  /* border: 1px solid purple; */
+`;
+
+const StrongNumber = styled.span`
+  font-weight: 700;
+  color: black;
+  margin: 0em 1em;
+
   /* border: 1px solid purple; */
 `;
 
