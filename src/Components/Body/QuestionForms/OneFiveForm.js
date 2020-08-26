@@ -6,7 +6,7 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
     <div>
       <Form action="#">
         <RadioButtonContainer>
-          <Strong className="pink-text text-darken-4">
+          <Strong className="deep-purple-text ">
             <p>Strongly Disagree </p>
           </Strong>
           <RadioButton>
@@ -20,7 +20,7 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
                 type="radio"
               />
 
-              <Strong className="pink-text text-darken-3">1</Strong>
+              <Strong className="deep-purple-text text-lighten-1">1</Strong>
             </label>
           </RadioButton>
           <br />
@@ -34,7 +34,7 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
                 checked={surveyInfo[questionKey] === "2"}
                 type="radio"
               />
-              <Strong className="pink-text text-darken-2 ">2</Strong>
+              <Strong className="deep-purple-text text-lighten-3">2</Strong>
             </label>
           </RadioButton>
 
@@ -108,7 +108,7 @@ const RadioButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0em 1em;
+  margin: 0em 0.25em;
 `;
 
 // const Input = styled.input`

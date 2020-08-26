@@ -60,8 +60,8 @@ function QuestionPage1({ prev, current, next, questions, keys, ...rest }) {
         <Section>
           <P>
             Thinking about your usual self, please indicate the degree to which
-            you agree with the following statements about yourself. Be as honest
-            as possible to ensure the most useful feedback.
+            you agree with the following statements about yourself. <br />
+            Be as honest as possible to ensure the most useful feedback.
           </P>
         </Section>
 
