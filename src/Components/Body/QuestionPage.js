@@ -12,7 +12,9 @@ function ValidationErrorCard({ visible }) {
   return visible ? (
     <Fade>
       <ErrorCard>
-        <ErrorCardText>Please answer each question before moving to the next page.</ErrorCardText>
+        <ErrorCardText>
+          Please answer each question before moving to the next page.
+        </ErrorCardText>
       </ErrorCard>
     </Fade>
   ) : null;
@@ -53,30 +55,16 @@ function QuestionPage1({ prev, current, next, questions, keys, ...rest }) {
   return (
     <Fade>
       <ValidationErrorCard visible={showError} />
-      {/* <AgreeBox> */}
-      {/* <AgreeBar>
-          <i className="material-icons medium left">navigate_before</i>{" "}
-          {/* <i className="material-icons small">fiber_manual_record</i> */}
-      {/* <P>Completely Disagree</P> */}
-      {/* <i className="material-icons tiny">fiber_manual_record</i> */}
-      {/* <i className="material-icons " style={{ margin: "0 1%" }}>
-            fiber_manual_record
-          </i> */}
-      {/* <i className="material-icons tiny">fiber_manual_record</i> */}
-      {/* <i className="material-icons " style={{ margin: "0 1%" }}>
-            fiber_manual_record
-          </i> */}
-      {/* <i className="material-icons tiny">fiber_manual_record</i> */}
-      {/* <i className="material-icons " style={{ margin: "0 1%" }}>
-            fiber_manual_record
-          </i> */}
-      {/* <i className="material-icons tiny">fiber_manual_record</i> */}
-      {/* <P>Completely Agree</P> */}
-      {/* <i className="material-icons small">fiber_manual_record</i> */}
-      {/* <i className="material-icons medium right">navigate_next</i> */}
-      {/* </AgreeBar>  */}
-      {/* </AgreeBox> */}
+
       <div>
+        <Section>
+          <P>
+            Thinking about your usual self, please indicate the degree to which
+            you agree with the following statements about yourself. Be as honest
+            as possible to ensure the most useful feedback.
+          </P>
+        </Section>
+
         {questions.map((question, i) => (
           <QuestionContainer>
             <Question key={i}>
@@ -103,7 +91,8 @@ function QuestionPage1({ prev, current, next, questions, keys, ...rest }) {
               </Button>
             </Link>
           )}
-          Page {current} of 7
+          <P>Page {current} of 7</P>
+
           {next ? (
             <Link to={`/questionpage${next}/`} onClick={navigate}>
               <Button className="hoverable  btn">
@@ -119,6 +108,12 @@ function QuestionPage1({ prev, current, next, questions, keys, ...rest }) {
     </Fade>
   );
 }
+
+const Section = styled.section`
+  margin: auto;
+  text-align: center;
+  max-width: 75%;
+`;
 
 const QuestionContainer = styled.div`
   display: flex;
@@ -179,25 +174,6 @@ const Button = styled.button`
   /* margin-bottom: 20px; */
   min-width: 180px;
   /* border: 1px solid red; */
-`;
-
-const AgreeBox = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  max-width: 100%;
-  /* border: 1px solid red; */
-  margin: 0.75em;
-`;
-
-const AgreeBar = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-width: 50%;
-  /* border: 1px solid red; */
-  /* padding-bottom: 0.5em;
-  margin-bottom: 1.5em; */
 `;
 
 const P = styled.p`
