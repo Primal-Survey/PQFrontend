@@ -9,6 +9,8 @@ import EmailMeForm from "./EmailMeForm.js";
 import { Collapsible, CollapsibleItem, Icon } from "react-materialize";
 import InviteForm from "./InviteForm.js";
 import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg";
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 const ResultVisual = (resultInfo) => {
   // const [range, setRange] = useState("")
   let range = "";
@@ -16,8 +18,6 @@ const ResultVisual = (resultInfo) => {
   let thirdRange = "";
 
   //   console.log("PQ short scale -->", resultInfo.resultInfo.PQ_ShortScale);
-
-  // const emailInfo =      Build out this object to send to email form
 
   /////////////////////////////////////////////////  Setting up the resultTotals array
   const resultTotals = [];
@@ -57,18 +57,12 @@ const ResultVisual = (resultInfo) => {
   });
   //   console.log("values sorted-->", Sorted);
 
-  //
-  //
-  //
   /////////////////////////////////////////////////////// taking the last / highest result to display info from result text
   const TopResult = Sorted.pop();
   //   console.log("TopResult-->", TopResult);
   const SecondResult = Sorted[0];
   const ThirdResult = Sorted[1];
 
-  //
-  //
-  //
   /////////////////////////////////////////////////////// bringing in data from ResultsText to match the "TopResult" category and value
   const Name = TopResult.name;
   const SecondName = SecondResult.name;
@@ -102,29 +96,8 @@ const ResultVisual = (resultInfo) => {
     } else return ThirdTextBlock.push(Object.values(i)[0]);
   });
 
-  //   console.log("TextBlock", TextBlock[0]);
-  //   console.log("TextBlock", TextBlock[0].catTitle);
-  //   console.log("TextBlock", TextBlock[0].catIntro);
-  //   console.log("TextBlock", TextBlock[0].rangeInfo);
-  //   console.log("TextBlock", TextBlock[0].tips);
-  //   console.log("top text2 -->", ResultsText[[0][0].catTitle]);
-  //
-  //
-  //
   //////////////////////////////////////////////////////  show results if value not 0 (initial state), if quiz not filled out, push to home
 
-  // if (TopResult.value !== 0) {
-  /* 		///////////////////////////sets range for result range
-			Value >= 3 && Value <= 6
-				? (setRange(TextBlock[0].rangeInfo.low))
-				: Value >= 7 && Value <= 11
-					? (setRange(TextBlock[0].rangeInfo.medium))
-					: (setRange(TextBlock[0].rangeInfo.high));
-			// console.log(92, range);
-			let RangeResult = TextBlock[0].rangeInfo;
-			// console.log(94, RangeResult);
-			//   if (range) { TextBlock[0].rangeInfo = range;}
-	 */
   switch (true) {
     case Value === 0:
       return (

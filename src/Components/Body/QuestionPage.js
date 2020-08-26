@@ -45,11 +45,6 @@ function QuestionPage1({ prev, current, next, questions, keys, ...rest }) {
     }
   }
 
-  // if you're in DEV mode, it will skip the survey.
-  // if (process.env.NODE_ENV === "development") {
-  //   next = false;
-  // }
-
   const Questions = useContext(QuestionsContext);
 
   return (

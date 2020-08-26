@@ -18,17 +18,6 @@ function BodyBox() {
     <Main>
       <Switch>
         <Route exact path="/" component={Welcome} />
-        {/* <Route
-          path="/startPage/"
-          render={(props) => (
-            <Home
-              {...props}
-              surveyInfo={surveyInfo}
-              handleChange={handleChange}
-            />
-          )}
-        /> */}
-        {/* metadata page is disabled per client */}
 
         <Route
           path="/questionpage1/"
@@ -140,7 +129,7 @@ function BodyBox() {
               next={null}
               surveyInfo={surveyInfo}
               handleChange={handleChange}
-              keys={["messianic4", "gallant4", "insecure4", "Nuts4"]}
+              keys={["messianic4", "gallant4", "insecure4", "nuts4"]}
               questions={["Messianic4", "Gallant4", "Insecure4", "Nuts4"]}
             />
           )}
