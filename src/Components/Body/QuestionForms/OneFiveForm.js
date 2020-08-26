@@ -7,7 +7,7 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
       <Form action="#">
         <RadioButtonContainer>
           <Strong className="pink-text text-darken-4">
-            <p>Disagree </p>
+            <p>Strongly Disagree </p>
           </Strong>
           <RadioButton>
             <label style={{ transform: "scale(1.65)", padding: "10px" }}>
@@ -80,7 +80,7 @@ function OneFiveForm({ questionKey, surveyInfo, handleChange }) {
             </label>
           </RadioButton>
           <Strong className="teal-text text-darken-3">
-            <p> Agree</p>
+            <p>Strongly Agree</p>
           </Strong>
         </RadioButtonContainer>
       </Form>
