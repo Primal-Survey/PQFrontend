@@ -17,7 +17,10 @@ const ResultVisual = (resultInfo) => {
   let secondRange = "";
   let thirdRange = "";
 
-  //   console.log("PQ short scale -->", resultInfo.resultInfo.PQ_ShortScale);
+  //   console.log(
+  //     "from resultVisual.js PQ short scale -->",
+  //     resultInfo.resultInfo.PQ_ShortScale
+  //   );
 
   /////////////////////////////////////////////////  Setting up the resultTotals array
   const resultTotals = [];
@@ -49,20 +52,21 @@ const ResultVisual = (resultInfo) => {
     name: "gallant",
     value: resultInfo.resultInfo.gallantResult,
   };
-  //   console.log("resultTotals-->", resultTotals);
+  //   console.log("from resultVisual.js resultTotals-->", resultTotals);
 
   ///////////////////////////////////////////////////////  sorting the results
   const Sorted = resultTotals.sort(function (a, b) {
     return a.value - b.value;
   });
-  //   console.log("values sorted-->", Sorted);
+  //   console.log("from resultVisual.js resultTotals sorted-->", Sorted);
 
   /////////////////////////////////////////////////////// taking the last / highest result to display info from result text
   const TopResult = Sorted.pop();
-  //   console.log("TopResult-->", TopResult);
-  const SecondResult = Sorted[0];
-  const ThirdResult = Sorted[1];
-
+  //   console.log("from resultVisual.js first result-->", TopResult);
+  const SecondResult = Sorted.pop(-1);
+  //   console.log("from resultVisual.js second result-->", SecondResult);
+  const ThirdResult = Sorted.pop(-2);
+  //   console.log("from resultVisual.js third result-->", ThirdResult);
   /////////////////////////////////////////////////////// bringing in data from ResultsText to match the "TopResult" category and value
   const Name = TopResult.name;
   const SecondName = SecondResult.name;
@@ -97,8 +101,10 @@ const ResultVisual = (resultInfo) => {
   });
 
   //////////////////////////////////////////////////////  show results if value not 0 (initial state), if quiz not filled out, push to home
+  // For the High/Medium/Low break downs, we can break it down: "Low" = Total Score of 4 to 9, "Medium" = Total Score of 10 to 15, and "High" = Total Score of 16 to 20.
 
   switch (true) {
+    //////////////////////////////////////////////////for top result
     case Value === 0:
       return (
         <>
@@ -109,35 +115,24 @@ const ResultVisual = (resultInfo) => {
         </>
       );
 
-    case Value <= 6:
+    case Value < 10:
       range = TextBlock[0].rangeInfo.low;
       TextBlock[0].range = "low";
       break;
-    case Value <= 11:
+    case Value >= 10 && Value < 16:
       range = TextBlock[0].rangeInfo.medium;
       TextBlock[0].range = "medium";
       break;
-    case Value > 11:
+    case Value >= 16 && Value <= 20:
       range = TextBlock[0].rangeInfo.high;
       TextBlock[0].range = "high";
-      break;
-
-    case ThirdValue <= 6:
-      thirdRange = ThirdTextBlock[0].rangeInfo.low;
-      ThirdTextBlock[0].range = "low";
-      break;
-    case ThirdValue <= 11:
-      thirdRange = ThirdTextBlock[0].rangeInfo.medium;
-      ThirdTextBlock[0].range = "medium";
-      break;
-    case ThirdValue > 11:
-      thirdRange = ThirdTextBlock[0].rangeInfo.high;
-      ThirdTextBlock[0].range = "high";
       break;
 
     default:
       console.log(110, "Broken Switch/Case in ResultVisual");
   }
+
+  ////////////////////////////////////////////////for second result
 
   switch (true) {
     case SecondValue === 0:
@@ -150,21 +145,23 @@ const ResultVisual = (resultInfo) => {
         </>
       );
 
-    case SecondValue <= 6:
+    case SecondValue < 10:
       secondRange = SecondTextBlock[0].rangeInfo.low;
       SecondTextBlock[0].range = "low";
       break;
-    case SecondValue <= 11:
+    case SecondValue >= 10 && SecondValue < 16:
       secondRange = SecondTextBlock[0].rangeInfo.medium;
       SecondTextBlock[0].range = "medium";
       break;
-    case SecondValue > 11:
+    case SecondValue >= 16 && SecondValue <= 20:
       secondRange = SecondTextBlock[0].rangeInfo.high;
       SecondTextBlock[0].range = "high";
       break;
     default:
       console.log(110, "Broken Switch/Case in ResultVisual");
   }
+
+  /////////////////////////////////////////////////for third result
 
   switch (true) {
     case ThirdValue === 0:
@@ -176,15 +173,15 @@ const ResultVisual = (resultInfo) => {
           {/* Have this else statement push to home page automatically if results are at 0 */}
         </>
       );
-    case ThirdValue <= 6:
+    case ThirdValue < 10:
       thirdRange = ThirdTextBlock[0].rangeInfo.low;
       ThirdTextBlock[0].range = "low";
       break;
-    case ThirdValue <= 11:
+    case ThirdValue >= 10 && ThirdValue < 16:
       thirdRange = ThirdTextBlock[0].rangeInfo.medium;
       ThirdTextBlock[0].range = "medium";
       break;
-    case ThirdValue > 11:
+    case ThirdValue >= 16 && Value <= 20:
       thirdRange = ThirdTextBlock[0].rangeInfo.high;
       ThirdTextBlock[0].range = "high";
       break;

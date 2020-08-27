@@ -23,7 +23,7 @@ const WelcomeContent = () => {
   };
 
   const all = Object.values(largeDataSet);
-  console.log(all.length);
+  //   console.log(all.length);
   //this axios call for some reason breaks the dropdowns. no matter where it is placed in app.
 
   return (
@@ -150,7 +150,7 @@ const WelcomeContent = () => {
           <PrimitiveTypesContainer />
           <H2>See How You Compare:</H2>
           <H3>
-					  Already, <strong>{all.length}</strong> people have taken the ROAMING
+            Already, <strong>{all.length}</strong> people have taken the ROAMING
             Survey to find their Primitive Quotient.
           </H3>
         </Section>
