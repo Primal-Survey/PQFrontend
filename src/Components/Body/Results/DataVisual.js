@@ -102,7 +102,9 @@ function DataVisual(surveyInfo) {
     }
   });
 
-  /////////////////////////////////////////////////////////////these are the Db results on the graph, dont change to /20, too many results are prior to adding the additional questions and it makes it very skewed///////////////////////////
+  /////////////////////////////////////////////////////////////these are the Db results on the graph, dont change to /20, too many results are prior to adding the additional questions
+  //and it makes it very skewed
+
   const R = parseInt(RelentlessResult / all.length) / 15;
   const O = parseInt(OppositionalResult / all.length) / 15;
   const A = parseInt(AgnosticResult / all.length) / 15;
@@ -180,29 +182,30 @@ function DataVisual(surveyInfo) {
         parseInt(DataInfo.gallant3) +
         parseInt(DataInfo.gallant4))
     );
-    console.log(DataInfo.relentlessResult);
-    console.log(DataInfo.oppositionalResult);
-    console.log(DataInfo.agnosticResult);
-    console.log(DataInfo.messianicResult);
-    console.log(DataInfo.insecureResult);
-    console.log(DataInfo.nutsResult);
-    console.log(DataInfo.gallantResult);
+    console.log("relentlessResult", DataInfo.relentlessResult);
+    console.log("oppositionalResult", DataInfo.oppositionalResult);
+    console.log("agnosticResult", DataInfo.agnosticResult);
+    console.log("messianicResult", DataInfo.messianicResult);
+    console.log("insecureResult", DataInfo.insecureResult);
+    console.log("nutsResult", DataInfo.nutsResult);
+    console.log("gallantResult", DataInfo.gallantResult);
 
     // if you're in DEV mode, this will RANDOM GEN the results..
-    // if (process.env.NODE_ENV === "development") {
-    //   DataInfo.relentlessResult = Math.floor(Math.random() * 20) + 1;
-    //   DataInfo.oppositionalResult = Math.floor(Math.random() * 20) + 1;
-    //   DataInfo.agnosticResult = Math.floor(Math.random() * 20) + 1;
-    //   DataInfo.messianicResult = Math.floor(Math.random() * 20) + 1;
-    //   DataInfo.insecureResult = Math.floor(Math.random() * 20) + 1;
-    //   DataInfo.nutsResult = Math.floor(Math.random() * 20) + 1;
-    //   DataInfo.gallantResult = Math.floor(Math.random() * 20) + 1;
-    // }
+    if (process.env.NODE_ENV === "development") {
+      DataInfo.relentlessResult = Math.floor(Math.random() * 20) + 1;
+      DataInfo.oppositionalResult = Math.floor(Math.random() * 20) + 1;
+      DataInfo.agnosticResult = Math.floor(Math.random() * 20) + 1;
+      DataInfo.messianicResult = Math.floor(Math.random() * 20) + 1;
+      DataInfo.insecureResult = Math.floor(Math.random() * 20) + 1;
+      DataInfo.nutsResult = Math.floor(Math.random() * 20) + 1;
+      DataInfo.gallantResult = Math.floor(Math.random() * 20) + 1;
+    }
 
     setDataInfo(
       (DataInfo.IN_ShortScale =
         parseInt(DataInfo.insecureResult) + parseInt(DataInfo.nutsResult))
     );
+
     setDataInfo(
       (DataInfo.PQ_ShortScale =
         parseInt(DataInfo.relentlessResult) +
@@ -258,7 +261,7 @@ function DataVisual(surveyInfo) {
     },
   ];
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   //change this to the following instead of dividing the percent
   //   The math is imperfect in the table (going to round up per Ron's advice), so if:
@@ -273,12 +276,35 @@ function DataVisual(surveyInfo) {
   // (i) someone scores between 129 to 139, then it should say: "You Scored in the 99th Primitive Percentile."
   // (j) someone scores 140, then it should say: "You Scored in the 100th Primitive Percentile."
 
-  const primitivePercentile = parseFloat(
-    (resultInfo.PQ_ShortScale / 140) * 100
-  ).toFixed();
+  //   const primitivePercentile = parseFloat(
+  //     (resultInfo.PQ_ShortScale / 140) * 100
+  //   ).toFixed();
 
+  //total results are out of 28 min to 140 max points
+
+  const primitivePercentile =
+    resultInfo.PQ_ShortScale < 48
+      ? "1st"
+      : resultInfo.PQ_ShortScale >= 48 && resultInfo.PQ_ShortScale < 66
+      ? "10th"
+      : resultInfo.PQ_ShortScale >= 66 && resultInfo.PQ_ShortScale < 79
+      ? "20th"
+      : resultInfo.PQ_ShortScale >= 79 && resultInfo.PQ_ShortScale < 90
+      ? "35th"
+      : resultInfo.PQ_ShortScale >= 90 && resultInfo.PQ_ShortScale < 100
+      ? "50th"
+      : resultInfo.PQ_ShortScale >= 100 && resultInfo.PQ_ShortScale < 112
+      ? "75th"
+      : resultInfo.PQ_ShortScale >= 112 && resultInfo.PQ_ShortScale < 119
+      ? "85th"
+      : resultInfo.PQ_ShortScale >= 119 && resultInfo.PQ_ShortScale < 129
+      ? "95th"
+      : resultInfo.PQ_ShortScale >= 129 && resultInfo.PQ_ShortScale < 140
+      ? "99th"
+      : (resultInfo.PQ_ShortScale = 140 ? "100th" : null);
+  console.log(resultInfo.PQ_ShortScale);
   console.log(primitivePercentile);
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   const captions = {
     // columns
@@ -294,7 +320,8 @@ function DataVisual(surveyInfo) {
   return (
     <>
       <H2 className="teal-text">
-        You scored in the <strong>{primitivePercentile}th</strong> percentile
+        You scored in the <strong>{primitivePercentile}</strong> Primitive
+        Percentile
       </H2>
 
       <GraphDiv>
@@ -307,7 +334,6 @@ function DataVisual(surveyInfo) {
           <GraphKey>
             <Text>
               <i className="material-icons tiny ">vpn_key</i>
-
               <P>Blue Overlay : Your Result</P>
               <P>Red Overlay : Overall Survey Results of {all.length} users</P>
             </Text>
