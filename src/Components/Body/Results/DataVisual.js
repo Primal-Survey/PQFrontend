@@ -113,13 +113,13 @@ function DataVisual(surveyInfo) {
   const N = parseInt(NutsResult / all.length) / 15;
   const G = parseInt(GallantResult / all.length) / 15;
 
-  //   console.log(R)
-  //   console.log(O)
-  //   console.log(A)
-  //   console.log(M)
-  //   console.log(I)
-  //   console.log(N)
-  //   console.log(G)
+  //   console.log(R);
+  //   console.log(O);
+  //   console.log(A);
+  //   console.log(M);
+  //   console.log(I);
+  //   console.log(N);
+  //   console.log(G);
 
   const agrigateData = () => {
     const formatData = () => {
@@ -182,24 +182,24 @@ function DataVisual(surveyInfo) {
         parseInt(DataInfo.gallant3) +
         parseInt(DataInfo.gallant4))
     );
-    console.log("relentlessResult", DataInfo.relentlessResult);
-    console.log("oppositionalResult", DataInfo.oppositionalResult);
-    console.log("agnosticResult", DataInfo.agnosticResult);
-    console.log("messianicResult", DataInfo.messianicResult);
-    console.log("insecureResult", DataInfo.insecureResult);
-    console.log("nutsResult", DataInfo.nutsResult);
-    console.log("gallantResult", DataInfo.gallantResult);
 
-    // if you're in DEV mode, this will RANDOM GEN the results..
-    if (process.env.NODE_ENV === "development") {
-      DataInfo.relentlessResult = Math.floor(Math.random() * 20) + 1;
-      DataInfo.oppositionalResult = Math.floor(Math.random() * 20) + 1;
-      DataInfo.agnosticResult = Math.floor(Math.random() * 20) + 1;
-      DataInfo.messianicResult = Math.floor(Math.random() * 20) + 1;
-      DataInfo.insecureResult = Math.floor(Math.random() * 20) + 1;
-      DataInfo.nutsResult = Math.floor(Math.random() * 20) + 1;
-      DataInfo.gallantResult = Math.floor(Math.random() * 20) + 1;
-    }
+    // // if you're in DEV mode, this will RANDOM GEN the results..
+    // if (process.env.NODE_ENV === "development") {
+    //   DataInfo.relentlessResult = Math.floor(Math.random() * 20) + 1;
+    //   DataInfo.oppositionalResult = Math.floor(Math.random() * 20) + 1;
+    //   DataInfo.agnosticResult = Math.floor(Math.random() * 20) + 1;
+    //   DataInfo.messianicResult = Math.floor(Math.random() * 20) + 1;
+    //   DataInfo.insecureResult = Math.floor(Math.random() * 20) + 1;
+    //   DataInfo.nutsResult = Math.floor(Math.random() * 20) + 1;
+    //   DataInfo.gallantResult = Math.floor(Math.random() * 20) + 1;
+    // }
+    // console.log("relentlessResult", DataInfo.relentlessResult);
+    // console.log("oppositionalResult", DataInfo.oppositionalResult);
+    // console.log("agnosticResult", DataInfo.agnosticResult);
+    // console.log("messianicResult", DataInfo.messianicResult);
+    // console.log("insecureResult", DataInfo.insecureResult);
+    // console.log("nutsResult", DataInfo.nutsResult);
+    // console.log("gallantResult", DataInfo.gallantResult);
 
     setDataInfo(
       (DataInfo.IN_ShortScale =
@@ -302,8 +302,9 @@ function DataVisual(surveyInfo) {
       : resultInfo.PQ_ShortScale >= 129 && resultInfo.PQ_ShortScale < 140
       ? "99th"
       : (resultInfo.PQ_ShortScale = 140 ? "100th" : null);
-  console.log(resultInfo.PQ_ShortScale);
-  console.log(primitivePercentile);
+
+  //   console.log("PQ_ShortScale -->", resultInfo.PQ_ShortScale);
+  //   console.log("primitivePercentile -->", primitivePercentile);
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   const captions = {
@@ -327,7 +328,6 @@ function DataVisual(surveyInfo) {
       <GraphDiv>
         <BoxLeft></BoxLeft>
         <BoxMid>
-          {" "}
           <RadarChart captions={captions} data={data} size={525} />
         </BoxMid>
         <Box>
