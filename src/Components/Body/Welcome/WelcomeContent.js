@@ -31,7 +31,7 @@ const WelcomeContent = () => {
       <Section>
         <Section>
           <P>
-            The <strong>“ROAMING SURVEY”</strong> is a 21-question
+            The <strong>“ROAMING SURVEY”</strong> is a 28-question
             self-assessment created to discover your Primitive Quotient (PQ).
             Your PQ is an overall score that tells you how likely you are to
             follow your innate, instinctive, and intuitive side in your
@@ -40,10 +40,13 @@ const WelcomeContent = () => {
             This is not corporate BS or business jargon. It is also not meant to
             be psychology. This survey gets to the heart of the matter for those
             eager to jump ahead of the pack in an unusually challenging economic
-            landscape. This survey is based on a study created by a St. Joseph's
-            University Professor of Management, building on the model developed
-            by Marco Greenberg in his book, <i>Primitive</i>: Tapping the
-            Primitive Drive that Powers the World’s Most Successful People.
+            and career environment. This survey is based on a study created by a
+            St. Joseph's University Professor of Management, building on the
+            model developed by Marco Greenberg in his book,{" "}
+            <a href="https://www.amazon.com/Primitive-Tapping-Primal-Powering-Successful/dp/0316530379/">
+              <i>Primitive</i>: Tapping thePrimitive Drive that Powers the
+              World’s Most Successful People.
+            </a>
           </P>
           <StartButton />
         </Section>
@@ -54,12 +57,12 @@ const WelcomeContent = () => {
           <H2>Why Primitive?</H2>
 
           <CenteredText>
-            Research Shows that, when we use our strengths, we're happier, more
-            engaged and more likely to achieve our goals. This doesn't just
-            benefit you, but also the people, groups, teams, and organizations
-            you work with. When each person knows their strengths and makes use
-            of them, group and team relationships are stronger and people
-            achieve better results.{" "}
+            Research shows that, when we use our strengths, we’re more satisfied
+            in our work, earn more, and are more likely to achieve our goals.
+            This doesn't just benefit you, but also the people, groups, teams,
+            and organizations you work with. When each person knows their
+            strengths and makes use of them, group and team relationships are
+            stronger and people achieve better results.{" "}
           </CenteredText>
 
           <StatSection>
@@ -146,7 +149,7 @@ const WelcomeContent = () => {
         <BackgroundLayer></BackgroundLayer>
 
         <Section>
-          <H2>What Primitive Types are there?</H2>
+          <H2>What Elements of Primitive are there?</H2>
           <PrimitiveTypesContainer />
           <H2>See How You Compare:</H2>
           <H3>

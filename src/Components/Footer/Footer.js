@@ -20,8 +20,8 @@ function Footer() {
                 <div>
                   <div>
                     <LeftH5>
-                      Captures insights and advice that everyone can use to
-                      thrive in the constantly evolving workplace.
+                      "Captures insights and advice that everyone can use to
+                      thrive in the constantly evolving workplace."
                     </LeftH5>
                   </div>
                   <LeftH5 className="teal-text">

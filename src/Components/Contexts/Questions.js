@@ -13,7 +13,7 @@ const Questions = {
       "I see what I do at work as being more than just a job--it's a mission.",
   },
   Gallant1: {
-    text: "I help others without looking to be repaid.",
+    text: "I prefer putting principles over profit in my work.",
   },
   Insecure1: {
     text: "I frequently view paranoia as a virtue.",

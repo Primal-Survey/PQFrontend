@@ -10,8 +10,14 @@ const WelcomeHeader = () => {
       </Section>
       <Section className="row">
         <H5>
-          Everyone has a <i>Civilized </i> side, but have you ever wondered
-          about your <i>Primitive </i> side?
+          Everyone has a{" "}
+          <WhiteSpace>
+            <i>Civilized </i>side
+          </WhiteSpace>
+          , but have you ever wondered about your{" "}
+          <WhiteSpace>
+            <i>Primitive </i> side?
+          </WhiteSpace>
         </H5>
       </Section>
     </Fade>
@@ -32,5 +38,7 @@ const H2 = styled.h2`
 const H5 = styled.h5`
   color: black;
 `;
-
+const WhiteSpace = styled.span`
+  word-spacing: 5px;
+`;
 export default WelcomeHeader;
