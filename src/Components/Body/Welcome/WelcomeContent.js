@@ -44,7 +44,7 @@ const WelcomeContent = () => {
             St. Joseph's University Professor of Management, building on the
             model developed by Marco Greenberg in his book,{" "}
             <a href="https://www.amazon.com/Primitive-Tapping-Primal-Powering-Successful/dp/0316530379/">
-              <i>Primitive</i>: Tapping thePrimitive Drive that Powers the
+              <i>Primitive</i>: Tapping the Primal Drive that Powers the
               World’s Most Successful People.
             </a>
           </P>
