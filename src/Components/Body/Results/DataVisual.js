@@ -1,21 +1,11 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-
-// import Fade from "react-reveal/Fade";
-import RadarChart from "react-svg-radar-chart";
-import "react-svg-radar-chart/build/css/index.css";
-import "./chart.css";
-import ResultVisual from "./ResultVisual";
-import axios from "axios";
-import RP from "../Welcome/typeImages/R-Med.png";
-import OP from "../Welcome/typeImages/O.ico";
-import AP from "../Welcome/typeImages/A.ico";
-import MP from "../Welcome/typeImages/M.ico";
-import IP from "../Welcome/typeImages/I.ico";
-import NP from "../Welcome/typeImages/N.ico";
-import GP from "../Welcome/typeImages/G.ico";
-import { Container } from "react-materialize";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import RadarChart from 'react-svg-radar-chart';
+import 'react-svg-radar-chart/build/css/index.css';
+import './chart.css';
+import ResultVisual from './ResultVisual';
+import axios from 'axios';
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
@@ -36,90 +26,81 @@ function DataVisual(surveyInfo) {
   };
 
   const all = Object.values(largeDataSet);
-  //   console.log(all);
 
   let RelentlessResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[15] === "relentlessResult") {
-      //   console.log("here", Object.keys(key))
-      RelentlessResult = RelentlessResult + Object.values(key)[15];
+    if (Object.keys(key)[14] === 'relentlessResult') {
+      //   console.log('here', Object.keys(key));
+      RelentlessResult = RelentlessResult + Object.values(key)[14];
     } else {
-      console.log("didnt work");
+      console.log('RelentlessResult didnt work');
     }
   });
 
   let OppositionalResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[19] === "oppositionalResult") {
+    if (Object.keys(key)[19] === 'oppositionalResult') {
       OppositionalResult = OppositionalResult + Object.values(key)[19];
     } else {
-      console.log("didnt work");
+      console.log('OppositionalResult didnt work');
     }
   });
 
   let AgnosticResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[23] === "agnosticResult") {
-      AgnosticResult = AgnosticResult + Object.values(key)[23];
+    if (Object.keys(key)[24] === 'agnosticResult') {
+      AgnosticResult = AgnosticResult + Object.values(key)[24];
     } else {
-      console.log("didnt work");
+      console.log('AgnosticResult didnt work');
     }
   });
 
   let MessianicResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[27] === "messianicResult") {
-      MessianicResult = MessianicResult + Object.values(key)[27];
+    if (Object.keys(key)[29] === 'messianicResult') {
+      MessianicResult = MessianicResult + Object.values(key)[29];
     } else {
-      console.log("didnt work");
+      console.log('MessianicResult didnt work');
     }
   });
 
   let InsecureResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[35] === "insecureResult") {
-      InsecureResult = InsecureResult + Object.values(key)[35];
+    if (Object.keys(key)[39] === 'insecureResult') {
+      InsecureResult = InsecureResult + Object.values(key)[39];
     } else {
-      console.log("didnt work");
+      console.log('InsecureResult didnt work');
     }
   });
 
   let NutsResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[39] === "nutsResult") {
-      NutsResult = NutsResult + Object.values(key)[39];
+    if (Object.keys(key)[44] === 'nutsResult') {
+      NutsResult = NutsResult + Object.values(key)[44];
     } else {
-      console.log("didnt work");
+      console.log('NutsResult didnt work');
     }
   });
 
   let GallantResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[31] === "gallantResult") {
-      GallantResult = GallantResult + Object.values(key)[31];
+    if (Object.keys(key)[34] === 'gallantResult') {
+      GallantResult = GallantResult + Object.values(key)[34];
     } else {
-      console.log("didnt work");
+      console.log('GallantResult didnt work');
     }
   });
 
-  /////////////////////////////////////////////////////////////these are the Db results on the graph, dont change to /20, too many results are prior to adding the additional questions
-  //and it makes it very skewed
+  //divide by 20 when the original 1000 survey takers data includes the additional questions totalling 28 questions
+  //divide by 15 when the original 1000 survey takers data includes the additional questions totalling 21 questions
 
-  const R = parseInt(RelentlessResult / all.length) / 15;
-  const O = parseInt(OppositionalResult / all.length) / 15;
-  const A = parseInt(AgnosticResult / all.length) / 15;
-  const M = parseInt(MessianicResult / all.length) / 15;
-  const I = parseInt(InsecureResult / all.length) / 15;
-  const N = parseInt(NutsResult / all.length) / 15;
-  const G = parseInt(GallantResult / all.length) / 15;
-
-  //   console.log(R);
-  //   console.log(O);
-  //   console.log(A);
-  //   console.log(M);
-  //   console.log(I);
-  //   console.log(N);
-  //   console.log(G);
+  const R = parseInt(RelentlessResult / all.length) / 20;
+  const O = parseInt(OppositionalResult / all.length) / 20;
+  const A = parseInt(AgnosticResult / all.length) / 20;
+  const M = parseInt(MessianicResult / all.length) / 20;
+  const I = parseInt(InsecureResult / all.length) / 20;
+  const N = parseInt(NutsResult / all.length) / 20;
+  const G = parseInt(GallantResult / all.length) / 20;
 
   const agrigateData = () => {
     const formatData = () => {
@@ -184,7 +165,7 @@ function DataVisual(surveyInfo) {
     );
 
     // // if you're in DEV mode, this will RANDOM GEN the results..
-    // if (process.env.NODE_ENV === "development") {
+    // if (process.env.NODE_ENV === 'development') {
     //   DataInfo.relentlessResult = Math.floor(Math.random() * 20) + 1;
     //   DataInfo.oppositionalResult = Math.floor(Math.random() * 20) + 1;
     //   DataInfo.agnosticResult = Math.floor(Math.random() * 20) + 1;
@@ -193,13 +174,6 @@ function DataVisual(surveyInfo) {
     //   DataInfo.nutsResult = Math.floor(Math.random() * 20) + 1;
     //   DataInfo.gallantResult = Math.floor(Math.random() * 20) + 1;
     // }
-    // console.log("relentlessResult", DataInfo.relentlessResult);
-    // console.log("oppositionalResult", DataInfo.oppositionalResult);
-    // console.log("agnosticResult", DataInfo.agnosticResult);
-    // console.log("messianicResult", DataInfo.messianicResult);
-    // console.log("insecureResult", DataInfo.insecureResult);
-    // console.log("nutsResult", DataInfo.nutsResult);
-    // console.log("gallantResult", DataInfo.gallantResult);
 
     setDataInfo(
       (DataInfo.IN_ShortScale =
@@ -245,7 +219,7 @@ function DataVisual(surveyInfo) {
         Nuts: N,
         Gallant: G,
       },
-      meta: { color: "red" },
+      meta: { color: 'red' },
     },
     {
       data: {
@@ -257,70 +231,45 @@ function DataVisual(surveyInfo) {
         Nuts: n,
         Gallant: g,
       },
-      meta: { color: "blue" },
+      meta: { color: 'blue' },
     },
   ];
 
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  //change this to the following instead of dividing the percent
-  //   The math is imperfect in the table (going to round up per Ron's advice), so if:
-  // (a)  someone scores 28 (i.e. if they put "1" for each question) to 47, then it should say: "You Scored in the 1st Primitive Percentile."
-  // (b) someone scores between 48 to 65, then it should say: "You Scored in the 10th Primitive Percentile."
-  // (c) someone scores between 66 to 78, then it should say: "You Scored in the 20th Primitive Percentile."
-  // (d) someone scores between 79 to 89, then it should say: "You Scored in the 35th Primitive Percentile."
-  // (e) someone scores between 90 to 99, then it should say: "You Scored in the 50th Primitive Percentile."
-  // (f) someone scores between 100 to 111, then it should say: "You Scored in the 75th Primitive Percentile."
-  // (g) someone scores between 112 to 118, then it should say: "You Scored in the 85th Primitive Percentile."
-  // (h) someone scores between 119 to 128, then it should say: "You Scored in the 95th Primitive Percentile."
-  // (i) someone scores between 129 to 139, then it should say: "You Scored in the 99th Primitive Percentile."
-  // (j) someone scores 140, then it should say: "You Scored in the 100th Primitive Percentile."
-
-  //   const primitivePercentile = parseFloat(
-  //     (resultInfo.PQ_ShortScale / 140) * 100
-  //   ).toFixed();
-
-  //total results are out of 28 min to 140 max points
-
   const primitivePercentile =
     resultInfo.PQ_ShortScale < 48
-      ? "1st"
+      ? '1st'
       : resultInfo.PQ_ShortScale >= 48 && resultInfo.PQ_ShortScale < 66
-      ? "10th"
+      ? '10th'
       : resultInfo.PQ_ShortScale >= 66 && resultInfo.PQ_ShortScale < 79
-      ? "20th"
+      ? '20th'
       : resultInfo.PQ_ShortScale >= 79 && resultInfo.PQ_ShortScale < 90
-      ? "35th"
+      ? '35th'
       : resultInfo.PQ_ShortScale >= 90 && resultInfo.PQ_ShortScale < 100
-      ? "50th"
+      ? '50th'
       : resultInfo.PQ_ShortScale >= 100 && resultInfo.PQ_ShortScale < 112
-      ? "75th"
+      ? '75th'
       : resultInfo.PQ_ShortScale >= 112 && resultInfo.PQ_ShortScale < 119
-      ? "85th"
+      ? '85th'
       : resultInfo.PQ_ShortScale >= 119 && resultInfo.PQ_ShortScale < 129
-      ? "95th"
+      ? '95th'
       : resultInfo.PQ_ShortScale >= 129 && resultInfo.PQ_ShortScale < 140
-      ? "99th"
-      : (resultInfo.PQ_ShortScale = 140 ? "100th" : null);
-
-  //   console.log("PQ_ShortScale -->", resultInfo.PQ_ShortScale);
-  //   console.log("primitivePercentile -->", primitivePercentile);
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      ? '99th'
+      : (resultInfo.PQ_ShortScale = 140 ? '100th' : null);
 
   const captions = {
     // columns
-    Relentless: "R",
-    Oppositional: "O",
-    Agnostic: "A",
-    Messianic: "M",
-    Insecure: "I",
-    Nuts: "N",
-    Gallant: "G",
+    Relentless: 'R',
+    Oppositional: 'O',
+    Agnostic: 'A',
+    Messianic: 'M',
+    Insecure: 'I',
+    Nuts: 'N',
+    Gallant: 'G',
   };
 
   return (
     <>
-      <H2 className="teal-text">
+      <H2 className='teal-text'>
         You scored in the <strong>{primitivePercentile}</strong> Primitive
         Percentile
       </H2>
@@ -333,7 +282,7 @@ function DataVisual(surveyInfo) {
         <Box>
           <GraphKey>
             <Text>
-              <i className="material-icons tiny ">vpn_key</i>
+              <i className='material-icons tiny '>vpn_key</i>
               <P>Blue Overlay : Your Result</P>
               <P>Red Overlay : Overall Survey Results of {all.length} users</P>
             </Text>

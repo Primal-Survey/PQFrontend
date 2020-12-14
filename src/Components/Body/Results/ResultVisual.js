@@ -1,21 +1,19 @@
-import React, { useState } from "react";
-import Fade from "react-reveal/Fade";
-import styled from "styled-components";
-import "../../../App.css";
+import React from 'react';
+import styled from 'styled-components';
+import '../../../App.css';
 
-import ResultsText from "./ResultsText";
-import EmailMeForm from "./EmailMeForm.js";
+import ResultsText from './ResultsText';
+import EmailMeForm from './EmailMeForm.js';
 
-import { Collapsible, CollapsibleItem, Icon } from "react-materialize";
-import InviteForm from "./InviteForm.js";
-import HeaderBanner from "../../../Assets/Images/HeaderBanner.jpg";
+import { Collapsible, CollapsibleItem, Icon } from 'react-materialize';
+import InviteForm from './InviteForm.js';
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const ResultVisual = (resultInfo) => {
   // const [range, setRange] = useState("")
-  let range = "";
-  let secondRange = "";
-  let thirdRange = "";
+  let range = '';
+  let secondRange = '';
+  let thirdRange = '';
 
   //   console.log(
   //     "from resultVisual.js PQ short scale -->",
@@ -25,31 +23,31 @@ const ResultVisual = (resultInfo) => {
   /////////////////////////////////////////////////  Setting up the resultTotals array
   const resultTotals = [];
   resultTotals[0] = {
-    name: "relentless",
+    name: 'relentless',
     value: resultInfo.resultInfo.relentlessResult,
   };
   resultTotals[1] = {
-    name: "oppositional",
+    name: 'oppositional',
     value: resultInfo.resultInfo.oppositionalResult,
   };
   resultTotals[2] = {
-    name: "agnostic",
+    name: 'agnostic',
     value: resultInfo.resultInfo.agnosticResult,
   };
   resultTotals[3] = {
-    name: "messianic",
+    name: 'messianic',
     value: resultInfo.resultInfo.messianicResult,
   };
   resultTotals[4] = {
-    name: "insecure",
+    name: 'insecure',
     value: resultInfo.resultInfo.insecureResult,
   };
   resultTotals[5] = {
-    name: "nuts",
+    name: 'nuts',
     value: resultInfo.resultInfo.nutsResult,
   };
   resultTotals[6] = {
-    name: "gallant",
+    name: 'gallant',
     value: resultInfo.resultInfo.gallantResult,
   };
   //   console.log("from resultVisual.js resultTotals-->", resultTotals);
@@ -117,19 +115,19 @@ const ResultVisual = (resultInfo) => {
 
     case Value < 10:
       range = TextBlock[0].rangeInfo.low;
-      TextBlock[0].range = "low";
+      TextBlock[0].range = 'low';
       break;
     case Value >= 10 && Value < 16:
       range = TextBlock[0].rangeInfo.medium;
-      TextBlock[0].range = "medium";
+      TextBlock[0].range = 'medium';
       break;
     case Value >= 16 && Value <= 20:
       range = TextBlock[0].rangeInfo.high;
-      TextBlock[0].range = "high";
+      TextBlock[0].range = 'high';
       break;
 
     default:
-      console.log(110, "Broken Switch/Case in ResultVisual");
+      console.log(110, 'Broken Switch/Case in ResultVisual');
   }
 
   ////////////////////////////////////////////////for second result
@@ -147,18 +145,18 @@ const ResultVisual = (resultInfo) => {
 
     case SecondValue < 10:
       secondRange = SecondTextBlock[0].rangeInfo.low;
-      SecondTextBlock[0].range = "low";
+      SecondTextBlock[0].range = 'low';
       break;
     case SecondValue >= 10 && SecondValue < 16:
       secondRange = SecondTextBlock[0].rangeInfo.medium;
-      SecondTextBlock[0].range = "medium";
+      SecondTextBlock[0].range = 'medium';
       break;
     case SecondValue >= 16 && SecondValue <= 20:
       secondRange = SecondTextBlock[0].rangeInfo.high;
-      SecondTextBlock[0].range = "high";
+      SecondTextBlock[0].range = 'high';
       break;
     default:
-      console.log(110, "Broken Switch/Case in ResultVisual");
+      console.log(110, 'Broken Switch/Case in ResultVisual');
   }
 
   /////////////////////////////////////////////////for third result
@@ -175,19 +173,19 @@ const ResultVisual = (resultInfo) => {
       );
     case ThirdValue < 10:
       thirdRange = ThirdTextBlock[0].rangeInfo.low;
-      ThirdTextBlock[0].range = "low";
+      ThirdTextBlock[0].range = 'low';
       break;
     case ThirdValue >= 10 && ThirdValue < 16:
       thirdRange = ThirdTextBlock[0].rangeInfo.medium;
-      ThirdTextBlock[0].range = "medium";
+      ThirdTextBlock[0].range = 'medium';
       break;
     case ThirdValue >= 16 && Value <= 20:
       thirdRange = ThirdTextBlock[0].rangeInfo.high;
-      ThirdTextBlock[0].range = "high";
+      ThirdTextBlock[0].range = 'high';
       break;
 
     default:
-      console.log(110, "Broken Switch/Case in ResultVisual");
+      console.log(110, 'Broken Switch/Case in ResultVisual');
   }
 
   let tips = TextBlock[0].tips;
@@ -201,49 +199,49 @@ const ResultVisual = (resultInfo) => {
   return (
     <div>
       <Section>
-        <H2 className="teal-text">Your Top Primitive Qualities</H2>
+        <H2 className='teal-text'>Your Top Primitive Qualities</H2>
         {/* Section 1 */}
-        <Collapsible accordion className={"Accordian"}>
+        <Collapsible accordion className={'Accordian'}>
           <CollapsibleItem
             expanded={true}
             header={
-              <H2 style={{ margin: "auto" }}>{TextBlock[0].catTitle}. </H2>
+              <H2 style={{ margin: 'auto' }}>{TextBlock[0].catTitle}. </H2>
             }
-            node="div"
+            node='div'
             icon={
               <Icon>
                 <LgIcon>looks_one</LgIcon>
               </Icon>
             }
             style={{
-              margin: "auto",
-              width: "100%",
+              margin: 'auto',
+              width: '100%',
               //   border: "1px solid red",
             }}
           >
             <P dangerouslySetInnerHTML={{ __html: TextBlock[0].catIntro }} />
 
-            <Collapsible accordion className={"Accordian"}>
+            <Collapsible accordion className={'Accordian'}>
               <CollapsibleItem
                 style={{
-                  margin: "auto",
-                  width: "100%",
+                  margin: 'auto',
+                  width: '100%',
                   //   border: "1px solid black",
                 }}
                 expanded={false}
-                header={<H3 style={{ margin: "auto" }}>More details</H3>}
-                node="div"
+                header={<H3 style={{ margin: 'auto' }}>More details</H3>}
+                node='div'
               >
                 <P dangerouslySetInnerHTML={{ __html: range }} />
               </CollapsibleItem>
 
               <CollapsibleItem
                 expanded={false}
-                header={<H3 style={{ margin: "auto" }}>Tips</H3>}
-                node="div"
+                header={<H3 style={{ margin: 'auto' }}>Tips</H3>}
+                node='div'
                 style={{
-                  margin: "auto",
-                  width: "100%",
+                  margin: 'auto',
+                  width: '100%',
                   //   border: "1px solid pink",
                 }}
               >
@@ -261,15 +259,15 @@ const ResultVisual = (resultInfo) => {
           </CollapsibleItem>
         </Collapsible>
         {/* Section 2 */}
-        <Collapsible accordion className={"Accordian"}>
+        <Collapsible accordion className={'Accordian'}>
           <CollapsibleItem
             expanded={false}
             header={
-              <H2 style={{ margin: "auto" }}>
-                {SecondTextBlock[0].catTitle}.{" "}
+              <H2 style={{ margin: 'auto' }}>
+                {SecondTextBlock[0].catTitle}.{' '}
               </H2>
             }
-            node="div"
+            node='div'
             icon={
               <Icon>
                 <LgIcon>looks_two</LgIcon>
@@ -283,13 +281,13 @@ const ResultVisual = (resultInfo) => {
                 }}
               />
             </>
-            <Collapsible accordion className={"Accordian"}>
+            <Collapsible accordion className={'Accordian'}>
               <CollapsibleItem
                 expanded={false}
-                header={<H3 style={{ margin: "auto" }}>More details</H3>}
-                node="div"
+                header={<H3 style={{ margin: 'auto' }}>More details</H3>}
+                node='div'
               >
-                {" "}
+                {' '}
                 <>
                   <P dangerouslySetInnerHTML={{ __html: secondRange }} />
                 </>
@@ -297,8 +295,8 @@ const ResultVisual = (resultInfo) => {
 
               <CollapsibleItem
                 expanded={false}
-                header={<H3 style={{ margin: "auto" }}>Tips</H3>}
-                node="div"
+                header={<H3 style={{ margin: 'auto' }}>Tips</H3>}
+                node='div'
               >
                 <>
                   <ul>
@@ -316,13 +314,13 @@ const ResultVisual = (resultInfo) => {
           </CollapsibleItem>
         </Collapsible>
         {/* Section 3 */}
-        <Collapsible accordion className={"Accordian"}>
+        <Collapsible accordion className={'Accordian'}>
           <CollapsibleItem
             expanded={false}
             header={
-              <H2 style={{ margin: "auto" }}>{ThirdTextBlock[0].catTitle}. </H2>
+              <H2 style={{ margin: 'auto' }}>{ThirdTextBlock[0].catTitle}. </H2>
             }
-            node="div"
+            node='div'
             icon={
               <Icon>
                 <LgIcon>looks_3</LgIcon>
@@ -334,13 +332,13 @@ const ResultVisual = (resultInfo) => {
                 dangerouslySetInnerHTML={{ __html: ThirdTextBlock[0].catIntro }}
               />
             </SubSection>
-            <Collapsible accordion className={"Accordian"}>
+            <Collapsible accordion className={'Accordian'}>
               <CollapsibleItem
                 expanded={false}
-                header={<H3 style={{ margin: "auto" }}>More details</H3>}
-                node="div"
+                header={<H3 style={{ margin: 'auto' }}>More details</H3>}
+                node='div'
               >
-                {" "}
+                {' '}
                 <SubSection>
                   <P dangerouslySetInnerHTML={{ __html: thirdRange }} />
                 </SubSection>
@@ -348,8 +346,8 @@ const ResultVisual = (resultInfo) => {
 
               <CollapsibleItem
                 expanded={false}
-                header={<H3 style={{ margin: "auto" }}>Tips</H3>}
-                node="div"
+                header={<H3 style={{ margin: 'auto' }}>Tips</H3>}
+                node='div'
               >
                 <SubSection>
                   <ul>

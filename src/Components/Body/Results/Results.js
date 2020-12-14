@@ -1,8 +1,8 @@
-import React from "react";
-import Fade from "react-reveal/Fade";
-import styled from "styled-components";
+import React from 'react';
 
-import DataVisual from "./DataVisual";
+import styled from 'styled-components';
+
+import DataVisual from './DataVisual';
 // import EmailMeForm from "./EmailMeForm.js";
 
 function Results(surveyInfo) {

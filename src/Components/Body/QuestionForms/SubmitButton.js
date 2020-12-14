@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import axios from "axios";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import axios from 'axios';
 
 const SubmitButton = (surveyInfo) => {
   const HandleSubmit = () => {
@@ -16,9 +16,9 @@ const SubmitButton = (surveyInfo) => {
   };
 
   return (
-    <Link to="/results/">
-      <Button onClick={HandleSubmit} className="waves-effect waves-light btn">
-        <i className="material-icons right ">send</i>See my results!
+    <Link to='/results/'>
+      <Button onClick={HandleSubmit} className='waves-effect waves-light btn'>
+        <i className='material-icons right '>send</i>See my results!
       </Button>
     </Link>
   );
