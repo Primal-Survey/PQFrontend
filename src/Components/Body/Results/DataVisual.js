@@ -1,11 +1,11 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import RadarChart from 'react-svg-radar-chart';
-import 'react-svg-radar-chart/build/css/index.css';
-import './chart.css';
-import ResultVisual from './ResultVisual';
-import axios from 'axios';
+import React from "react";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import RadarChart from "react-svg-radar-chart";
+import "react-svg-radar-chart/build/css/index.css";
+import "./chart.css";
+import ResultVisual from "./ResultVisual";
+import axios from "axios";
 
 function DataVisual(surveyInfo) {
   const resultInfo = surveyInfo.surveyInfo.surveyInfo;
@@ -20,74 +20,76 @@ function DataVisual(surveyInfo) {
   }, []);
 
   const pullAndCompare = () => {
-    axios.get(`https://pq-backend.herokuapp.com/api/results`).then((res) => {
-      setLargeDataSet(res.data);
-    });
+    axios
+      .get(`https://pq-backend-a52333f1cc00.herokuapp.com/api/results`)
+      .then((res) => {
+        setLargeDataSet(res.data);
+      });
   };
 
   const all = Object.values(largeDataSet);
 
   let RelentlessResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[14] === 'relentlessResult') {
+    if (Object.keys(key)[14] === "relentlessResult") {
       //   console.log('here', Object.keys(key));
       RelentlessResult = RelentlessResult + Object.values(key)[14];
     } else {
-      console.log('RelentlessResult didnt work');
+      console.log("RelentlessResult didnt work");
     }
   });
 
   let OppositionalResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[19] === 'oppositionalResult') {
+    if (Object.keys(key)[19] === "oppositionalResult") {
       OppositionalResult = OppositionalResult + Object.values(key)[19];
     } else {
-      console.log('OppositionalResult didnt work');
+      console.log("OppositionalResult didnt work");
     }
   });
 
   let AgnosticResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[24] === 'agnosticResult') {
+    if (Object.keys(key)[24] === "agnosticResult") {
       AgnosticResult = AgnosticResult + Object.values(key)[24];
     } else {
-      console.log('AgnosticResult didnt work');
+      console.log("AgnosticResult didnt work");
     }
   });
 
   let MessianicResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[29] === 'messianicResult') {
+    if (Object.keys(key)[29] === "messianicResult") {
       MessianicResult = MessianicResult + Object.values(key)[29];
     } else {
-      console.log('MessianicResult didnt work');
+      console.log("MessianicResult didnt work");
     }
   });
 
   let InsecureResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[39] === 'insecureResult') {
+    if (Object.keys(key)[39] === "insecureResult") {
       InsecureResult = InsecureResult + Object.values(key)[39];
     } else {
-      console.log('InsecureResult didnt work');
+      console.log("InsecureResult didnt work");
     }
   });
 
   let NutsResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[44] === 'nutsResult') {
+    if (Object.keys(key)[44] === "nutsResult") {
       NutsResult = NutsResult + Object.values(key)[44];
     } else {
-      console.log('NutsResult didnt work');
+      console.log("NutsResult didnt work");
     }
   });
 
   let GallantResult = 0;
   all.forEach(function (key) {
-    if (Object.keys(key)[34] === 'gallantResult') {
+    if (Object.keys(key)[34] === "gallantResult") {
       GallantResult = GallantResult + Object.values(key)[34];
     } else {
-      console.log('GallantResult didnt work');
+      console.log("GallantResult didnt work");
     }
   });
 
@@ -219,7 +221,7 @@ function DataVisual(surveyInfo) {
         Nuts: N,
         Gallant: G,
       },
-      meta: { color: 'red' },
+      meta: { color: "red" },
     },
     {
       data: {
@@ -231,45 +233,45 @@ function DataVisual(surveyInfo) {
         Nuts: n,
         Gallant: g,
       },
-      meta: { color: 'blue' },
+      meta: { color: "blue" },
     },
   ];
 
   const primitivePercentile =
     resultInfo.PQ_ShortScale < 48
-      ? '1st'
+      ? "1st"
       : resultInfo.PQ_ShortScale >= 48 && resultInfo.PQ_ShortScale < 66
-      ? '10th'
+      ? "10th"
       : resultInfo.PQ_ShortScale >= 66 && resultInfo.PQ_ShortScale < 79
-      ? '20th'
+      ? "20th"
       : resultInfo.PQ_ShortScale >= 79 && resultInfo.PQ_ShortScale < 90
-      ? '35th'
+      ? "35th"
       : resultInfo.PQ_ShortScale >= 90 && resultInfo.PQ_ShortScale < 100
-      ? '50th'
+      ? "50th"
       : resultInfo.PQ_ShortScale >= 100 && resultInfo.PQ_ShortScale < 112
-      ? '75th'
+      ? "75th"
       : resultInfo.PQ_ShortScale >= 112 && resultInfo.PQ_ShortScale < 119
-      ? '85th'
+      ? "85th"
       : resultInfo.PQ_ShortScale >= 119 && resultInfo.PQ_ShortScale < 129
-      ? '95th'
+      ? "95th"
       : resultInfo.PQ_ShortScale >= 129 && resultInfo.PQ_ShortScale < 140
-      ? '99th'
-      : (resultInfo.PQ_ShortScale = 140 ? '100th' : null);
+      ? "99th"
+      : (resultInfo.PQ_ShortScale = 140 ? "100th" : null);
 
   const captions = {
     // columns
-    Relentless: 'R',
-    Oppositional: 'O',
-    Agnostic: 'A',
-    Messianic: 'M',
-    Insecure: 'I',
-    Nuts: 'N',
-    Gallant: 'G',
+    Relentless: "R",
+    Oppositional: "O",
+    Agnostic: "A",
+    Messianic: "M",
+    Insecure: "I",
+    Nuts: "N",
+    Gallant: "G",
   };
 
   return (
     <>
-      <H2 className='teal-text'>
+      <H2 className="teal-text">
         You scored in the <strong>{primitivePercentile}</strong> Primitive
         Percentile
       </H2>
@@ -282,7 +284,7 @@ function DataVisual(surveyInfo) {
         <Box>
           <GraphKey>
             <Text>
-              <i className='material-icons tiny '>vpn_key</i>
+              <i className="material-icons tiny ">vpn_key</i>
               <P>Blue Overlay : Your Result</P>
               <P>Red Overlay : Overall Survey Results of {all.length} users</P>
             </Text>

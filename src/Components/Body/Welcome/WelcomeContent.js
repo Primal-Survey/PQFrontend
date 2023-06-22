@@ -17,9 +17,11 @@ const WelcomeContent = () => {
   }, []);
 
   const pullAndCompare = () => {
-    axios.get(`https://pq-backend.herokuapp.com/api/results`).then((res) => {
-      setLargeDataSet(res.data);
-    });
+    axios
+      .get(`https://pq-backend-a52333f1cc00.herokuapp.com/api/results`)
+      .then((res) => {
+        setLargeDataSet(res.data);
+      });
   };
 
   const all = Object.values(largeDataSet);
@@ -44,8 +46,8 @@ const WelcomeContent = () => {
             St. Joseph's University Professor of Management, building on the
             model developed by Marco Greenberg in his book,{" "}
             <a href="https://www.amazon.com/Primitive-Tapping-Primal-Powering-Successful/dp/0316530379/">
-              <i>Primitive</i>: Tapping the Primal Drive that Powers the
-              World’s Most Successful People.
+              <i>Primitive</i>: Tapping the Primal Drive that Powers the World’s
+              Most Successful People.
             </a>
           </P>
           <StartButton />
